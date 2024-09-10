@@ -1,0 +1,42 @@
+[user]
+	email = niedzwiedzwo@gmail.com
+	name = niedzwiedzw
+[includeIf "gitdir:~/crionis/"]
+	path = ~/crionis/.gitconfig
+
+[core]
+	excludesfile = ~/.global-git-ignores
+	editor = hx
+	compression = 0
+
+[merge]
+	tool = meld
+	ff = only
+
+# `git dlog` to show `git log -p` with difftastic.
+[alias]
+        dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[diff]
+	external = difft
+	tool = difftastic
+
+[pager]
+        difftool = true
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[http]
+	postBuffer = 524288000
+[sendpack]
+	sideband = false
