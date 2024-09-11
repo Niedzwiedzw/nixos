@@ -32,7 +32,14 @@
       dust
       deluge
       mpv
+      # rust stuff
+      clang
+      cmake
+      cargo-make
+      # stdenv.cc
+      pkg-config
       cargo
+      rustc
       rust-analyzer
       #  thunderbird
     ];
