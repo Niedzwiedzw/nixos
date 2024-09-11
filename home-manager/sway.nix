@@ -30,6 +30,7 @@
   };
 
   wayland.windowManager.sway = {
+    checkConfig = false;
     enable = true;
 
     config = {
@@ -109,6 +110,9 @@
         };
       };
     };
+    extraConfig = ''
+      output * bg /home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill
+    '';
   };
 
   programs.waybar = {

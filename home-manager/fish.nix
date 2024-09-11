@@ -35,6 +35,8 @@
     ];
 
     shellAliases = {
+      "nixrebuild" = "cd ~/nixos/ && sudo nixos-rebuild switch --flake ~/nixos/#niedzwiedz --upgrade && home-manager switch -b backup --flake ~/nixos/#niedzwiedz && git add . && git commit -m '$(date \"+%Y-%m-%d--%H-%M-%S\")' && cd -";
+      "htop" = "btm";
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../../";

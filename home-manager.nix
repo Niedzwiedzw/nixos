@@ -30,6 +30,8 @@
       git
       eza
       dust
+      deluge
+      mpv
       #  thunderbird
     ];
   };

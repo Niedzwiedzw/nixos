@@ -178,6 +178,9 @@
     pavucontrol
     pulseaudio
     helvum
+    gparted
+    xorg.xhost.out
+    bottom
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
