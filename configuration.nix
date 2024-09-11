@@ -18,6 +18,14 @@
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["modesetting" "amdgpu"];
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
   hardware.amdgpu = {
     opencl.enable = true;
     initrd.enable = true;
