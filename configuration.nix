@@ -15,6 +15,20 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # amd gpu specific stuff
+  boot.initrd.kernelModules = ["amdgpu"];
+  services.xserver.videoDrivers = ["modesetting" "amdgpu"];
+  hardware.amdgpu = {
+    opencl.enable = true;
+    initrd.enable = true;
+    amdvlk = {
+      enable = true;
+      supportExperimental.enable = true;
+      support32Bit.enable = true;
+    };
+  };
+  # end of amd gpu specific stuff
+
   boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -183,6 +197,14 @@
     xorg.xhost.out
     bottom
     inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+    # -- amd gpu
+    blender-hip
+    amdvlk
+    # driversi686Linux.amdvlk
+    amdgpu_top
+    mesa
+    # driversi686Linux.mesa
+    # -- end of amd gpu
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
