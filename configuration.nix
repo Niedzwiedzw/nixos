@@ -1,7 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -178,6 +182,7 @@
     gparted
     xorg.xhost.out
     bottom
+    inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
