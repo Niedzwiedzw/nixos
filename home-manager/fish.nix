@@ -56,27 +56,12 @@
       "llt" = "eza -lh -s time --no-quotes --time-style long-iso";
       "lltr" = "eza -lhr -s time --no-quotes --time-style long-iso";
 
-      "p" = "feh -Z pics/";
-      "v" = "vlc vids/";
-      "avi" = "vlc *.avi";
       "jpeg" = "feh -Z *.jpeg";
       "jpg" = "feh -Z *.jpg";
-      "mkv" = "vlc *.mkv";
-      "mov" = "vlc *.mov";
-      "mp3" = "vlc *.mp3";
-      "mp4" = "vlc *.mp4";
       "png" = "feh -Z *.png";
-      "vvlc" = "vlc *";
-      "webm" = "vlc *.webm";
     };
 
     shellAbbrs = {
-      # cargo abbreviations
-      cb = "cargo build";
-      cc = "cargo check";
-      cdo = "cargo doc --open";
-      cr = "cargo run";
-
       # git abbreviations
       gaa = "git add -A";
       ga = "git add";
@@ -92,11 +77,6 @@
       gs = "git status";
       gst = "git stash";
       gstp = "git stash pop";
-
-      # nix abbreviations
-
-      nhb = "home-manager switch --flake ~/nixos#niedzwiedz";
-      nrn = "sudo nixos-rebuild switch --flake ~/nixos#niedzwiedz";
     };
 
     functions = {

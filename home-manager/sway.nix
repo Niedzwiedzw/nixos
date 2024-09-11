@@ -207,7 +207,7 @@
           border-radius: 0;
           /* `otf-font-awesome` is required to be installed for icons */
           font-family: ${font};
-          font-size: 13px;
+          font-size: 16px;
           min-height: 0;
       }
       window#waybar {
