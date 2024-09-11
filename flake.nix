@@ -7,12 +7,17 @@
     };
     musnix = {url = "github:musnix/musnix";};
     stylix.url = "github:danth/stylix";
+    firefox = {
+      url = "github:nix-community/flake-firefox-nightly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
     nixpkgs,
     home-manager,
     stylix,
+    firefox,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -25,6 +30,7 @@
 
         ./configuration.nix
       ];
+      specialArgs = {inherit inputs;};
     };
     homeConfigurations.niedzwiedz = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
