@@ -32,6 +32,8 @@
       dust
       deluge
       mpv
+      cargo
+      rust-analyzer
       #  thunderbird
     ];
   };
