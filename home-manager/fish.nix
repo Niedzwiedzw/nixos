@@ -15,24 +15,24 @@
       set fish_greeting # Disable greeting
     '';
 
-    plugins = with pkgs.fishPlugins; [
-      {
-        name = "done";
-        src = done.src;
-      }
-      {
-        name = "forgit";
-        src = forgit.src;
-      }
-      {
-        name = "hydro";
-        src = hydro.src;
-      }
-      {
-        name = "grc";
-        src = grc.src;
-      }
-    ];
+    # plugins = with pkgs.fishPlugins; [
+    #   {
+    #     name = "done";
+    #     src = done.src;
+    #   }
+    #   {
+    #     name = "forgit";
+    #     src = forgit.src;
+    #   }
+    #   {
+    #     name = "hydro";
+    #     src = hydro.src;
+    #   }
+    #   {
+    #     name = "grc";
+    #     src = grc.src;
+    #   }
+    # ];
 
     shellAliases = {
       "nixrebuild" = "cd ~/nixos/ && sudo nixos-rebuild switch --flake ~/nixos/#niedzwiedz --upgrade && home-manager switch -b backup --flake ~/nixos/#niedzwiedz && git add . && git commit -m '$(date \"+%Y-%m-%d--%H-%M-%S\")' && cd -";
@@ -63,6 +63,7 @@
 
     shellAbbrs = {
       # git abbreviations
+      ggu = "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)";
       gaa = "git add -A";
       ga = "git add";
       gb = "git branch";
