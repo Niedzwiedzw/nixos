@@ -200,9 +200,16 @@
     # -- amd gpu
     blender-hip
     amdvlk
-    # driversi686Linux.amdvlk
     amdgpu_top
     mesa
+    vulkan-tools
+    vulkan-headers
+    vulkan-loader
+    mesa
+    libGL
+    libxkbcommon
+    wayland
+
     # driversi686Linux.mesa
     # -- end of amd gpu
   ];
