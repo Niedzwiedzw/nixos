@@ -23,18 +23,6 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  hardware.opengl.extraPackages = with pkgs; [
-    amdvlk
-  ];
-  hardware.amdgpu = {
-    opencl.enable = true;
-    initrd.enable = true;
-    amdvlk = {
-      enable = true;
-      supportExperimental.enable = true;
-      support32Bit.enable = true;
-    };
-  };
   # end of amd gpu specific stuff
 
   boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
@@ -216,7 +204,6 @@
     mesa
     libGL
     libxkbcommon
-    wayland
 
     # driversi686Linux.mesa
     # -- end of amd gpu
