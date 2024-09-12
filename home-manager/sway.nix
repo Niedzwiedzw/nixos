@@ -69,21 +69,6 @@
       client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
       client.background        $base
 
-      # bar
-      bar {
-        colors {
-          background         $base
-          statusline         $text
-          focused_statusline $text
-          focused_separator  $base
-
-          # target           border bg        text
-          focused_workspace  $base  $mauve    $crust
-          active_workspace   $base  $surface2 $text
-          inactive_workspace $base  $base     $text
-          urgent_workspace   $base  $red      $crust
-        }
-      }
       # wallpaper
       output * bg /home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill
     '';
