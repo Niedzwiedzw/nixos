@@ -156,7 +156,7 @@
     polarity = "dark";
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
   };
   fonts.packages = with pkgs; [
     noto-fonts

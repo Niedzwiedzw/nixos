@@ -17,6 +17,7 @@
       wezterm
       xfce.thunar
       keepassxc
+      thunderbird
       discord
       ungoogled-chromium
       thunderbird
@@ -156,7 +157,7 @@
       enable = true;
       defaultEditor = true;
       settings = {
-        theme = "onedark";
+        theme = "catppuccin_mocha";
         editor = {
           auto-completion = false;
           auto-format = true;
