@@ -8,6 +8,9 @@
     kooha
     wl-clipboard
     grim
+    swappy
+    slurp
+    pngquant
   ];
 
   home.sessionVariables = {
@@ -74,6 +77,9 @@
 
       # wallpaper
       output * bg /home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill
+
+      # keybinds
+
     '';
 
     config = {
@@ -90,10 +96,6 @@
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
       terminal = "wezterm";
-      # keybindings = {
-      #   inherit wayland.windowManager.sway.config.keybindings;
-      #   "Ctrl+Shift+x" = "exec watershot -c";
-      # };
       input = {
         "*" = {
           xkb_layout = "pl";
