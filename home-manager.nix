@@ -50,6 +50,9 @@
     zellij = {
       enable = true;
       enableFishIntegration = true;
+      settings = {
+        theme = "catppuccin_mocha";
+      };
     };
     wezterm = {
       enable = true;
