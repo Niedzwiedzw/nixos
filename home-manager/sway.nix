@@ -171,10 +171,6 @@
   services.swaync = {
     enable = true;
   };
-  services.copyq = {
-    enable = true;
-    systemdTarget = "sway-session.target";
-  };
   programs.waybar = {
     enable = true;
     systemd.target = "sway-session.target";
