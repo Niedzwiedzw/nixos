@@ -245,6 +245,7 @@
     };
   };
   imports = [
+    ./home-manager/thunderbird.nix
     ./home-manager/sway.nix
     ./home-manager/fish.nix
     ./home-manager/git.nix
