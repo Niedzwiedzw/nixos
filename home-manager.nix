@@ -237,7 +237,13 @@
         language-server.nil = {
           command = "nil";
           config = {
-            nix.flake.autoEvalInputs = true;
+            nix = {
+              flake = {
+                autoEvalInputs = true;
+                autoArchive = true;
+              };
+              maxMemoryMB = 8192;
+            };
             formatting.command = ["alejandra" "--"];
           };
         };
