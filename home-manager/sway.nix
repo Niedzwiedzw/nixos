@@ -238,25 +238,25 @@
       window#waybar {
         /* you can also GTK3 CSS functions! */
         background-color: shade(@base, 0.9);
-        border: 2px solid alpha(@crust, 0.3);
+        // border: 2px solid alpha(@crust, 0.3);
       }
       #workspaces button {
           padding: 0 5px;
           background: transparent;
           color: white;
-          border-bottom: 3px solid transparent;
+          // border-bottom: 3px solid transparent;
       }
 
       #workspaces button.focused {
           background: @mantle;
-          border-bottom: 3px solid @muave;
+          // border-bottom: 3px solid @muave;
       }
       label.module {
         padding: 0 10px;
-        border-left: 2px solid @muave;
+        // border-left: 2px solid @muave;
       }
       box.module button:hover {
-          box-shadow: inset 0 -3px @muave;
+          // box-shadow: inset 0 -3px @muave;
       }
     '';
   };
