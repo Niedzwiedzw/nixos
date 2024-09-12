@@ -249,15 +249,14 @@
 
       #workspaces button.focused {
           background: @mantle;
-          border-bottom: 3px solid @lavender;
+          border-bottom: 3px solid @muave;
       }
       label.module {
         padding: 0 10px;
-        box-shadow: inset 0 -3px;
-        border-left: 2px solid @mantle;
+        border-left: 2px solid @muave;
       }
       box.module button:hover {
-          box-shadow: inset 0 -3px #ffffff;
+          box-shadow: inset 0 -3px @muave;
       }
     '';
   };

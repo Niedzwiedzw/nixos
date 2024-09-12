@@ -43,6 +43,7 @@
       cargo
       rustc
       rust-analyzer
+      betterbird
       #  thunderbird
     ];
   };
