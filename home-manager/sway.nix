@@ -254,7 +254,7 @@
       label.module {
         padding: 0 10px;
         box-shadow: inset 0 -3px;
-        outline: 2px solid @mantle;
+        border-left: 2px solid @mantle;
       }
       box.module button:hover {
           box-shadow: inset 0 -3px #ffffff;
