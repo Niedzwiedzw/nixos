@@ -11,6 +11,10 @@
       url = "github:nix-community/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    watershot = {
+      url = "github:Kirottu/watershot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -18,6 +22,7 @@
     home-manager,
     stylix,
     firefox,
+    watershot,
     ...
   } @ inputs: let
     system = "x86_64-linux";
