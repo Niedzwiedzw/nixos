@@ -91,6 +91,7 @@
         {command = "betterbird";}
         {command = "slack";}
         {command = "discord";}
+        {command = "keepassxc";}
       ];
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
@@ -238,6 +239,25 @@
         /* you can also GTK3 CSS functions! */
         background-color: shade(@base, 0.9);
         border: 2px solid alpha(@crust, 0.3);
+      }
+      #workspaces button {
+          padding: 0 5px;
+          background: transparent;
+          color: white;
+          border-bottom: 3px solid transparent;
+      }
+
+      #workspaces button.focused {
+          background: @blue;
+          border-bottom: 3px solid @lavender;
+      }
+      label.module {
+        padding: 0 10px;
+        box-shadow: inset 0 -3px;
+        border: 2px solid @blue;
+      }
+      box.module button:hover {
+          box-shadow: inset 0 -3px #ffffff;
       }
     '';
   };
