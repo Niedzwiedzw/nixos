@@ -89,13 +89,17 @@
     packages = with pkgs; [
       helix
       wezterm
-      xfce.thunar
       keepassxc
       discord
       ungoogled-chromium
       #  thunderbird
     ];
   };
+
+  programs.thunar.enable = true;
+  programs.xconf.enable = true;
+  services.tumbler.enable = true;
+  services.gvfs.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
