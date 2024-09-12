@@ -33,6 +33,7 @@
       dust
       deluge
       mpv
+      zellij
       # rust stuff
       clang
       cmake
@@ -46,6 +47,10 @@
     ];
   };
   programs = {
+    zellij = {
+      enable = true;
+      enableFishIntegration = true;
+    };
     wezterm = {
       enable = true;
       extraConfig = ''

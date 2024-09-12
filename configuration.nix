@@ -145,7 +145,6 @@
     extraGroups = ["networkmanager" "wheel" "audio"];
     packages = with pkgs; [
       home-manager
-      zellij
     ];
   };
 
