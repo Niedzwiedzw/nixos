@@ -81,6 +81,7 @@
         {command = "discord";}
         {command = "keepassxc";}
         {command = "xrandr --output HDMI-A-1 --primary";}
+        {command = "thunderbird";}
         {command = "autotiling";}
       ];
       modifier = "Mod4";
