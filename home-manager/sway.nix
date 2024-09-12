@@ -8,6 +8,7 @@
     kooha
     wl-clipboard
     watershot
+    grim
   ];
 
   home.sessionVariables = {
