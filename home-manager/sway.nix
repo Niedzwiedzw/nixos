@@ -7,7 +7,6 @@
     autotiling
     kooha
     wl-clipboard
-    watershot
     grim
   ];
 
@@ -91,9 +90,10 @@
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
       terminal = "wezterm";
-      keybindings = {
-        "Ctrl+Shift+x" = "exec watershot -c";
-      };
+      # keybindings = {
+      #   inherit wayland.windowManager.sway.config.keybindings;
+      #   "Ctrl+Shift+x" = "exec watershot -c";
+      # };
       input = {
         "*" = {
           xkb_layout = "pl";
