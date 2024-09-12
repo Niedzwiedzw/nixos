@@ -17,10 +17,8 @@
       wezterm
       xfce.thunar
       keepassxc
-      thunderbird
       discord
       ungoogled-chromium
-      thunderbird
       slack
       steam
       signal-desktop
@@ -43,7 +41,6 @@
       cargo
       rustc
       rust-analyzer
-      thunderbird
       #  thunderbird
     ];
   };

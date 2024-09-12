@@ -3,6 +3,7 @@
     qt5.qtwayland
     waybar
     dmenu
+    xorg.xrandr
   ];
 
   home.sessionVariables = {
@@ -92,6 +93,7 @@
         {command = "slack";}
         {command = "discord";}
         {command = "keepassxc";}
+        {command = "xrandr --output HDMI-A-1 --primary";}
       ];
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
@@ -174,7 +176,9 @@
       };
     };
   };
-
+  services.swaync = {
+    enable = true;
+  };
   programs.waybar = {
     enable = true;
     settings = [
