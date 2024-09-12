@@ -79,7 +79,7 @@
       output * bg /home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill
 
       # keybinds
-      bindsym $mod+p exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | wl-copy -t image/png
+      bindsym Mod4+p exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | wl-copy -t image/png
     '';
 
     config = {
