@@ -191,145 +191,43 @@
         };
       }
     ];
-    style = let
-      makeBorder = color: "border-bottom: 3px solid #${color};";
-      makeInfo = color: ''
-        color: #${color};
-        ${makeBorder color}
-      '';
-      colorSchemeDark = rec {
-        primary = {
-          normal = {
-            background = "181818";
-            foreground = "b9b9b9";
-          };
-          bright = {
-            background = bright.black;
-            foreground = bright.white;
-          };
-        };
-        normal = {
-          black = "252525";
-          gray = "5b5b5b";
-          red = "ed4a46";
-          green = "70b433";
-          yellow = "dbb32d";
-          blue = "368aeb";
-          magenta = "eb6eb7";
-          cyan = "3fc5b7";
-          white = "777777";
-        };
-        bright = {
-          black = "3b3b3b";
-          gray = "7b7b7b";
-          red = "ff5e56";
-          green = "83c746";
-          yellow = "efc541";
-          blue = "4f9cfe";
-          magenta = "ff81ca";
-          cyan = "56d8c9";
-          white = "dedede";
-        };
-      };
+    style = ''
+      @define-color rosewater #f5e0dc;
+      @define-color flamingo #f2cdcd;
+      @define-color pink #f5c2e7;
+      @define-color mauve #cba6f7;
+      @define-color red #f38ba8;
+      @define-color maroon #eba0ac;
+      @define-color peach #fab387;
+      @define-color yellow #f9e2af;
+      @define-color green #a6e3a1;
+      @define-color teal #94e2d5;
+      @define-color sky #89dceb;
+      @define-color sapphire #74c7ec;
+      @define-color blue #89b4fa;
+      @define-color lavender #b4befe;
+      @define-color text #cdd6f4;
+      @define-color subtext1 #bac2de;
+      @define-color subtext0 #a6adc8;
+      @define-color overlay2 #9399b2;
+      @define-color overlay1 #7f849c;
+      @define-color overlay0 #6c7086;
+      @define-color surface2 #585b70;
+      @define-color surface1 #45475a;
+      @define-color surface0 #313244;
+      @define-color base #1e1e2e;
+      @define-color mantle #181825;
+      @define-color crust #11111b;
 
-      bgColor = colorScheme.primary.normal.background;
-      fgColor = colorScheme.primary.bright.foreground;
-      acColor = colorScheme.normal.red;
-
-      colorScheme = colorSchemeDark;
-      font = "Iosevka Nerd Font Mono";
-
-      clockColor = colorScheme.bright.magenta;
-      cpuColor = colorScheme.bright.green;
-      memColor = colorScheme.bright.blue;
-      pulseColor = {
-        normal = colorScheme.bright.cyan;
-        muted = colorScheme.bright.gray;
-      };
-      tmpColor = {
-        normal = colorScheme.bright.yellow;
-        critical = colorScheme.bright.red;
-      };
-    in ''
       * {
-          border: none;
-          border-radius: 0;
-          /* `otf-font-awesome` is required to be installed for icons */
-          font-family: ${font};
-          font-size: 16px;
-          min-height: 0;
+        /* reference the color by using @color-name */
+        color: @text;
       }
+
       window#waybar {
-          background-color: #${bgColor};
-          /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
-          color: #${fgColor};
-          transition-property: background-color;
-          transition-duration: .5s;
-      }
-      #workspaces button {
-          padding: 0 5px;
-          background-color: transparent;
-          color: #${fgColor};
-          border-bottom: 3px solid transparent;
-      }
-      /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-      #workspaces button:hover {
-          background: rgba(0, 0, 0, 0.2);
-          box-shadow: inherit;
-          border-bottom: 3px solid #ffffff;
-      }
-      #workspaces button.focused {
-          border-bottom: 3px solid #${acColor};
-      }
-      #workspaces button.urgent {
-          background-color: #${acColor};
-          color: #${bgColor};
-      }
-      #mode {
-          background-color: #64727D;
-          border-bottom: 3px solid #ffffff;
-      }
-      #clock,
-      #battery,
-      #cpu,
-      #memory,
-      #temperature,
-      #backlight,
-      #network,
-      #pulseaudio,
-      #custom-media,
-      #tray,
-      #mode,
-      #idle_inhibitor,
-      #mpd {
-          padding: 0 10px;
-          margin: 0 4px;
-          background-color: transparent;
-          ${makeInfo fgColor}
-      }
-      label:focus {
-          color: #000000;
-      }
-      #clock {
-          ${makeInfo clockColor}
-      }
-      #cpu {
-          ${makeInfo cpuColor}
-      }
-      #memory {
-          ${makeInfo memColor}
-      }
-      #pulseaudio {
-          ${makeInfo pulseColor.normal}
-      }
-      #pulseaudio.muted {
-          ${makeInfo pulseColor.muted}
-      }
-      #temperature {
-          ${makeInfo tmpColor.normal}
-      }
-      #temperature.critical {
-          ${makeInfo tmpColor.critical}
+        /* you can also GTK3 CSS functions! */
+        background-color: shade(@base, 0.9);
+        border: 2px solid alpha(@crust, 0.3);
       }
     '';
   };
