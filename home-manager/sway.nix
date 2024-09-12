@@ -5,9 +5,9 @@
     dmenu
     xorg.xrandr
     autotiling
-    flameshot
     kooha
     wl-clipboard
+    watershot
   ];
 
   home.sessionVariables = {
@@ -90,15 +90,13 @@
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
       terminal = "wezterm";
-
+      keybindings = {
+        "Ctrl+Shift+x" = "exec watershot -c";
+      };
       input = {
         "*" = {
           xkb_layout = "pl";
         };
-      };
-      gaps = {
-        inner = 18;
-        outer = -8;
       };
 
       bars = [
