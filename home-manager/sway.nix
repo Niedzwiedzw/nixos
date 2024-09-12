@@ -4,6 +4,7 @@
     waybar
     dmenu
     xorg.xrandr
+    autotiling
   ];
 
   home.sessionVariables = {
@@ -94,6 +95,7 @@
         {command = "discord";}
         {command = "keepassxc";}
         {command = "xrandr --output HDMI-A-1 --primary";}
+        {command = "autotiling";}
       ];
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
