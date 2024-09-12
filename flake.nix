@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     watershot = {
-      url = "github:Kirottu/watershot";
+      url = "github:Kirottu/watershot?rev=17225900e909a1d499f7534e4056cea7418a60d0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
