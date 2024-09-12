@@ -51,7 +51,7 @@
       enable = true;
       enableFishIntegration = true;
       settings = {
-        theme = "catppuccin_mocha";
+        theme = "catppuccin-mocha";
       };
     };
     wezterm = {
