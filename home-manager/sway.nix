@@ -95,6 +95,10 @@
           xkb_layout = "pl";
         };
       };
+      gaps = {
+        inner = 18;
+        outer = -8;
+      };
 
       bars = [
         {
