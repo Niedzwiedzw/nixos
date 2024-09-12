@@ -14,6 +14,7 @@
   ];
 
   home.sessionVariables = {
+    LD_LIBRARY_PATH = "${pkgs.libglvnd}/lib";
     MOZ_ENABLE_WAYLAND = "1";
     MOZ_USE_XINPUT2 = "1";
     XDG_SESSION_TYPE = "wayland";
