@@ -5,6 +5,9 @@
     dmenu
     xorg.xrandr
     autotiling
+    flameshot
+    kooha
+    wl-clipboard
   ];
 
   home.sessionVariables = {
