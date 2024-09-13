@@ -17,14 +17,31 @@
 
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
-  services.xserver.videoDrivers = ["modesetting" "amdgpu"];
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    # extraPackages = [pkgs.amdvlk];
-    # extraPackages32 = [pkgs.driversi686Linux.amdvlk];
+  services.xserver.videoDrivers = ["modesetting"];
+
+  hardware = {
+    # graphics = {
+    #   emable = true;
+    #   enable32Bit = true;
+    #   extraPackages = with pkgs; [
+    #     amdvlk
+    #     vulkan-loader
+    #     vulkan-validation-layers
+    #     vulkan-extension-layer
+    #   ];
+    #   extraPackages32 = with pkgs; [
+    #     driversi686Linux.amdvlk
+    #   ];
+    # };
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = [pkgs.amdvlk];
+      extraPackages32 = [pkgs.driversi686Linux.amdvlk];
+    };
   };
+  environment.variables.AMD_VULKAN_ICD = "RADV";
   # end of amd gpu specific stuff
 
   boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
@@ -204,11 +221,13 @@
     bottom
     inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     # -- amd gpu
+
     blender-hip
     amdvlk
     amdgpu_top
     mesa
     vulkan-tools
+    glxinfo
     vulkan-headers
     vulkan-loader
     mesa
