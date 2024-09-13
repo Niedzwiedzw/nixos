@@ -178,7 +178,16 @@
     sway.enable = true;
     fish.enable = true;
   };
-
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          pango
+          libthai
+          harfbuzz
+        ];
+    };
+  };
   users.defaultUserShell = pkgs.fish;
 
   # Allow unfree packages
@@ -205,7 +214,24 @@
     mesa
     libGL
     libxkbcommon
-
+    # gaming - STEAM
+    mangohud
+    gamemode
+    # WINE
+    wine
+    winetricks
+    protontricks
+    vulkan-tools
+    # Extra dependencies
+    # https://github.com/lutris/docs/
+    gnutls
+    openldap
+    libgpgerror
+    freetype
+    sqlite
+    libxml2
+    xml2
+    SDL2
     # driversi686Linux.mesa
     # -- end of amd gpu
   ];
