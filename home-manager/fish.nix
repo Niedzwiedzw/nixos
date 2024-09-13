@@ -63,6 +63,8 @@
 
     shellAbbrs = {
       # git abbreviations
+      ggf = "git push --force-with-lease $(git rev-parse --abbrev-ref HEAD)";
+      ggp = "git push origin $(git rev-parse --abbrev-ref HEAD)";
       ggu = "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)";
       gaa = "git add -A";
       ga = "git add";
