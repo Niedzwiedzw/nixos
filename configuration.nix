@@ -45,7 +45,7 @@
       ];
     };
   };
-  environment.variables.AMD_VULKAN_ICD = "RADV";
+  # environment.variables.AMD_VULKAN_ICD = "RADV";
   # end of amd gpu specific stuff
 
   boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
