@@ -69,9 +69,10 @@
         -- This is where you actually apply your config choices
 
         -- For example, changing the color scheme:
-        config.color_scheme = 'OneHalfDark'
+        config.color_scheme = 'Catppuccin Mocha';
         config.font = wezterm.font("Iosevka Nerd Font Mono", {weight="Medium", stretch="Normal", style="Normal"});
-        config.enable_tab_bar = false
+        config.enable_tab_bar = false;
+        config.front_end = "WebGpu";
         config.scrollback_lines = 100000
         config.window_background_opacity = 0.88;
         config.font_size = 14;
