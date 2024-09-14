@@ -1,23 +1,21 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager/release-24.05";
     };
     musnix = {url = "github:musnix/musnix";};
     stylix.url = "github:danth/stylix";
-    firefox = {
-      url = "github:nix-community/flake-firefox-nightly";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
   outputs = {
     self,
     nixpkgs,
     home-manager,
     stylix,
-    firefox,
+    chaotic,
+    # firefox,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -29,6 +27,7 @@
         inputs.musnix.nixosModules.musnix
 
         ./configuration.nix
+        chaotic.nixosModules.default
       ];
       specialArgs = {inherit inputs;};
     };

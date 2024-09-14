@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
-  inputs,
+  # inputs,
   ...
 }: {
   imports = [
@@ -18,6 +18,7 @@
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
+  chaotic.mesa-git.enable = true;
 
   hardware = {
     # graphics = {
@@ -33,10 +34,10 @@
     #     driversi686Linux.amdvlk
     #   ];
     # };
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      # driSupport = true;
+      # driSupport32Bit = true;
       extraPackages = with pkgs; [
         rocm-opencl-icd
         rocm-opencl-runtime
@@ -44,7 +45,7 @@
       ];
     };
   };
-  # environment.variables.AMD_VULKAN_ICD = "RADV";
+  environment.variables.AMD_VULKAN_ICD = "RADV";
   # end of amd gpu specific stuff
 
   boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
@@ -192,7 +193,6 @@
     (nerdfonts.override {fonts = ["Iosevka"];})
   ];
 
-  # Install firefox.
   programs = {
     steam.enable = true;
     sway.enable = true;
@@ -216,24 +216,24 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # chaotic stuff
+    firefox_nightly
+    # end of chaotic stuff
     pavucontrol
     pulseaudio
     helvum
     gparted
     xorg.xhost.out
     bottom
-    inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+    # inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     # -- amd gpu
-
     blender-hip
     amdvlk
     amdgpu_top
-    mesa
     vulkan-tools
     glxinfo
     vulkan-headers
     vulkan-loader
-    mesa
     libGL
     libxkbcommon
     # gaming - STEAM
@@ -254,7 +254,6 @@
     libxml2
     xml2
     SDL2
-    # driversi686Linux.mesa
     # -- end of amd gpu
   ];
 
