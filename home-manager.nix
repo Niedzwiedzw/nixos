@@ -5,7 +5,16 @@
       allowUnfreePredicate = _: true;
     };
   };
-
+  # CATPUCCIN
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    pointerCursor.enable = true;
+  };
+  gtk.catppuccin.enable = true;
+  gtk.catppuccin.icon.enable = true;
+  qt.style.catppuccin.enable = true;
+  # /CATPUCCIN
   home = {
     stateVersion = "24.05";
     sessionPath = [
@@ -169,7 +178,6 @@
       enable = true;
       defaultEditor = true;
       settings = {
-        theme = "catppuccin_mocha";
         editor = {
           auto-completion = false;
           auto-format = true;

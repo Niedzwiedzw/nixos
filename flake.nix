@@ -8,6 +8,7 @@
     musnix = {url = "github:musnix/musnix";};
     stylix.url = "github:danth/stylix";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    catppuccin.url = "github:catppuccin/nix";
   };
   outputs = {
     self,
@@ -15,6 +16,7 @@
     home-manager,
     stylix,
     chaotic,
+    catppuccin,
     # firefox,
     ...
   } @ inputs: let
@@ -23,6 +25,7 @@
     nixosConfigurations.niedzwiedz = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
+        catppuccin.nixosModules.catppuccin
         stylix.nixosModules.stylix
         inputs.musnix.nixosModules.musnix
 
@@ -35,6 +38,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [
         ./home-manager.nix
+        catppuccin.homeManagerModules.catppuccin
       ];
     };
   };
