@@ -8,6 +8,7 @@
     kooha
     wl-screenrec
     wf-recorder
+    obs-studio
     wl-clipboard
     grim
     swappy
