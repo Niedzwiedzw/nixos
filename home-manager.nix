@@ -23,6 +23,7 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      evince
       wezterm
       xfce.thunar
       keepassxc
