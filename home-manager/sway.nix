@@ -5,7 +5,8 @@
     dmenu
     xorg.xrandr
     autotiling
-    kooha
+    wl-screenrec
+    wf-recorder
     wl-clipboard
     grim
     swappy
