@@ -216,6 +216,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # devtools
+    python3
     # chaotic stuff
     firefox_nightly
     # end of chaotic stuff
