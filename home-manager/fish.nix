@@ -6,6 +6,7 @@
     fishPlugins.forgit
     fishPlugins.hydro
     fishPlugins.grc
+    fzf
     grc
   ];
 
