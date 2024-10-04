@@ -23,6 +23,7 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      reaper
       evince
       wezterm
       xfce.thunar
