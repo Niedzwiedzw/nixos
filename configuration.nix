@@ -29,6 +29,18 @@
   # BACKUPS
   services.borgmatic = {
     enable = true;
+    settings = {
+      repositories = [
+        {
+          label = "local";
+          path = "/mnt/md0/manual-backup/001-borgmatic";
+        }
+      ];
+      source_directories = [
+        "/home/niedzwiedz/firma-niedzwiedz"
+      ];
+      keep_daily = 7;
+    };
   };
 
   # amd gpu specific stuff
