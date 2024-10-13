@@ -216,6 +216,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # raid
+    mdadm
     # devtools
     python3
     # chaotic stuff
