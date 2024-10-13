@@ -26,6 +26,11 @@
     fsType = "ext4"; # Adjust to the correct filesystem type (e.g., ext4, xfs, etc.)
   };
 
+  # BACKUPS
+  services.borgmatic = {
+    enable = true;
+  };
+
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
