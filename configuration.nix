@@ -15,6 +15,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # RAID config
+  boot.swraid = {
+    enable = true;
+    mdadmConf = builtins.readFile ./mdadm.conf;
+  };
+
+  fileSystems."/mnt/md0" = {
+    device = "/dev/md0"; # Adjust to the correct RAID device
+    fsType = "ext4"; # Adjust to the correct filesystem type (e.g., ext4, xfs, etc.)
+  };
+
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
@@ -49,7 +60,7 @@
   # end of amd gpu specific stuff
 
   boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "niedzwiedz-main"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
