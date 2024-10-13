@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  helix-flake,
+  ...
+}: {
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -177,6 +181,7 @@
       enableFishIntegration = true;
     };
     helix = {
+      package = helix-flake.packages.${pkgs.system}.default;
       enable = true;
       defaultEditor = true;
       settings = {
@@ -188,6 +193,10 @@
           cursorline = true;
           color-modes = true;
           true-color = true;
+          inline-diagnostics = {
+            cursor-line = "warning";
+            other-lines = "disable";
+          };
           search = {
             wrap-around = true;
           };

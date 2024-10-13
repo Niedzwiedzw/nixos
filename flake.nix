@@ -9,6 +9,7 @@
     stylix.url = "github:danth/stylix";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     catppuccin.url = "github:catppuccin/nix";
+    helix.url = "github:helix-editor/helix";
   };
   outputs = {
     self,
@@ -17,6 +18,7 @@
     stylix,
     chaotic,
     catppuccin,
+    helix,
     # firefox,
     ...
   } @ inputs: let
@@ -36,6 +38,9 @@
     };
     homeConfigurations.niedzwiedz = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
+      extraSpecialArgs = {
+        helix-flake = helix;
+      };
       modules = [
         ./home-manager.nix
         catppuccin.homeManagerModules.catppuccin
