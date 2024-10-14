@@ -271,6 +271,12 @@
     vulkan-loader
     libGL
     libxkbcommon
+    wayland-utils
+    winePackages.wayland
+    wine64Packages.wayland
+    wineWow64Packages.wayland
+    wineWowPackages.wayland
+    waylandpp
     wayland
     wayland.dev
     # gaming - STEAM
