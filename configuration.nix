@@ -193,7 +193,7 @@
   users.users.niedzwiedz = {
     isNormalUser = true;
     description = "niedzwiedz";
-    extraGroups = ["networkmanager" "wheel" "audio"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video"];
     packages = with pkgs; [
       home-manager
     ];
