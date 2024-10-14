@@ -27,6 +27,7 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      ffmpeg-full
       reaper
       evince
       wezterm
