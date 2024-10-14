@@ -261,6 +261,7 @@
     bottom
     # inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     # -- amd gpu
+
     blender-hip
     amdvlk
     amdgpu_top
@@ -270,6 +271,8 @@
     vulkan-loader
     libGL
     libxkbcommon
+    wayland
+    wayland.dev
     # gaming - STEAM
     mangohud
     gamemode
