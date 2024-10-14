@@ -269,6 +269,7 @@
     glxinfo
     vulkan-headers
     vulkan-loader
+    vulkan-extension-layer
     libGL
     libxkbcommon
     wayland-utils
@@ -278,6 +279,12 @@
     wineWowPackages.wayland
     waylandpp
     wayland
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXrandr
+    xorg.libXi
+    shaderc
+    directx-shader-compiler
     wayland.dev
     # gaming - STEAM
     mangohud
