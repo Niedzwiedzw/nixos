@@ -274,6 +274,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # scanner, printer
+    avahi
     sane-airscan
     brscan4
     brscan5
@@ -355,7 +356,9 @@
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [
+    5353 # avahi deamon (printer/scanner)
+  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
