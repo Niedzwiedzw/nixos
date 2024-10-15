@@ -44,6 +44,7 @@
   };
 
   # scanner, printer etc
+  services.udev.packages = [pkgs.sane-airscan];
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
   services.avahi.publish.enable = true;
