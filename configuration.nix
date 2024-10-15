@@ -275,6 +275,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # scanner, printer
+    imagemagick
     avahi
     sane-airscan
     brscan4
