@@ -62,6 +62,15 @@
         };
       };
     };
+    brscan5 = {
+      enable = true;
+      netDevices = {
+        home = {
+          model = "MFC-B7715DW";
+          ip = "192.168.1.11";
+        };
+      };
+    };
   };
 
   # amd gpu specific stuff
@@ -264,6 +273,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # scanner, printer
+    sane-airscan
+    brscan4
+    brscan5
     # backups
     borgmatic
     # raid
