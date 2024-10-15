@@ -275,6 +275,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # scanner, printer
+    qpdf
     imagemagick
     avahi
     sane-airscan
