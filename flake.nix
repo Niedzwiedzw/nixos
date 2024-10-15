@@ -33,6 +33,7 @@
 
         ./configuration.nix
         chaotic.nixosModules.default
+        # nixpkgs.nixosModules.sane_extra_backends.brscan4 # Reference to brscan4
       ];
       specialArgs = {inherit inputs;};
     };

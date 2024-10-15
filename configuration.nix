@@ -43,11 +43,25 @@
     };
   };
 
+  # scanner, printer etc
+  hardware.sane = {
+    enable = true;
+    extraBackends = [pkgs.sane-airscan];
+    brscan4 = {
+      enable = true;
+      netDevices = {
+        home = {
+          model = "MFC-B7715DW";
+          ip = "192.168.1.11";
+        };
+      };
+    };
+  };
+
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
   chaotic.mesa-git.enable = true;
-
   hardware = {
     # graphics = {
     #   emable = true;
@@ -193,7 +207,7 @@
   users.users.niedzwiedz = {
     isNormalUser = true;
     description = "niedzwiedz";
-    extraGroups = ["networkmanager" "wheel" "audio" "video"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "scanner" "lp"];
     packages = with pkgs; [
       home-manager
     ];
