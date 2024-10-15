@@ -44,8 +44,14 @@
   };
 
   # scanner, printer etc
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  services.avahi.publish.enable = true;
+  services.avahi.publish.addresses = true;
+  services.avahi.publish.userServices = true;
   hardware.sane = {
     enable = true;
+    disabledDefaultBackends = ["escl" "v4l"];
     extraBackends = [pkgs.sane-airscan];
     brscan4 = {
       enable = true;
