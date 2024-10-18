@@ -1,6 +1,7 @@
 {
   pkgs,
   helix-flake,
+  lib,
   ...
 }: {
   nixpkgs = {
@@ -186,6 +187,8 @@
       enable = true;
       defaultEditor = true;
       settings = {
+        theme = lib.mkForce "penumbra+";
+
         editor = {
           auto-completion = false;
           auto-format = true;
