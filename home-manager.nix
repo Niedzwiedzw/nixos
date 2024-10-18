@@ -187,7 +187,7 @@
       enable = true;
       defaultEditor = true;
       settings = {
-        theme = lib.mkForce "penumbra+";
+        theme = lib.mkForce "kanagawa";
 
         editor = {
           auto-completion = false;
