@@ -305,6 +305,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # audio production
+    alsa-utils
     # scanner, printer
     qpdf
     imagemagick
