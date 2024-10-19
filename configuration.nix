@@ -306,6 +306,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # audio production
+    pipewire.jack
     alsa-utils
     # scanner, printer
     qpdf
