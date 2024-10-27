@@ -28,6 +28,7 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      aseprite
       ffmpeg-full
       reaper
       evince
