@@ -28,6 +28,7 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      anydesk
       aseprite
       ffmpeg-full
       reaper
