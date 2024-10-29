@@ -28,6 +28,7 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      gimp
       anydesk
       aseprite
       ffmpeg-full
