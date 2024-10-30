@@ -28,6 +28,7 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      davinci-resolve
       gimp
       anydesk
       aseprite
