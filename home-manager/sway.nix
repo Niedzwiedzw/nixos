@@ -9,6 +9,7 @@
     wl-screenrec
     wf-recorder
     obs-studio
+    obs-studio-plugins.obs-shaderfilter
     wl-clipboard
     grim
     swappy
