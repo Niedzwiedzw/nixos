@@ -28,6 +28,10 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      # opennox
+      pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
+      pkgsi686Linux.openalSoft # 32-bit OpenAL library
+      # rest
       davinci-resolve
       gimp
       anydesk
