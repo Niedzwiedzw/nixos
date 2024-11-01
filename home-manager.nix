@@ -46,7 +46,12 @@
       ungoogled-chromium
       slack
       steam
-      lutris
+      (lutris.override {
+        extraLibraries = pkgs: [
+          pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
+          pkgsi686Linux.openalSoft # 32-bit OpenAL library
+        ];
+      })
       signal-desktop
       bacon
       nil

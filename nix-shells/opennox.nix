@@ -1,9 +1,19 @@
-with import <nixpkgs> {};
-  mkShell {
-    NIX_LD_LIBRARY_PATH = lib.makeLibraryPath [
+{pkgs ? import <nixpkgs> {}}:
+(pkgs.buildFHSEnv {
+  name = "opennox";
+  targetPkgs = pkgs:
+    (with pkgs; [
+      udev
+      alsa-lib
+    ])
+    ++ (with pkgs; [
       pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
       pkgsi686Linux.openalSoft # 32-bit OpenAL library
-      # ...
-    ];
-    NIX_LD = lib.fileContents "${stdenv.cc}/nix-support/dynamic-linker";
-  }
+    ]);
+  # multiPkgs = pkgs: (with pkgs; [
+  #   udev
+  #   alsa-lib
+  # ]);
+  runScript = "lutris";
+})
+.env
