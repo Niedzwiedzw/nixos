@@ -10,6 +10,12 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     catppuccin.url = "github:catppuccin/nix";
     helix.url = "github:helix-editor/helix";
+    # nix-ld, used to run unpatched dynamnic binaries
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      # this line assume that you also have nixpkgs as an input
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -19,7 +25,7 @@
     chaotic,
     catppuccin,
     helix,
-    # firefox,
+    nix-ld,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -33,6 +39,8 @@
 
         ./configuration.nix
         chaotic.nixosModules.default
+        nix-ld.nixosModules.nix-ld
+        {programs.nix-ld.dev.enable = true;}
         # nixpkgs.nixosModules.sane_extra_backends.brscan4 # Reference to brscan4
       ];
       specialArgs = {inherit inputs;};
