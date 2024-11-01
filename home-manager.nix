@@ -42,6 +42,7 @@
       ungoogled-chromium
       slack
       steam
+      lutris
       signal-desktop
       bacon
       nil
