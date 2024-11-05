@@ -62,6 +62,8 @@
     };
 
     shellAbbrs = {
+      # zellij helper
+      "zz" = "zellij attach -c (echo $PWD | string replace -a '/' '-' | string trim --chars=-)";
       # nix helpers
       "nixrebuild" = "cd ~/nixos/ && sudo nixos-rebuild switch --flake ~/nixos/#niedzwiedz --upgrade && home-manager switch -b backup --flake ~/nixos/#niedzwiedz && git add . && git commit -m 'quick rebuild' && cd -";
       # git abbreviations
