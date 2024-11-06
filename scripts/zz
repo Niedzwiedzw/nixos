@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+
+zellij attach -c (echo $PWD | string replace -a '/' '-' | string trim --chars=-)
+

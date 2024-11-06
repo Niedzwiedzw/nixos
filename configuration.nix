@@ -283,6 +283,9 @@
   ];
 
   programs = {
+    kdeconnect = {
+      enable = true;
+    };
     steam.enable = true;
     sway.enable = true;
     fish.enable = true;
