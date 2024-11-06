@@ -97,7 +97,7 @@
         {command = "xrandr --output HDMI-A-1 --primary";}
         {command = "thunderbird";}
         {command = "autotiling";}
-        {command = "kdeconnect";}
+        {command = "kdeconnect-app";}
       ];
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
