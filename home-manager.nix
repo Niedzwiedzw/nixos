@@ -65,11 +65,11 @@
       # rust stuff
       clang
       cmake
-      cargo-make
+      # cargo-make
       # stdenv.cc
       pkg-config
-      cargo
-      rustc
+      # cargo
+      # rustc
       rust-analyzer
       #  thunderbird
       adw-gtk3
