@@ -26,6 +26,14 @@
     fsType = "ext4"; # Adjust to the correct filesystem type (e.g., ext4, xfs, etc.)
   };
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   # BACKUPS
   services.borgmatic = {
     enable = true;
@@ -254,7 +262,7 @@
   users.users.niedzwiedz = {
     isNormalUser = true;
     description = "niedzwiedz";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "scanner" "lp"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "scanner" "lp" "docker"];
     packages = with pkgs; [
       home-manager
     ];
