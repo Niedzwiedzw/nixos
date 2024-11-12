@@ -35,6 +35,7 @@
       gimp
       anydesk
       aseprite
+      firefox
       ffmpeg-full
       reaper
       evince
