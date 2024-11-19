@@ -88,6 +88,13 @@
           program = "hx";
           args = [];
         };
+        window = {
+          opacity = 0.88;
+          blur = true;
+        };
+        fonts = {
+          family = "Iosevka Nerd Font Mono";
+        };
       };
     };
     zellij = {
