@@ -86,6 +86,7 @@
       settings = {
         editor = {
           program = "hx";
+          args = [];
         };
       };
     };
