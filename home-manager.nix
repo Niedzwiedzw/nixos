@@ -93,6 +93,7 @@
           blur = true;
         };
         fonts = {
+          size = 14;
           family = "Iosevka Nerd Font Mono";
         };
       };
