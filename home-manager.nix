@@ -81,6 +81,14 @@
     gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
   programs = {
+    rio = {
+      enable = true;
+      settings = {
+        editor = {
+          program = "hx";
+        };
+      };
+    };
     zellij = {
       enable = true;
       enableFishIntegration = true;

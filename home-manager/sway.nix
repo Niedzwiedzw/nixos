@@ -101,7 +101,7 @@
       ];
       modifier = "Mod4";
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
-      terminal = "wezterm";
+      terminal = "rio";
       input = {
         "*" = {
           xkb_layout = "pl";
