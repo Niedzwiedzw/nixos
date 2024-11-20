@@ -68,7 +68,7 @@
       # nix helpers
       "nixrebuild" = "cd ~/nixos/ && sudo nixos-rebuild switch --flake ~/nixos/#niedzwiedz --upgrade && home-manager switch -b backup --flake ~/nixos/#niedzwiedz && git add . && git commit -m 'quick rebuild' && cd -";
       # git abbreviations
-      ggf = "git push --force-with-lease $(git rev-parse --abbrev-ref HEAD)";
+      ggf = "git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)";
       ggp = "git push origin $(git rev-parse --abbrev-ref HEAD)";
       ggu = "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)";
       gaa = "git add -A";
