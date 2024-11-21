@@ -105,10 +105,10 @@
         theme = "catppuccin-mocha";
         keybindings = {
           locked = [
-            {"Alt j" = ["MoveFocus" "Down"];}
-            {"Alt k" = ["MoveFocus" "Up"];}
-            {"Alt h" = ["MoveFocusOrTab" "Left"];}
-            {"Alt l" = ["MoveFocusOrTab" "Right"];}
+            {bind = {"Alt j" = ["MoveFocus" "Down"];};}
+            {bind = {"Alt k" = ["MoveFocus" "Up"];};}
+            {bind = {"Alt h" = ["MoveFocusOrTab" "Left"];};}
+            {bind = {"Alt l" = ["MoveFocusOrTab" "Right"];};}
           ];
         };
       };
