@@ -103,7 +103,7 @@
       enableFishIntegration = true;
       settings = {
         theme = "catppuccin-mocha";
-        keybindings = {
+        keybinds = {
           locked = {
             "bind \"Alt j\"" = {"MoveFocus" = {_args = ["Down"];};};
             "bind \"Alt k\"" = {"MoveFocus" = {_args = ["Up"];};};
