@@ -103,6 +103,8 @@
       enableFishIntegration = true;
       settings = {
         theme = "catppuccin-mocha";
+        scroll_buffer_size = 100000;
+
         keybinds = {
           locked = {
             "bind \"Alt j\"" = {"MoveFocus" = {_args = ["Down"];};};
