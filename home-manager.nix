@@ -55,6 +55,7 @@
       signal-desktop
       bacon
       nil
+      yaml-language-server
       nixpkgs-fmt
       alejandra
       git
