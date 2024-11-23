@@ -52,6 +52,7 @@
       slack
       steam
       nexusmods-app
+      gedit
       (lutris.override {
         extraLibraries = pkgs: [
           pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
