@@ -318,12 +318,10 @@
   environment.systemPackages = with pkgs; [
     # audio production
     pipewire.jack
-    pipr
     alsa-utils
     alsa-tools
     alsa-plugins
     alsa-firmware
-    qastools
     # scanner, printer
     qpdf
     imagemagick
