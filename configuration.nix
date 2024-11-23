@@ -343,6 +343,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    desktop-file-utils
+    xdg-utils
     gnome.gnome-software
     # audio production
     pipewire.jack
