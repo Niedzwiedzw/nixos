@@ -28,7 +28,12 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
-      busybox
+      eza
+      fd
+      dust
+      ripgrep
+      wget
+      curl
       libreoffice
       # rest
       davinci-resolve
