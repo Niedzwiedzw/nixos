@@ -51,6 +51,7 @@
       ungoogled-chromium
       slack
       steam
+      nexusmods-app
       (lutris.override {
         extraLibraries = pkgs: [
           pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
