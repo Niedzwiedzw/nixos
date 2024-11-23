@@ -33,7 +33,7 @@
       setSocketVariable = true;
     };
   };
-
+  services.flatpak.enable = true;
   # BACKUPS
   services.borgmatic = {
     enable = true;
@@ -343,6 +343,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    gnome.gnome-software
     # audio production
     pipewire.jack
     alsa-utils
