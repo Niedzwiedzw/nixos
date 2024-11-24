@@ -20,6 +20,7 @@
   gtk.catppuccin.icon.enable = true;
   qt.style.catppuccin.enable = true;
   # /CATPUCCIN
+
   home = {
     stateVersion = "24.05";
     sessionPath = [

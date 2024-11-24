@@ -33,6 +33,16 @@
       setSocketVariable = true;
     };
   };
+
+  # virtualbox
+  virtualisation.virtualbox = {
+    host.enable = true;
+    guest.enable = true;
+    guest.dragAndDrop = true;
+    guest.cliboard = true;
+  };
+  users.extraGroups.vboxusers.members = ["niedzwiedz"];
+
   services.flatpak.enable = true;
   # BACKUPS
   services.borgmatic = {
