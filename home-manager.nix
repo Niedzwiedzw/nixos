@@ -38,7 +38,6 @@
       # rest
       davinci-resolve
       gimp
-      anydesk
       aseprite
       firefox
       ffmpeg-full
