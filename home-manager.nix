@@ -54,6 +54,7 @@
       nexusmods-app
       gedit
       steamtinkerlaunch
+      protontricks
       (lutris.override {
         extraLibraries = pkgs: [
           pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
