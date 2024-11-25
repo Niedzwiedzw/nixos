@@ -311,7 +311,11 @@
           command = "rust-analyzer";
           config = {
             command = "clippy";
-            checkOnSave.command = "clippy";
+            extraArgs = ["--tests"];
+            checkOnSave = {
+              command = "clippy";
+              extraArgs = ["--tests"];
+            };
           };
         };
         language-server.tinymist.command = "tinymist";
