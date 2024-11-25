@@ -39,7 +39,6 @@
     host.enable = true;
     guest.enable = true;
     guest.dragAndDrop = true;
-    guest.cliboard = true;
   };
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
 
@@ -353,6 +352,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    teamviewer
     desktop-file-utils
     xdg-utils
     gnome.gnome-software
