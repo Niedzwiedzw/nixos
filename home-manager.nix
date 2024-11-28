@@ -64,6 +64,7 @@
       signal-desktop
       bacon
       nil
+      nodePackages.vscode-json-languageserver
       yaml-language-server
       nixpkgs-fmt
       alejandra
