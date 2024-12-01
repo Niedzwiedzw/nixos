@@ -64,8 +64,8 @@
       signal-desktop
       bacon
       nil
-      nodePackages.vscode-json-languageserver
       vscode-langservers-extracted
+      taplo
       yaml-language-server
       nixpkgs-fmt
       alejandra
