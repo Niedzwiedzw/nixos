@@ -63,7 +63,7 @@
   # scanner, printer etc
   services.udev.packages = [pkgs.sane-airscan];
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
   services.avahi.publish.enable = true;
   services.avahi.publish.addresses = true;
   services.avahi.publish.userServices = true;
@@ -114,8 +114,7 @@
       # driSupport = true;
       # driSupport32Bit = true;
       extraPackages = with pkgs; [
-        rocm-opencl-icd
-        rocm-opencl-runtime
+        rocmPackages.clr
         # clinfo
       ];
     };
@@ -315,7 +314,7 @@
   };
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
     fira-code
@@ -355,7 +354,7 @@
     teamviewer
     desktop-file-utils
     xdg-utils
-    gnome.gnome-software
+    gnome-software
     # audio production
     pipewire.jack
     alsa-utils
@@ -423,7 +422,7 @@
     # https://github.com/lutris/docs/
     gnutls
     openldap
-    libgpgerror
+    libgpg-error
     freetype
     sqlite
     libxml2

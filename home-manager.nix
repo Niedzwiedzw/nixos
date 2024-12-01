@@ -65,6 +65,7 @@
       bacon
       nil
       nodePackages.vscode-json-languageserver
+      vscode-langservers-extracted
       yaml-language-server
       nixpkgs-fmt
       alejandra
