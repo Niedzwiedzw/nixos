@@ -365,7 +365,7 @@
     # -- amd gpu
 
     blender-hip
-    amdvlk
+    # amdvlk
     amdgpu_top
     vulkan-tools
     glxinfo
