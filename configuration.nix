@@ -95,26 +95,19 @@
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
   hardware = {
-    # graphics = {
-    #   emable = true;
-    #   enable32Bit = true;
-    #   extraPackages = with pkgs; [
-    #     amdvlk
-    #     vulkan-loader
-    #     vulkan-validation-layers
-    #     vulkan-extension-layer
-    #   ];
-    #   extraPackages32 = with pkgs; [
-    #     driversi686Linux.amdvlk
-    #   ];
-    # };
+    #
+    #
     graphics = {
       enable = true;
+      enable32Bit = true;
       # driSupport = true;
       # driSupport32Bit = true;
       extraPackages = with pkgs; [
+        amdvlk
         rocmPackages.clr
-        # clinfo
+      ];
+      extraPackages32 = with pkgs; [
+        driversi686Linux.amdvlk
       ];
     };
   };
