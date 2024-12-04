@@ -163,19 +163,6 @@
         end
       '';
 
-      lsr = ''
-        function lsr
-          	ls | rg -i $argv[1]
-        end
-      '';
-
-      mkcd = ''
-        function mkcd --argument name
-        	mkdir -p $name
-        	cd $name
-        end
-      '';
-
       num = ''
         function num
         	ls -1 $argv | wc -l;
