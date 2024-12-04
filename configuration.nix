@@ -94,7 +94,7 @@
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
-  chaotic.mesa-git.enable = true;
+  # chaotic.mesa-git.enable = true;
   hardware.graphics.enable = true;
   # environment.variables.AMD_VULKAN_ICD = "RADV";
   # end of amd gpu specific stuff
