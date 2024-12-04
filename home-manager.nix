@@ -37,7 +37,7 @@
       curl
       libreoffice
       # rest
-      davinci-resolve
+      # davinci-resolve
       gimp
       aseprite
       firefox

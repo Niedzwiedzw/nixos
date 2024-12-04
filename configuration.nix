@@ -323,7 +323,7 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
-    nerd-fonts.iosevka
+    (nerdfonts.override {fonts = ["Iosevka"];})
   ];
 
   programs = {
