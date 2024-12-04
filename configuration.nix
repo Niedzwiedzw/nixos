@@ -94,7 +94,6 @@
   # amd gpu specific stuff
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
-  chaotic.mesa-git.enable = true;
   hardware = {
     # graphics = {
     #   emable = true;
