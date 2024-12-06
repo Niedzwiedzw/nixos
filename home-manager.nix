@@ -5,6 +5,12 @@
       allowUnfreePredicate = _: true;
     };
   };
+  services.gammastep = {
+    enable = true;
+    provider = "manual";
+    latitude = 53.013790;
+    longitude = 18.598444;
+  };
   # CATPUCCIN
   catppuccin = {
     enable = true;
@@ -28,6 +34,7 @@
       fd
       dust
       ripgrep
+      bat
       wget
       curl
       libreoffice

@@ -41,7 +41,6 @@
     guest.dragAndDrop = true;
   };
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
-
   services.flatpak.enable = true;
   # BACKUPS
   services.borgmatic = {

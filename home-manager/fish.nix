@@ -46,11 +46,13 @@
       "....." = "cd ../../../../";
 
       "cp" = "cp -v";
+      "cat" = "bat";
       "ddf" = "df -h";
       "mkdir" = "mkdir -p";
       "mv" = "mv -v";
       "rm" = "rm -v";
 
+      "ls" = "eza -lhr -s time --no-quotes --time-style long-iso";
       "ld" = "eza -ld */ --no-quotes --time-style long-iso";
       "lla" = "eza -lah --no-quotes --time-style long-iso";
       "ll" = "eza -lh --no-quotes --time-style long-iso";
