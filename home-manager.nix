@@ -10,6 +10,10 @@
     provider = "manual";
     latitude = 53.013790;
     longitude = 18.598444;
+    temperature = {
+      night = 2000;
+      day = 5500;
+    };
   };
   # CATPUCCIN
   catppuccin = {
