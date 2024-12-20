@@ -12,7 +12,11 @@
     longitude = 18.598444;
     temperature = {
       night = 2000;
-      day = 5500;
+      day = 5000;
+    };
+    settings.general = {
+      brightness-night = 0.6;
+      brightness-day = 0.6;
     };
   };
   # CATPUCCIN
