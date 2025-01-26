@@ -54,7 +54,7 @@
         keys = {
           normal = {
             space = {
-              "e" = ":reload-all";
+              "E" = ":reload-all";
               "L" = ":lsp-restart";
               "I" = ":toggle-option lsp.display-inlay-hints";
               "O" = ":toggle inline-diagnostics.cursor-line disable warning";
