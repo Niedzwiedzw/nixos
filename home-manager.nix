@@ -62,7 +62,6 @@
       steam
       nexusmods-app
       gedit
-      steamtinkerlaunch
       protontricks
       (lutris.override {
         extraLibraries = pkgs: [

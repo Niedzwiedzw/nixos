@@ -98,7 +98,7 @@
   # environment.variables.AMD_VULKAN_ICD = "RADV";
   # end of amd gpu specific stuff
 
-  boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
+  # boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
   networking.hostName = "niedzwiedz-main"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -390,6 +390,14 @@
     # gaming - STEAM
     mangohud
     gamemode
+    # steamtinkerlaunch
+    steamtinkerlaunch
+    protonup-qt
+    unixtools.xxd
+    yad
+    xorg.xwininfo
+    unzip
+
     # WINE
     wine
     winetricks
@@ -406,6 +414,8 @@
     xml2
     SDL2
     # -- end of amd gpu
+    # crypto
+    cryptsetup
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
