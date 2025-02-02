@@ -106,9 +106,13 @@
           blur = true;
         };
         fonts = {
-          size = 14;
-          family = "Iosevka Nerd Font Mono";
+          size = 16;
+          family = "Maple Mono NF";
         };
+        fonts.extras = [
+          {family = "Noto Color Emoji";}
+          {family = "DejaVu Sans";}
+        ];
       };
     };
 

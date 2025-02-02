@@ -185,77 +185,345 @@
       {
         layer = "top";
         position = "top";
+        # modules-left = ["sway/workspaces"];
+        # modules-center = ["sway/window"];
+        # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
         modules-left = ["sway/workspaces"];
         modules-center = ["sway/window"];
-        modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
-        clock.format = "{:%Y-%m-%d %H:%M}";
-        "tray" = {spacing = 8;};
-        "cpu" = {format = "cpu {usage}";};
-        "memory" = {format = "mem {}";};
-        "temperature" = {
-          hwmon-path = "/sys/class/hwmon/hwmon1/temp2_input";
-          format = "tmp {temperatureC}C";
+        modules-right = ["pulseaudio" "clock" "cpu" "memory" "temperature" "network" "tray"];
+        clock = {
+          format = "🕗  {:%H:%M 📆  %a %Y-%m-%d}";
+          "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+          "calendar" = {
+            "mode" = "year";
+            "mode-mon-col" = 3;
+            "weeks-pos" = "right";
+            "on-scroll" = 1;
+            "on-click-right" = "mode";
+            "format" = {
+              "months" = "<span color='#ffead3'><b>{}</b></span>";
+              "days" = "<span color='#ecc6d9'><b>{}</b></span>";
+              "weeks" = "<span color='#99ffdd'><b>W{}</b></span>";
+              "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
+              "today" = "<span color='#ff6699'><b><u>{}</u></b></span>";
+            };
+          };
         };
-        "pulseaudio" = {
-          format = "vol {volume} {format_source}";
-          format-bluetooth = "volb {volume} {format_source}";
-          format-bluetooth-muted = "volb {format_source}";
-          format-muted = "vol {format_source}";
-          format-source = "mic {volume}";
-          format-source-muted = "mic";
+        tray = {spacing = 6;};
+        cpu = {
+          format = "  {usage}% ({load})";
+          interval = 5;
+          states = {
+            warning = 80;
+            critical = 95;
+          };
+        };
+        memory = {
+          format = "🐏 {}%";
+          interval = 5;
+          states = {
+            warning = 70;
+            critical = 95;
+          };
+        };
+        network = {
+          interval = 5;
+          "format-wifi" = "  {essid} ({signalStrength}%)"; # Icon= wifi
+          "format-ethernet" = "🕸️  {ifname}: {ipaddr}/{cidr}"; #  Icon= ethernet
+          "format-disconnected" = "⚠  Disconnected";
+          "tooltip-format" = "{ifname}= {ipaddr}";
+        };
+
+        pulseaudio = {
+          format = "{icon} {volume}%";
+          format-icons = {
+            default = ["" "" ""];
+          };
+        };
+
+        "temperature" = {
+          "critical-threshold" = 80;
+          "interval" = 5;
+          "format" = "{icon}  {temperatureC}°C";
+          "format-icons" = [
+            "" # Icon = temperature-empty
+            "" # Icon = temperature-quarter
+            "" # Icon = temperature-half
+            "" # Icon = temperature-three-quarters
+            "" # Icon = temperature-full
+          ];
+          "tooltip" = true;
         };
       }
     ];
     style = ''
-      @define-color rosewater #f5e0dc;
-      @define-color flamingo #f2cdcd;
-      @define-color pink #f5c2e7;
-      @define-color mauve #cba6f7;
-      @define-color red #f38ba8;
-      @define-color maroon #eba0ac;
-      @define-color peach #fab387;
-      @define-color yellow #f9e2af;
-      @define-color green #a6e3a1;
-      @define-color teal #94e2d5;
-      @define-color sky #89dceb;
-      @define-color sapphire #74c7ec;
-      @define-color blue #89b4fa;
-      @define-color lavender #b4befe;
-      @define-color text #cdd6f4;
-      @define-color subtext1 #bac2de;
-      @define-color subtext0 #a6adc8;
-      @define-color overlay2 #9399b2;
-      @define-color overlay1 #7f849c;
-      @define-color overlay0 #6c7086;
-      @define-color surface2 #585b70;
-      @define-color surface1 #45475a;
-      @define-color surface0 #313244;
-      @define-color base #1e1e2e;
-      @define-color mantle #181825;
-      @define-color crust #11111b;
+                  * {
+            	border: none;
+            	border-radius: 10;
+              font-family: "Cantarell, Noto Sans, sans-serif";
+            	font-size: 15px;
+            	min-height: 10px;
+            }
 
-      * {
-        /* reference the color by using @color-name */
-        color: @text;
-      }
+            window#waybar {
+            	background: transparent;
+            }
 
-      window#waybar {
-        /* you can also GTK3 CSS functions! */
-        background-color: shade(@base, 0.9);
-      }
-      #workspaces button {
-          padding: 0 5px;
-          background: transparent;
-          color: white;
+            window#waybar.hidden {
+            	opacity: 0.2;
+            }
+
+            #window {
+            	margin-top: 6px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	border-radius: 10px;
+            	transition: none;
+                color: transparent;
+            	background: transparent;
+            }
+            #tags {
+            	margin-top: 6px;
+            	margin-left: 12px;
+            	font-size: 4px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	background: #161320;
+            	transition: none;
+            }
+
+            #tags button {
+            	transition: none;
+            	color: #B5E8E0;
+            	background: transparent;
+            	font-size: 16px;
+            	border-radius: 2px;
+            }
+
+            #tags button.occupied {
+            	transition: none;
+            	color: #F28FAD;
+            	background: transparent;
+            	font-size: 4px;
+            }
+
+            #tags button.focused {
+            	color: #ABE9B3;
+                border-top: 2px solid #ABE9B3;
+                border-bottom: 2px solid #ABE9B3;
+            }
+
+            #tags button:hover {
+            	transition: none;
+            	box-shadow: inherit;
+            	text-shadow: inherit;
+            	color: #FAE3B0;
+                border-color: #E8A2AF;
+                color: #E8A2AF;
+            }
+
+            #tags button.focused:hover {
+                color: #E8A2AF;
+            }
+
+            #network {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #bd93f9;
+            }
+
+            #pulseaudio {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #1A1826;
+            	background: #FAE3B0;
+            }
+
+            #battery {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #B5E8E0;
+            }
+
+            #battery.charging, #battery.plugged {
+            	color: #161320;
+                background-color: #B5E8E0;
+            }
+
+            #battery.critical:not(.charging) {
+                background-color: #B5E8E0;
+                color: #161320;
+                animation-name: blink;
+                animation-duration: 0.5s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            @keyframes blink {
+                to {
+                    background-color: #BF616A;
+                    color: #B5E8E0;
+                }
+            }
+
+            #backlight {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #F8BD96;
+            }
+            #clock {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #ABE9B3;
+            	/*background: #1A1826;*/
+            }
+
+            #memory {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	margin-bottom: 0px;
+            	padding-right: 10px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #DDB6F2;
+            }
+            #cpu {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	margin-bottom: 0px;
+            	padding-right: 10px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #96CDFB;
+            }
+
+            #tray {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	margin-bottom: 0px;
+            	padding-right: 10px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #B5E8E0;
+            	background: #161320;
+            }
+
+            #custom-launcher {
+            	font-size: 24px;
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 5px;
+            	border-radius: 10px;
+            	transition: none;
+                color: #89DCEB;
+                background: #161320;
+            }
+
+            #custom-power {
+            	font-size: 20px;
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	margin-right: 8px;
+            	padding-left: 10px;
+            	padding-right: 5px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #F28FAD;
+            }
+
+            #custom-wallpaper {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #C9CBFF;
+            }
+
+            #custom-updates {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #E8A2AF;
+            }
+
+            #custom-media {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	padding-right: 10px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #F2CDCD;
+            }
+
+
+            #workspaces button {
+          border-top: 2px solid transparent;
+          /* To compensate for the top border and still have vertical centering */
+          padding-bottom: 2px;
+          padding-left: 10px;
+          padding-right: 10px;
+          color: #888888;
       }
 
       #workspaces button.focused {
-          background: @mantle;
+          border-color: #4c7899;
+          color: white;
+          background-color: #285577;
       }
-      label.module {
-        padding: 0 10px;
-      }
-      box.module button:hover {
+
+      #workspaces button.urgent {
+          border-color: #c9545d;
+          color: #c9545d;
       }
     '';
   };
