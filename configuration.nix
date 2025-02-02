@@ -300,6 +300,7 @@
     dina-font
     proggyfonts
     (nerdfonts.override {fonts = ["Iosevka"];})
+    maple-mono-NF
   ];
 
   programs = {
