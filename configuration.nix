@@ -42,6 +42,7 @@
   };
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
   services.flatpak.enable = true;
+  services.atd.enable = true;
   # BACKUPS
   services.borgmatic = {
     enable = true;
@@ -300,7 +301,7 @@
     dina-font
     proggyfonts
     (nerdfonts.override {fonts = ["Iosevka"];})
-    maple-mono-NF
+    maple-mono
   ];
 
   programs = {

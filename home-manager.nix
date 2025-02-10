@@ -107,12 +107,12 @@
         };
         fonts = {
           size = 16;
-          family = "Maple Mono NF";
+          family = "Maple Mono";
         };
-        fonts.extras = [
-          {family = "Noto Color Emoji";}
-          {family = "DejaVu Sans";}
-        ];
+        # fonts.extras = [
+        #   {family = "Noto Color Emoji";}
+        #   {family = "DejaVu Sans";}
+        # ];
       };
     };
 

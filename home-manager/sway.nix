@@ -15,6 +15,8 @@
     swappy
     slurp
     pngquant
+    alacritty
+    emoji-picker
   ];
 
   home.sessionVariables = {
@@ -85,6 +87,7 @@
 
       # keybinds
       bindsym Mod4+Shift+x exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | wl-copy -t image/png
+      bindsym Mod4+Shift+w exec alacritty -e ep
     '';
 
     config = {
@@ -190,7 +193,7 @@
         # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
         modules-left = ["sway/workspaces"];
         modules-center = ["sway/window"];
-        modules-right = ["pulseaudio" "clock" "cpu" "memory" "temperature" "network" "tray"];
+        modules-right = ["pulseaudio" "cpu" "memory" "temperature" "network" "tray" "clock"];
         clock = {
           format = "🕗  {:%H:%M 📆  %a %Y-%m-%d}";
           "tooltip-format" = "<tt><small>{calendar}</small></tt>";
