@@ -193,26 +193,46 @@
         # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
         modules-left = ["sway/workspaces"];
         modules-center = ["sway/window"];
-        modules-right = ["pulseaudio" "cpu" "memory" "temperature" "network" "tray" "clock"];
+        modules-right = ["pulseaudio" "cpu" "memory" "temperature" "network" "clock" "custom/notification" "tray"];
         clock = {
           format = "🕗  {:%H:%M 📆  %a %Y-%m-%d}";
-          "tooltip-format" = "<tt><small>{calendar}</small></tt>";
-          "calendar" = {
-            "mode" = "year";
-            "mode-mon-col" = 3;
-            "weeks-pos" = "right";
-            "on-scroll" = 1;
-            "on-click-right" = "mode";
-            "format" = {
-              "months" = "<span color='#ffead3'><b>{}</b></span>";
-              "days" = "<span color='#ecc6d9'><b>{}</b></span>";
-              "weeks" = "<span color='#99ffdd'><b>W{}</b></span>";
-              "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
-              "today" = "<span color='#ff6699'><b><u>{}</u></b></span>";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          calendar = {
+            mode = "year";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            on-click-right = "mode";
+            format = {
+              months = "<span color='#ffead3'><b>{}</b></span>";
+              days = "<span color='#ecc6d9'><b>{}</b></span>";
+              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
+              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
             };
           };
         };
-        tray = {spacing = 6;};
+        tray = {spacing = 5;};
+        "custom/notification" = {
+          tooltip = false;
+          format = "{icon}";
+          format-icons = {
+            notification = "<span foreground='red'><sup></sup></span>";
+            none = "";
+            dnd-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-none = "";
+            inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            inhibited-none = "";
+            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-inhibited-none = "";
+          };
+          return-type = "json";
+          exec-if = "which swaync-client";
+          exec = "swaync-client -swb";
+          on-click = "swaync-client -t -sw";
+          on-click-right = "swaync-client -d -sw";
+          escape = true;
+        };
         cpu = {
           format = "  {usage}% ({load})";
           interval = 5;
@@ -409,6 +429,18 @@
             	color: #161320;
             	background: #ABE9B3;
             	/*background: #1A1826;*/
+            }
+            #custom-notification {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	margin-right: 4px;
+            	padding-left: 10px;
+            	padding-right: 15px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #E8A2AF;
             }
 
             #memory {
