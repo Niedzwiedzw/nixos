@@ -54,7 +54,7 @@
       ffmpeg-full
       reaper
       evince
-      xfce.thunar
+      losslesscut-bin
       keepassxc
       discord
       ungoogled-chromium
