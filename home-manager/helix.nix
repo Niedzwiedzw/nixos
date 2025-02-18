@@ -12,6 +12,7 @@
     nil
     nixpkgs-fmt
     alejandra
+    lua-language-server
   ];
   programs = {
     helix = {
