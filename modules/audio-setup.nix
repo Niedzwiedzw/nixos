@@ -5,6 +5,7 @@
     alsa-tools
     alsa-plugins
     alsa-firmware
+    pipewire.jack
   ];
 
   hardware.pulseaudio.enable = false;
