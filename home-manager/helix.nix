@@ -13,6 +13,7 @@
     nixpkgs-fmt
     alejandra
     lua-language-server
+    tinymist
   ];
   programs = {
     helix = {
@@ -100,7 +101,12 @@
             };
           };
         };
-        language-server.tinymist.command = "tinymist";
+        language-server.tinymist = {
+          command = "tinymist";
+          config = {
+            formatterMode = "typstyle";
+          };
+        };
         language-server.nil = {
           command = "nil";
           config = {

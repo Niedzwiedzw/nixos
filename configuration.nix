@@ -184,6 +184,7 @@
     proggyfonts
     (nerdfonts.override {fonts = ["Iosevka"];})
     maple-mono
+    lato
   ];
 
   services.gvfs.enable = true;

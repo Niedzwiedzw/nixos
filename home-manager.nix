@@ -59,6 +59,7 @@
       discord
       ungoogled-chromium
       slack
+      rclone
       steam
       nexusmods-app
       gedit
