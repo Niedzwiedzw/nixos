@@ -168,8 +168,11 @@
     enable = true;
     image = ./my-wallpaper-malysz-tajner-chester-linkin-park.png;
     polarity = "dark";
-    cursor.package = pkgs.bibata-cursors;
-    cursor.name = "Bibata-Modern-Ice";
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 10;
+    };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
   };
   fonts.packages = with pkgs; [
