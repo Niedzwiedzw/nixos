@@ -105,6 +105,12 @@
           command = "tinymist";
           config = {
             formatterMode = "typstyle";
+            preview = {
+              background = {
+                enabled = true;
+                args = ["--invert-colors=never"];
+              };
+            };
           };
         };
         language-server.nil = {
