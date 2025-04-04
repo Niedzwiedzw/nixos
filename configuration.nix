@@ -322,8 +322,11 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    4455 # with-fire-and-sword
+  ];
   networking.firewall.allowedUDPPorts = [
+    4455 # with-fire-and-sword
     5353 # avahi deamon (printer/scanner)
   ];
   # Or disable the firewall altogether.
