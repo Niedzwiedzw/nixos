@@ -97,6 +97,8 @@
   services.xserver.videoDrivers = ["amdgpu"];
   # chaotic.mesa-git.enable = true;
   hardware.graphics.enable = true;
+  # magewell capture card
+  hardware.mwProCapture.enable = true;
   # environment.variables.AMD_VULKAN_ICD = "RADV";
   # end of amd gpu specific stuff
 
@@ -219,9 +221,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # capture card
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # utils
     comma
     teamviewer
     desktop-file-utils
