@@ -52,7 +52,19 @@
       aseprite
       firefox
       ffmpeg-full
+      # audio
+      davinci-resolve
       reaper
+      lsp-plugins
+      chow-tape-model
+      chow-phaser
+      calf
+      vital
+      mda_lv2
+      distrho-ports
+      helm
+      zam-plugins
+      # utils
       evince
       losslesscut-bin
       keepassxc
