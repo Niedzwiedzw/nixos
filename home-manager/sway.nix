@@ -193,7 +193,7 @@
         # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
         modules-left = ["sway/workspaces"];
         modules-center = ["sway/window"];
-        modules-right = ["pulseaudio" "cpu" "memory" "temperature" "network" "clock" "custom/notification" "tray"];
+        modules-right = ["cpu" "memory" "temperature" "network" "clock" "custom/notification" "tray"];
         clock = {
           format = "🕗  {:%H:%M 📆  %a %Y-%m-%d}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
@@ -255,13 +255,6 @@
           "format-ethernet" = "🕸️  {ifname}: {ipaddr}/{cidr}"; #  Icon= ethernet
           "format-disconnected" = "⚠  Disconnected";
           "tooltip-format" = "{ifname}= {ipaddr}";
-        };
-
-        pulseaudio = {
-          format = "{icon} {volume}%";
-          format-icons = {
-            default = ["" "" ""];
-          };
         };
 
         "temperature" = {
@@ -359,18 +352,6 @@
             	transition: none;
             	color: #161320;
             	background: #bd93f9;
-            }
-
-            #pulseaudio {
-            	margin-top: 6px;
-            	margin-left: 8px;
-            	padding-left: 10px;
-            	padding-right: 10px;
-            	margin-bottom: 0px;
-            	border-radius: 10px;
-            	transition: none;
-            	color: #1A1826;
-            	background: #FAE3B0;
             }
 
             #battery {

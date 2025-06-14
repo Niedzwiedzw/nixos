@@ -53,7 +53,7 @@
       firefox
       ffmpeg-full
       # audio
-      davinci-resolve
+      # davinci-resolve
       reaper
       lsp-plugins
       chow-tape-model

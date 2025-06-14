@@ -1,31 +1,28 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
     };
     musnix = {url = "github:musnix/musnix";};
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     catppuccin.url = "github:catppuccin/nix";
     helix.url = "github:helix-editor/helix";
-    # nix-ld, used to run unpatched dynamnic binaries
-    # nix-ld = {
-    #   url = "github:Mic92/nix-ld";
-    #   # this line assume that you also have nixpkgs as an input
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     stylix,
-    chaotic,
     catppuccin,
     helix,
-    # nix-ld,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -38,10 +35,6 @@
         inputs.musnix.nixosModules.musnix
 
         ./configuration.nix
-        chaotic.nixosModules.default
-        # nix-ld.nixosModules.nix-ld
-        # {programs.nix-ld.dev.enable = true;}
-        # nixpkgs.nixosModules.sane_extra_backends.brscan4 # Reference to brscan4
       ];
       specialArgs = {inherit inputs;};
     };

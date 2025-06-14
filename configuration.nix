@@ -3,7 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
-  # inputs,
+  inputs,
   ...
 }: {
   imports = [
@@ -92,7 +92,14 @@
     };
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
   # amd gpu specific stuff
+  boot.kernelPackages =
+    (import inputs.nixpkgs-unstable {
+      config.allowUnfree = true;
+      system = "x86_64-linux";
+    }).linuxPackages_6_12;
   boot.initrd.kernelModules = ["amdgpu"];
   services.xserver.videoDrivers = ["amdgpu"];
   # chaotic.mesa-git.enable = true;
@@ -187,9 +194,15 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
-    (nerdfonts.override {fonts = ["Iosevka"];})
-    maple-mono
-    lato
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.iosevka
+    # Maple Mono (Ligature TTF unhinted)
+    maple-mono.truetype
+    # Maple Mono NF (Ligature unhinted)
+    maple-mono.NF-unhinted
+    # Maple Mono NF CN (Ligature unhinted)
+    maple-mono.NF-CN-unhinted
   ];
 
   services.gvfs.enable = true;
@@ -218,9 +231,6 @@
   };
   users.defaultUserShell = pkgs.fish;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # capture card
 
   # List packages installed in system profile. To search, run:
@@ -247,7 +257,7 @@
     # devtools
     python3
     # chaotic stuff
-    firefox_nightly
+    # firefox_nightly
     # end of chaotic stuff
     pavucontrol
     pulseaudio
