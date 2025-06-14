@@ -95,16 +95,16 @@
             bind "tab" { MovePane; }
         }
         scroll {
-            bind "Alt left" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
-            bind "Alt down" { MoveFocus "down"; SwitchToMode "locked"; }
-            bind "Alt up" { MoveFocus "up"; SwitchToMode "locked"; }
-            bind "Alt right" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+            bind "Alt Shift left" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
+            bind "Alt Shift down" { MoveFocus "down"; SwitchToMode "locked"; }
+            bind "Alt Shift up" { MoveFocus "up"; SwitchToMode "locked"; }
+            bind "Alt Shift right" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
             bind "e" { EditScrollback; SwitchToMode "locked"; }
             bind "f" { SwitchToMode "entersearch"; SearchInput 0; }
-            bind "Alt h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
-            bind "Alt j" { MoveFocus "down"; SwitchToMode "locked"; }
-            bind "Alt k" { MoveFocus "up"; SwitchToMode "locked"; }
-            bind "Alt l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+            bind "Alt Shift h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
+            bind "Alt Shift j" { MoveFocus "down"; SwitchToMode "locked"; }
+            bind "Alt Shift k" { MoveFocus "up"; SwitchToMode "locked"; }
+            bind "Alt Shift l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
             bind "s" { SwitchToMode "normal"; }
         }
         search {
@@ -140,23 +140,23 @@
             }
         }
         shared_among "normal" "locked" {
-            bind "Alt left" { MoveFocusOrTab "left"; }
-            bind "Alt down" { MoveFocus "down"; }
-            bind "Alt up" { MoveFocus "up"; }
-            bind "Alt right" { MoveFocusOrTab "right"; }
-            bind "Alt +" { Resize "Increase"; }
-            bind "Alt -" { Resize "Decrease"; }
-            bind "Alt =" { Resize "Increase"; }
-            bind "Alt [" { PreviousSwapLayout; }
-            bind "Alt ]" { NextSwapLayout; }
-            bind "Alt f" { ToggleFloatingPanes; }
-            bind "Alt h" { MoveFocusOrTab "left"; }
-            bind "Alt i" { MoveTab "left"; }
-            bind "Alt j" { MoveFocus "down"; }
-            bind "Alt k" { MoveFocus "up"; }
-            bind "Alt l" { MoveFocusOrTab "right"; }
-            bind "Alt n" { NewPane; }
-            bind "Alt o" { MoveTab "right"; }
+            bind "Alt Shift left" { MoveFocusOrTab "left"; }
+            bind "Alt Shift down" { MoveFocus "down"; }
+            bind "Alt Shift up" { MoveFocus "up"; }
+            bind "Alt Shift right" { MoveFocusOrTab "right"; }
+            bind "Alt Shift +" { Resize "Increase"; }
+            bind "Alt Shift -" { Resize "Decrease"; }
+            bind "Alt Shift =" { Resize "Increase"; }
+            bind "Alt Shift [" { PreviousSwapLayout; }
+            bind "Alt Shift ]" { NextSwapLayout; }
+            bind "Alt Shift f" { ToggleFloatingPanes; }
+            bind "Alt Shift h" { MoveFocusOrTab "left"; }
+            bind "Alt Shift i" { MoveTab "left"; }
+            bind "Alt Shift j" { MoveFocus "down"; }
+            bind "Alt Shift k" { MoveFocus "up"; }
+            bind "Alt Shift l" { MoveFocusOrTab "right"; }
+            bind "Alt Shift n" { NewPane; }
+            bind "Alt Shift o" { MoveTab "right"; }
         }
         shared_except "locked" "renametab" "renamepane" {
             bind "Ctrl g" { SwitchToMode "locked"; }
