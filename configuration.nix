@@ -38,6 +38,7 @@
   # virtualbox
   virtualisation.virtualbox = {
     host.enable = true;
+    host.enableExtensionPack = true;
     guest.enable = true;
     guest.dragAndDrop = true;
   };
@@ -100,7 +101,16 @@
       config.allowUnfree = true;
       system = "x86_64-linux";
     }).linuxPackages_6_12;
-  boot.initrd.kernelModules = ["amdgpu"];
+
+  # tiktok
+  boot.kernelModules = [
+    "v4l2loopback"
+  ];
+  boot.initrd.kernelModules = [
+    "amdgpu"
+    # for alsa visibility
+    "snd-aloop"
+  ];
   services.xserver.videoDrivers = ["amdgpu"];
   # chaotic.mesa-git.enable = true;
   hardware.graphics.enable = true;

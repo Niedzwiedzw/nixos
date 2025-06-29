@@ -110,6 +110,7 @@
     rio = {
       enable = true;
       settings = {
+        confirm-before-quit = false;
         editor = {
           program = "hx";
           args = [];

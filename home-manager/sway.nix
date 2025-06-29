@@ -166,6 +166,7 @@
         "DP-2" = {
           resolution = "1920x1080@144hz";
           position = "0,295";
+          # transform = "270";
         };
         "HDMI-A-1" = {
           resolution = "2560x1440@144hz";
