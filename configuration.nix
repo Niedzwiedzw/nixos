@@ -1,15 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/audio-setup.nix
+    # only enable for magewell (mwcap) sessions
+    # ./modules/magewell-legacy-compat.nix
   ];
 
   # Bootloader.
@@ -44,6 +42,18 @@
   };
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
   services.flatpak.enable = true;
+  # home media server
+  services.minidlna = {
+    enable = true;
+    settings = {
+      friendly_name = "MEDIA MAIN";
+      media_dir = ["V,/home/niedzwiedz/Downloads/torrent"];
+      log_level = "error";
+    };
+  };
+  users.users.minidlna = {
+    extraGroups = ["users"];
+  };
   services.atd.enable = true;
   # BACKUPS
   services.borgmatic = {
@@ -96,16 +106,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # amd gpu specific stuff
-  boot.kernelPackages =
-    (import inputs.nixpkgs-unstable {
-      config.allowUnfree = true;
-      system = "x86_64-linux";
-    }).linuxPackages_6_12;
 
-  # tiktok
-  boot.kernelModules = [
-    "v4l2loopback"
-  ];
   boot.initrd.kernelModules = [
     "amdgpu"
     # for alsa visibility
@@ -114,8 +115,6 @@
   services.xserver.videoDrivers = ["amdgpu"];
   # chaotic.mesa-git.enable = true;
   hardware.graphics.enable = true;
-  # magewell capture card
-  hardware.mwProCapture.enable = true;
   # environment.variables.AMD_VULKAN_ICD = "RADV";
   # end of amd gpu specific stuff
 
@@ -333,24 +332,19 @@
     cryptsetup
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    4455 # with-fire-and-sword
-  ];
+  networking.firewall.allowedTCPPorts =
+    [
+      8200 # minidlna
+      21 # unftp
+      2121 # unftp
+      4455 # with-fire-and-sword
+    ]
+    ++ (builtins.genList (x: x + 30000) 1001); # Opens 30000-31000 for unftp;
   networking.firewall.allowedUDPPorts = [
+    1900 # minidlna
+    21 # unftp
+    2121 # unftp
     4455 # with-fire-and-sword
     5353 # avahi deamon (printer/scanner)
   ];
