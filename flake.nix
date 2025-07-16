@@ -14,6 +14,9 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     catppuccin.url = "github:catppuccin/nix";
     helix.url = "github:helix-editor/helix";
+    # nix index provides up-to-date binary cache
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = {
     self,
@@ -23,6 +26,7 @@
     stylix,
     catppuccin,
     helix,
+    nix-index-database,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -35,6 +39,8 @@
         inputs.musnix.nixosModules.musnix
 
         ./configuration.nix
+
+        nix-index-database.nixosModules.nix-index
       ];
       specialArgs = {inherit inputs;};
     };

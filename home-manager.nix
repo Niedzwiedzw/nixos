@@ -54,6 +54,8 @@
       ffmpeg-full
       # audio
       # davinci-resolve
+      anydesk
+      spotify
       reaper
       lsp-plugins
       chow-tape-model

@@ -6,6 +6,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/audio-setup.nix
+    ./modules/brother-printer.nix
     # only enable for magewell (mwcap) sessions
     # ./modules/magewell-legacy-compat.nix
   ];
@@ -72,37 +73,6 @@
     };
   };
 
-  # scanner, printer etc
-  services.udev.packages = [pkgs.sane-airscan];
-  services.avahi.enable = true;
-  services.avahi.nssmdns4 = true;
-  services.avahi.publish.enable = true;
-  services.avahi.publish.addresses = true;
-  services.avahi.publish.userServices = true;
-  hardware.sane = {
-    enable = true;
-    disabledDefaultBackends = ["escl" "v4l"];
-    extraBackends = [pkgs.sane-airscan];
-    brscan4 = {
-      enable = true;
-      netDevices = {
-        home = {
-          model = "MFC-B7715DW";
-          ip = "192.168.1.11";
-        };
-      };
-    };
-    brscan5 = {
-      enable = true;
-      netDevices = {
-        home = {
-          model = "MFC-B7715DW";
-          ip = "192.168.1.11";
-        };
-      };
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # amd gpu specific stuff
@@ -164,8 +134,6 @@
   # Configure console keymap
   console.keyMap = "pl2";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -175,7 +143,7 @@
   users.users.niedzwiedz = {
     isNormalUser = true;
     description = "niedzwiedz";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "scanner" "lp" "docker"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "docker"];
     packages = with pkgs; [
       home-manager
     ];
@@ -193,26 +161,38 @@
     };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
   };
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-    nerd-fonts.fira-code
-    nerd-fonts.droid-sans-mono
-    nerd-fonts.iosevka
-    # Maple Mono (Ligature TTF unhinted)
-    maple-mono.truetype
-    # Maple Mono NF (Ligature unhinted)
-    maple-mono.NF-unhinted
-    # Maple Mono NF CN (Ligature unhinted)
-    maple-mono.NF-CN-unhinted
-  ];
+  fonts = with pkgs; {
+    packages = [
+      noto-fonts
+      noto-fonts-emoji
+      dejavu_fonts
+      # noto-fonts-cjk-sans
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
+      nerd-fonts.fira-code
+      nerd-fonts.droid-sans-mono
+      nerd-fonts.iosevka
+      # Maple Mono (Ligature TTF unhinted)
+      maple-mono.truetype
+      # Maple Mono NF (Ligature unhinted)
+      maple-mono.NF-unhinted
+      # Maple Mono NF CN (Ligature unhinted)
+      maple-mono.NF-CN-unhinted
+    ];
+    enableDefaultFonts = true;
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        sansSerif = ["Noto Sans"];
+        monospace = ["DejaVu Sans Mono"];
+        emoji = ["Noto Color Emoji"];
+      };
+    };
+  };
 
   services.gvfs.enable = true;
   programs = {
@@ -245,6 +225,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # global fonts
+    noto-fonts
+    noto-fonts-emoji
+    dejavu_fonts
+
     # utils
     comma
     teamviewer
@@ -255,10 +240,7 @@
     # scanner, printer
     qpdf
     imagemagick
-    avahi
     sane-airscan
-    brscan4
-    brscan5
     # backups
     borgmatic
     # raid
@@ -346,7 +328,6 @@
     21 # unftp
     2121 # unftp
     4455 # with-fire-and-sword
-    5353 # avahi deamon (printer/scanner)
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
