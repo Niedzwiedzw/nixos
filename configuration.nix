@@ -43,18 +43,6 @@
   };
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
   services.flatpak.enable = true;
-  # home media server
-  services.minidlna = {
-    enable = true;
-    settings = {
-      friendly_name = "MEDIA MAIN";
-      media_dir = ["V,/home/niedzwiedz/Downloads/torrent"];
-      log_level = "error";
-    };
-  };
-  users.users.minidlna = {
-    extraGroups = ["users"];
-  };
   services.atd.enable = true;
   # BACKUPS
   services.borgmatic = {
@@ -317,14 +305,12 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts =
     [
-      8200 # minidlna
       21 # unftp
       2121 # unftp
       4455 # with-fire-and-sword
     ]
     ++ (builtins.genList (x: x + 30000) 1001); # Opens 30000-31000 for unftp;
   networking.firewall.allowedUDPPorts = [
-    1900 # minidlna
     21 # unftp
     2121 # unftp
     4455 # with-fire-and-sword

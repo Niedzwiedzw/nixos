@@ -60,7 +60,8 @@
               "L" = ":lsp-restart";
               "I" = ":toggle-option lsp.display-inlay-hints";
               "O" = ":toggle inline-diagnostics.cursor-line disable warning";
-              "C" = "@ D%s error";
+              "C" = "@ D%severity error";
+              "B" = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}";
             };
           };
           insert = {

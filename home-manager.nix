@@ -39,6 +39,7 @@
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
       eza
+      uv
       fd
       dust
       ripgrep
@@ -112,6 +113,7 @@
     rio = {
       enable = true;
       settings = {
+        use-split = false;
         confirm-before-quit = false;
         editor = {
           program = "hx";
