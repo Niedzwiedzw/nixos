@@ -90,7 +90,9 @@
       bindsym Mod4+Shift+w exec alacritty -e ep
 
       # hibernation
-      exec swayidle -w before-sleep 'swaylock'
+      exec swayidle -w  \
+        timeout 300 'swaylock' \
+        before-sleep 'swaylock'
     '';
 
     config = {
@@ -185,9 +187,23 @@
   services.swaync = {
     enable = true;
   };
+  programs.swaylock = {
+    enable = true;
+    package = pkgs.swaylock-effects;
+    settings = {
+      effect-blur = "20x2";
+      fade-in = "0.5";
+      font = "Roboto";
+      indicator-radius = 100;
+      indicator-thickness = 7;
+    };
+  };
   programs.waybar = {
     enable = true;
-    systemd.target = "sway-session.target";
+    systemd = {
+      enable = true;
+      target = "sway-session.target";
+    };
     settings = [
       {
         layer = "top";
@@ -197,7 +213,19 @@
         # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
         modules-left = ["sway/workspaces"];
         modules-center = ["sway/window"];
-        modules-right = ["cpu" "memory" "temperature" "network" "clock" "custom/notification" "tray"];
+        modules-right = ["cpu" "memory" "temperature#cpu" "temperature#gpu" "network" "clock" "idle_inhibitor" "custom/lock" "custom/notification" "tray"];
+        "idle_inhibitor" = {
+          format = "{icon}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
+        };
+        "custom/lock" = {
+          format = "";
+          on-click = "swaylock";
+          tooltip = true;
+        };
         clock = {
           format = "🕗  {:%H:%M 📆  %a %Y-%m-%d}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
@@ -261,18 +289,33 @@
           "tooltip-format" = "{ifname}= {ipaddr}";
         };
 
-        "temperature" = {
-          "critical-threshold" = 80;
-          "interval" = 5;
-          "format" = "{icon}  {temperatureC}°C";
-          "format-icons" = [
-            "" # Icon = temperature-empty
-            "" # Icon = temperature-quarter
-            "" # Icon = temperature-half
-            "" # Icon = temperature-three-quarters
-            "" # Icon = temperature-full
+        "temperature#cpu" = {
+          critical-threshold = 80;
+          interval = 5;
+          format = "{icon} CPU {temperatureC}°C";
+          hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
+          format-icons = [
+            "" # temperature-empty
+            "" # temperature-quarter
+            "" # temperature-half
+            "" # temperature-three-quarters
+            "" # temperature-full
           ];
-          "tooltip" = true;
+          tooltip = true;
+        };
+        "temperature#gpu" = {
+          critical-threshold = 80;
+          interval = 5;
+          format = "{icon} GPU {temperatureC}°C";
+          hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
+          format-icons = [
+            "" # temperature-empty
+            "" # temperature-quarter
+            "" # temperature-half
+            "" # temperature-three-quarters
+            "" # temperature-full
+          ];
+          tooltip = true;
         };
       }
     ];
@@ -299,7 +342,7 @@
             	padding-right: 10px;
             	border-radius: 10px;
             	transition: none;
-                color: transparent;
+              color: transparent;
             	background: transparent;
             }
             #tags {
@@ -427,6 +470,30 @@
             	color: #161320;
             	background: #E8A2AF;
             }
+            #custom-lock {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	margin-right: 4px;
+            	padding-left: 10px;
+            	padding-right: 15px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #E8A2AF;
+            }
+            #idle_inhibitor {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	margin-right: 4px;
+            	padding-left: 10px;
+            	padding-right: 15px;
+            	margin-bottom: 0px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #E8A2AF;
+            }
 
             #memory {
             	margin-top: 6px;
@@ -440,6 +507,17 @@
             	background: #DDB6F2;
             }
             #cpu {
+            	margin-top: 6px;
+            	margin-left: 8px;
+            	padding-left: 10px;
+            	margin-bottom: 0px;
+            	padding-right: 10px;
+            	border-radius: 10px;
+            	transition: none;
+            	color: #161320;
+            	background: #96CDFB;
+            }
+            #temperature {
             	margin-top: 6px;
             	margin-left: 8px;
             	padding-left: 10px;
