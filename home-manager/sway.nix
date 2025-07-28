@@ -88,6 +88,9 @@
       # keybinds
       bindsym Mod4+Shift+x exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | wl-copy -t image/png
       bindsym Mod4+Shift+w exec alacritty -e ep
+
+      # hibernation
+      exec swayidle -w before-sleep 'swaylock'
     '';
 
     config = {

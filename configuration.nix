@@ -7,6 +7,8 @@
     ./hardware-configuration.nix
     ./modules/audio-setup.nix
     ./modules/brother-printer.nix
+    ./modules/jellyfin.nix
+    ./modules/hibernation.nix
     # only enable for magewell (mwcap) sessions
     # ./modules/magewell-legacy-compat.nix
   ];
