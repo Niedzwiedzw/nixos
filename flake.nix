@@ -31,6 +31,7 @@
   } @ inputs: let
     system = "x86_64-linux";
   in {
+    # nixos`
     nixosConfigurations.niedzwiedz = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
@@ -44,6 +45,20 @@
       ];
       specialArgs = {inherit inputs;};
     };
+    nixosConfigurations.vivobook = nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [
+        catppuccin.nixosModules.catppuccin
+        stylix.nixosModules.stylix
+        # inputs.musnix.nixosModules.musnix
+
+        ./configuration--vivobook.nix
+
+        nix-index-database.nixosModules.nix-index
+      ];
+      specialArgs = {inherit inputs;};
+    };
+    # home
     homeConfigurations.niedzwiedz = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
