@@ -25,7 +25,7 @@
     flavor = "mocha";
     pointerCursor.enable = true;
   };
-  gtk.catppuccin.enable = true;
+  # gtk.catppuccin.enable = true;
   gtk.catppuccin.icon.enable = true;
   qt.style.catppuccin.enable = true;
   # /CATPUCCIN

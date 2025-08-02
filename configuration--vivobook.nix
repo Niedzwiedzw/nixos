@@ -23,46 +23,8 @@
     enable = true;
     mdadmConf = builtins.readFile ./mdadm.conf;
   };
-
-  # fileSystems."/mnt/md0" = {
-  #   device = "/dev/md0"; # Adjust to the correct RAID device
-  #   fsType = "ext4"; # Adjust to the correct filesystem type (e.g., ext4, xfs, etc.)
-  # };
-
-  # virtualisation.docker = {
-  #   enable = true;
-  #   # rootless = {
-  #   #   enable = true;
-  #   #   setSocketVariable = true;
-  #   # };
-  # };
-
-  # # virtualbox
-  # virtualisation.virtualbox = {
-  #   host.enable = true;
-  #   host.enableExtensionPack = true;
-  #   guest.enable = true;
-  #   guest.dragAndDrop = true;
-  # };
-  # users.extraGroups.vboxusers.members = ["niedzwiedz"];
   services.flatpak.enable = true;
   services.atd.enable = true;
-  # BACKUPS
-  # services.borgmatic = {
-  #   enable = true;
-  #   settings = {
-  #     repositories = [
-  #       {
-  #         label = "local";
-  #         path = "/mnt/md0/manual-backup/001-borgmatic";
-  #       }
-  #     ];
-  #     source_directories = [
-  #       "/home/niedzwiedz/firma-niedzwiedz"
-  #     ];
-  #     keep_daily = 7;
-  #   };
-  # };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -70,22 +32,12 @@
 
   boot.initrd.kernelModules = [
     "amdgpu"
-    # for alsa visibility
-    # "snd-aloop"
   ];
   services.xserver.videoDrivers = ["amdgpu"];
-  # chaotic.mesa-git.enable = true;
   hardware.graphics.enable = true;
-  # environment.variables.AMD_VULKAN_ICD = "RADV";
-  # end of amd gpu specific stuff
 
   # boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
-  networking.hostName = "niedzwiedz-main"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.hostName = "niedzwiedz-vivobook"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -191,24 +143,9 @@
       enable = true;
       plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
     };
-
-    # kdeconnect = {
-    #   enable = true;
-    # };
-    # steam.enable = true;
     sway.enable = true;
     fish.enable = true;
   };
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   steam = pkgs.steam.override {
-  #     extraPkgs = pkgs:
-  #       with pkgs; [
-  #         pango
-  #         libthai
-  #         harfbuzz
-  #       ];
-  #   };
-  # };
   users.defaultUserShell = pkgs.fish;
 
   # capture card
