@@ -308,12 +308,14 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts =
     [
+      22 # ssh
       21 # unftp
       2121 # unftp
       4455 # with-fire-and-sword
     ]
     ++ (builtins.genList (x: x + 30000) 1001); # Opens 30000-31000 for unftp;
   networking.firewall.allowedUDPPorts = [
+    22 # ssh
     21 # unftp
     2121 # unftp
     4455 # with-fire-and-sword
