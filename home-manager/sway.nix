@@ -115,12 +115,7 @@
           xkb_layout = "pl";
         };
       };
-
-      bars = [
-        {
-          "command" = "${pkgs.waybar}/bin/waybar";
-        }
-      ];
+      bars = [];
 
       workspaceOutputAssign = [
         {
@@ -320,7 +315,7 @@
       }
     ];
     style = ''
-                  * {
+            * {
             	border: none;
             	border-radius: 10;
               font-family: "Cantarell, Noto Sans, sans-serif";
