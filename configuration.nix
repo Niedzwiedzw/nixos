@@ -12,6 +12,7 @@
     # only enable for magewell (mwcap) sessions
     ./modules/magewell-legacy-compat.nix
     ./modules/wireguard.nix
+    ./modules/gaming.nix
   ];
 
   # Bootloader.
@@ -47,6 +48,21 @@
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
   services.flatpak.enable = true;
   services.atd.enable = true;
+
+  # sshd
+  services.openssh = {
+    enable = true;
+    ports = [22];
+    settings = {
+      PasswordAuthentication = false;
+      AllowUsers = ["niedzwiedz"]; # Allows all users by default. Can be [ "user1" "user2" ]
+      UseDns = false;
+      X11Forwarding = false;
+      GSSAPIAuthentication = "no";
+      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    };
+  };
+
   # BACKUPS
   services.borgmatic = {
     enable = true;
@@ -187,6 +203,25 @@
 
   services.gvfs.enable = true;
   programs = {
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc.lib
+        zlib
+        freetype
+        fontconfig
+        expat
+        libpng
+        zlib
+        glib
+        libuuid
+        wayland
+        libxkbcommon
+        libGL
+        mesa
+      ];
+    };
+
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
@@ -195,19 +230,8 @@
     kdeconnect = {
       enable = true;
     };
-    steam.enable = true;
     sway.enable = true;
     fish.enable = true;
-  };
-  nixpkgs.config.packageOverrides = pkgs: {
-    steam = pkgs.steam.override {
-      extraPkgs = pkgs:
-        with pkgs; [
-          pango
-          libthai
-          harfbuzz
-        ];
-    };
   };
   users.defaultUserShell = pkgs.fish;
 
@@ -275,20 +299,12 @@
     directx-shader-compiler
     wayland.dev
     # gaming - STEAM
-    mangohud
-    gamemode
     # steamtinkerlaunch
-    steamtinkerlaunch
-    protonup-qt
     unixtools.xxd
     yad
     xorg.xwininfo
     unzip
 
-    # WINE
-    wine
-    winetricks
-    protontricks
     vulkan-tools
     # Extra dependencies
     # https://github.com/lutris/docs/
@@ -312,6 +328,7 @@
       21 # unftp
       2121 # unftp
       4455 # with-fire-and-sword
+      8080 # trunk
     ]
     ++ (builtins.genList (x: x + 30000) 1001); # Opens 30000-31000 for unftp;
   networking.firewall.allowedUDPPorts = [
@@ -319,6 +336,7 @@
     21 # unftp
     2121 # unftp
     4455 # with-fire-and-sword
+    8080 # trunk
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

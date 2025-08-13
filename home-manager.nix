@@ -83,6 +83,8 @@
         extraLibraries = pkgs: [
           pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
           pkgsi686Linux.openalSoft # 32-bit OpenAL library
+          pkgs.wineWowPackages.stagingFull
+          pkgs.winetricks
         ];
       })
       signal-desktop
@@ -113,7 +115,9 @@
     rio = {
       enable = true;
       settings = {
-        use-split = false;
+        navigation = {
+          use-split = false;
+        };
         confirm-before-quit = false;
         editor = {
           program = "hx";
