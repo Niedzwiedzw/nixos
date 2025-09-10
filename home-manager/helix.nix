@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    rust-analyzer
+    # rust-analyzer
     vscode-langservers-extracted
     yaml-language-server
     taplo

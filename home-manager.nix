@@ -83,7 +83,7 @@
         extraLibraries = pkgs: [
           pkgsi686Linux.libglvnd # 32-bit OpenGL compatibility libraries
           pkgsi686Linux.openalSoft # 32-bit OpenAL library
-          pkgs.wineWowPackages.stagingFull
+          # pkgs.wineWowPackages.stagingFull
           pkgs.winetricks
         ];
       })

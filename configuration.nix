@@ -10,7 +10,7 @@
     ./modules/jellyfin.nix
     ./modules/hibernation.nix
     # only enable for magewell (mwcap) sessions
-    ./modules/magewell-legacy-compat.nix
+    # ./modules/magewell-legacy-compat.nix
     ./modules/wireguard.nix
     ./modules/gaming.nix
   ];
