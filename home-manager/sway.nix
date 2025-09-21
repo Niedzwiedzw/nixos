@@ -105,6 +105,8 @@
         {command = "xrandr --output HDMI-A-1 --primary";}
         {command = "thunderbird";}
         {command = "autotiling";}
+        # kde connect
+        {command = "kdeconnectd --replace &";}
         {command = "kdeconnect-app";}
       ];
       modifier = "Mod4";
@@ -181,6 +183,10 @@
   };
   services.swaync = {
     enable = true;
+  };
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
   };
   programs.swaylock = {
     enable = true;

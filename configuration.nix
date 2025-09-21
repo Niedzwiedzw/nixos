@@ -227,9 +227,6 @@
       plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
     };
 
-    kdeconnect = {
-      enable = true;
-    };
     sway.enable = true;
     fish.enable = true;
   };
