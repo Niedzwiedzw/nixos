@@ -79,9 +79,23 @@
     #media-session.enable = true;
   };
   musnix.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   environment.systemPackages = with pkgs; [
+    # reaper
+    reaper
+    # plugins
+    lsp-plugins
+    chow-tape-model
+    chow-phaser
+    calf
+    vital
+    mda_lv2
+    distrho-ports
+    helm
+    zam-plugins
+    drumgizmo
+    # drivers, utils
     alsa-utils
     alsa-tools
     alsa-plugins

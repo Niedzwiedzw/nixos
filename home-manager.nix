@@ -23,11 +23,10 @@
   catppuccin = {
     enable = true;
     flavor = "mocha";
-    pointerCursor.enable = true;
+    cursors.enable = true;
+    kvantum.enable = true;
+    gtk.icon.enable = true;
   };
-  # gtk.catppuccin.enable = true;
-  gtk.catppuccin.icon.enable = true;
-  qt.style.catppuccin.enable = true;
   # /CATPUCCIN
 
   home = {
@@ -50,23 +49,14 @@
       # rest
       # davinci-resolve
       gimp
-      aseprite
+      # aseprite
       firefox
       ffmpeg-full
       # audio
       # davinci-resolve
       anydesk
       spotify
-      reaper
-      lsp-plugins
-      chow-tape-model
-      chow-phaser
-      calf
-      vital
-      mda_lv2
-      distrho-ports
-      helm
-      zam-plugins
+
       # utils
       evince
       losslesscut-bin
