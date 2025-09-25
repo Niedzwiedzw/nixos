@@ -94,7 +94,7 @@
     distrho-ports
     helm
     zam-plugins
-    drumgizmo
+    drumgizmo # /run/current-system/sw/lib/lv2
     # vst emulation
     yabridge
     yabridgectl
