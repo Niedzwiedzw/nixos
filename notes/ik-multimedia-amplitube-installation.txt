@@ -1,0 +1,9 @@
+AMP modeller installation:
+1. go to https://www.ikmultimedia.com/userarea/my-products/
+2. download the windows release into ~/.vst
+3. run: export WINEPREFIX="$(pwd)/pfx"
+4. run: wine ./ProductManager_1_1_9/Install\ IK\ Product\ Manager\ \(v1.1.9\).exe
+5. click 'download' for amplitube
+6. install to Z:\home\niedzwiedz\.vst
+7. run: yabridgectl --add ~/.vst
+8. yabridgectl sync

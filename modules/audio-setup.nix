@@ -95,6 +95,9 @@
     helm
     zam-plugins
     drumgizmo
+    # vst emulation
+    yabridge
+    yabridgectl
     # drivers, utils
     alsa-utils
     alsa-tools
