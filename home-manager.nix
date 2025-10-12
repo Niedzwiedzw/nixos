@@ -59,6 +59,7 @@
 
       # utils
       evince
+      papers
       losslesscut-bin
       keepassxc
       discord

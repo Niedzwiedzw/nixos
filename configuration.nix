@@ -190,7 +190,7 @@
       # Maple Mono NF CN (Ligature unhinted)
       maple-mono.NF-CN-unhinted
     ];
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
     fontconfig = {
       enable = true;
       defaultFonts = {

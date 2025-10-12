@@ -1,0 +1,689 @@
+[11:22:57.540135] [sanei_debug] Setting debug level of dll to 255.
+[11:22:57.540177] [dll] sane_init: SANE dll backend version 1.0.13 from sane-backends 1.3.1
+[11:22:57.540188] [dll] sane_init/read_dlld: attempting to open directory `/etc/sane-config/dll.d'
+[11:22:57.540203] [dll] sane_init/read_dlld: using config directory `/etc/sane-config/dll.d'
+[11:22:57.540216] [dll] sane_init/read_dlld: done.
+[11:22:57.540227] [dll] sane_init/read_config: reading dll.conf
+[11:22:57.540237] [dll] add_backend: adding backend `net'
+[11:22:57.540242] [dll] add_backend: adding backend `abaton'
+[11:22:57.540247] [dll] add_backend: adding backend `agfafocus'
+[11:22:57.540252] [dll] add_backend: adding backend `apple'
+[11:22:57.540258] [dll] add_backend: adding backend `artec'
+[11:22:57.540263] [dll] add_backend: adding backend `artec_eplus48u'
+[11:22:57.540268] [dll] add_backend: adding backend `as6e'
+[11:22:57.540273] [dll] add_backend: adding backend `avision'
+[11:22:57.540278] [dll] add_backend: adding backend `bh'
+[11:22:57.540283] [dll] add_backend: adding backend `canon'
+[11:22:57.540288] [dll] add_backend: adding backend `canon630u'
+[11:22:57.540293] [dll] add_backend: adding backend `canon_dr'
+[11:22:57.540298] [dll] add_backend: adding backend `canon_lide70'
+[11:22:57.540303] [dll] add_backend: adding backend `cardscan'
+[11:22:57.540308] [dll] add_backend: adding backend `coolscan'
+[11:22:57.540313] [dll] add_backend: adding backend `coolscan3'
+[11:22:57.540318] [dll] add_backend: adding backend `dell1600n_net'
+[11:22:57.540323] [dll] add_backend: adding backend `dmc'
+[11:22:57.540329] [dll] add_backend: adding backend `epjitsu'
+[11:22:57.540334] [dll] add_backend: adding backend `epson2'
+[11:22:57.540339] [dll] add_backend: adding backend `epsonds'
+[11:22:57.540344] [dll] add_backend: adding backend `fujitsu'
+[11:22:57.540349] [dll] add_backend: adding backend `genesys'
+[11:22:57.540354] [dll] add_backend: adding backend `gt68xx'
+[11:22:57.540360] [dll] add_backend: adding backend `hp'
+[11:22:57.540365] [dll] add_backend: adding backend `hp3500'
+[11:22:57.540370] [dll] add_backend: adding backend `hp3900'
+[11:22:57.540375] [dll] add_backend: adding backend `hp4200'
+[11:22:57.540380] [dll] add_backend: adding backend `hp5400'
+[11:22:57.540386] [dll] add_backend: adding backend `hp5590'
+[11:22:57.540392] [dll] add_backend: adding backend `hpljm1005'
+[11:22:57.540397] [dll] add_backend: adding backend `hpsj5s'
+[11:22:57.540402] [dll] add_backend: adding backend `hs2p'
+[11:22:57.540407] [dll] add_backend: adding backend `ibm'
+[11:22:57.540412] [dll] add_backend: adding backend `kodak'
+[11:22:57.540417] [dll] add_backend: adding backend `kodakaio'
+[11:22:57.540422] [dll] add_backend: adding backend `kvs1025'
+[11:22:57.540427] [dll] add_backend: adding backend `kvs20xx'
+[11:22:57.540432] [dll] add_backend: adding backend `kvs40xx'
+[11:22:57.540437] [dll] add_backend: adding backend `leo'
+[11:22:57.540442] [dll] add_backend: adding backend `lexmark'
+[11:22:57.540448] [dll] add_backend: adding backend `ma1509'
+[11:22:57.540453] [dll] add_backend: adding backend `magicolor'
+[11:22:57.540458] [dll] add_backend: adding backend `matsushita'
+[11:22:57.540463] [dll] add_backend: adding backend `microtek'
+[11:22:57.540468] [dll] add_backend: adding backend `microtek2'
+[11:22:57.540473] [dll] add_backend: adding backend `mustek'
+[11:22:57.540478] [dll] add_backend: adding backend `mustek_usb'
+[11:22:57.540483] [dll] add_backend: adding backend `mustek_usb2'
+[11:22:57.540489] [dll] add_backend: adding backend `nec'
+[11:22:57.540494] [dll] add_backend: adding backend `niash'
+[11:22:57.540499] [dll] add_backend: adding backend `pie'
+[11:22:57.540504] [dll] add_backend: adding backend `pieusb'
+[11:22:57.540511] [dll] add_backend: adding backend `pint'
+[11:22:57.540516] [dll] add_backend: adding backend `pixma'
+[11:22:57.540526] [dll] add_backend: adding backend `plustek'
+[11:22:57.540532] [dll] add_backend: adding backend `qcam'
+[11:22:57.540537] [dll] add_backend: adding backend `ricoh'
+[11:22:57.540542] [dll] add_backend: adding backend `ricoh2'
+[11:22:57.540547] [dll] add_backend: adding backend `rts8891'
+[11:22:57.540553] [dll] add_backend: adding backend `s9036'
+[11:22:57.540558] [dll] add_backend: adding backend `sceptre'
+[11:22:57.540563] [dll] add_backend: adding backend `sharp'
+[11:22:57.540568] [dll] add_backend: adding backend `sm3600'
+[11:22:57.540574] [dll] add_backend: adding backend `sm3840'
+[11:22:57.540579] [dll] add_backend: adding backend `snapscan'
+[11:22:57.540584] [dll] add_backend: adding backend `sp15c'
+[11:22:57.540589] [dll] add_backend: adding backend `tamarack'
+[11:22:57.540594] [dll] add_backend: adding backend `teco1'
+[11:22:57.540600] [dll] add_backend: adding backend `teco2'
+[11:22:57.540605] [dll] add_backend: adding backend `teco3'
+[11:22:57.540610] [dll] add_backend: adding backend `u12'
+[11:22:57.540615] [dll] add_backend: adding backend `umax'
+[11:22:57.540621] [dll] add_backend: adding backend `umax1220u'
+[11:22:57.540626] [dll] add_backend: adding backend `xerox_mfp'
+[11:22:57.540631] [dll] add_backend: adding backend `brother4'
+[11:22:57.540644] [dll] sane_get_devices
+[11:22:57.540650] [dll] load: searching backend `brother4' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.540656] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-brother4.so.1'
+[11:22:57.540668] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-brother4.so.1' (No such file or directory)
+[11:22:57.540674] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-brother4.so.1'
+[11:22:57.540681] [dll] load: couldn't open `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-brother4.so.1' (No such file or directory)
+[11:22:57.540687] [dll] load: couldn't find backend `brother4' (No such file or directory)
+[11:22:57.540692] [dll] load: searching backend `xerox_mfp' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.540698] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-xerox_mfp.so.1'
+[11:22:57.540705] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-xerox_mfp.so.1' (No such file or directory)
+[11:22:57.540710] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-xerox_mfp.so.1'
+[11:22:57.540719] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-xerox_mfp.so.1'
+[11:22:57.540808] [dll] init: initializing backend `xerox_mfp'
+[11:22:57.551014] [dll] init: backend `xerox_mfp' is version 1.0.13
+[11:22:57.551093] [dll] load: searching backend `umax1220u' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.551099] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-umax1220u.so.1'
+[11:22:57.551107] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-umax1220u.so.1' (No such file or directory)
+[11:22:57.551112] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-umax1220u.so.1'
+[11:22:57.551122] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-umax1220u.so.1'
+[11:22:57.551202] [dll] init: initializing backend `umax1220u'
+[11:22:57.551264] [dll] init: backend `umax1220u' is version 1.0.2
+[11:22:57.551270] [dll] load: searching backend `umax' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.551275] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-umax.so.1'
+[11:22:57.551284] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-umax.so.1' (No such file or directory)
+[11:22:57.551290] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-umax.so.1'
+[11:22:57.551300] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-umax.so.1'
+[11:22:57.551379] [dll] init: initializing backend `umax'
+[11:22:57.552392] [dll] init: backend `umax' is version 1.0.45
+[11:22:57.552402] [dll] load: searching backend `u12' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.552408] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-u12.so.1'
+[11:22:57.552415] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-u12.so.1' (No such file or directory)
+[11:22:57.552422] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-u12.so.1'
+[11:22:57.552430] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-u12.so.1'
+[11:22:57.552503] [dll] init: initializing backend `u12'
+[11:22:57.552591] [dll] init: backend `u12' is version 1.0.0
+[11:22:57.552597] [dll] load: searching backend `teco3' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.552603] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-teco3.so.1'
+[11:22:57.552612] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-teco3.so.1' (No such file or directory)
+[11:22:57.552618] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-teco3.so.1'
+[11:22:57.552626] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-teco3.so.1'
+[11:22:57.552682] [dll] init: initializing backend `teco3'
+[11:22:57.553040] [dll] init: backend `teco3' is version 1.0.1
+[11:22:57.553046] [dll] load: searching backend `teco2' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.553051] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-teco2.so.1'
+[11:22:57.553059] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-teco2.so.1' (No such file or directory)
+[11:22:57.553065] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-teco2.so.1'
+[11:22:57.553072] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-teco2.so.1'
+[11:22:57.553129] [dll] init: initializing backend `teco2'
+[11:22:57.553745] [dll] init: backend `teco2' is version 1.0.10
+[11:22:57.553751] [dll] load: searching backend `teco1' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.553755] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-teco1.so.1'
+[11:22:57.553761] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-teco1.so.1' (No such file or directory)
+[11:22:57.553767] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-teco1.so.1'
+[11:22:57.553774] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-teco1.so.1'
+[11:22:57.553824] [dll] init: initializing backend `teco1'
+[11:22:57.554221] [dll] init: backend `teco1' is version 1.0.10
+[11:22:57.554226] [dll] load: searching backend `tamarack' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.554230] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-tamarack.so.1'
+[11:22:57.554236] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-tamarack.so.1' (No such file or directory)
+[11:22:57.554241] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-tamarack.so.1'
+[11:22:57.554248] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-tamarack.so.1'
+[11:22:57.554302] [dll] init: initializing backend `tamarack'
+[11:22:57.554479] [dll] init: backend `tamarack' is version 1.0.0
+[11:22:57.554484] [dll] load: searching backend `sp15c' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.554488] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sp15c.so.1'
+[11:22:57.554494] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sp15c.so.1' (No such file or directory)
+[11:22:57.554499] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sp15c.so.1'
+[11:22:57.554508] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sp15c.so.1'
+[11:22:57.554570] [dll] init: initializing backend `sp15c'
+[11:22:57.554642] [dll] init: backend `sp15c' is version 1.0.0
+[11:22:57.554647] [dll] load: searching backend `snapscan' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.554652] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-snapscan.so.1'
+[11:22:57.554658] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-snapscan.so.1' (No such file or directory)
+[11:22:57.554663] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-snapscan.so.1'
+[11:22:57.554670] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-snapscan.so.1'
+[11:22:57.554741] [dll] init: initializing backend `snapscan'
+[11:22:57.555028] [dll] init: backend `snapscan' is version 1.4.53
+[11:22:57.555033] [dll] load: searching backend `sm3840' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.555038] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sm3840.so.1'
+[11:22:57.555044] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sm3840.so.1' (No such file or directory)
+[11:22:57.555049] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sm3840.so.1'
+[11:22:57.555056] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sm3840.so.1'
+[11:22:57.555122] [dll] init: initializing backend `sm3840'
+[11:22:57.555172] [dll] init: backend `sm3840' is version 1.0.0
+[11:22:57.555177] [dll] load: searching backend `sm3600' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.555181] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sm3600.so.1'
+[11:22:57.555187] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sm3600.so.1' (No such file or directory)
+[11:22:57.555192] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sm3600.so.1'
+[11:22:57.555199] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sm3600.so.1'
+[11:22:57.555255] [dll] init: initializing backend `sm3600'
+[11:22:57.555304] [dll] init: backend `sm3600' is version 1.0.6
+[11:22:57.555309] [dll] load: searching backend `sharp' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.555313] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sharp.so.1'
+[11:22:57.555319] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sharp.so.1' (No such file or directory)
+[11:22:57.555324] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sharp.so.1'
+[11:22:57.555331] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sharp.so.1'
+[11:22:57.555381] [dll] init: initializing backend `sharp'
+[11:22:57.555572] [dll] init: backend `sharp' is version 1.0.0
+[11:22:57.555577] [dll] load: searching backend `sceptre' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.555582] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sceptre.so.1'
+[11:22:57.555587] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-sceptre.so.1' (No such file or directory)
+[11:22:57.555592] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sceptre.so.1'
+[11:22:57.555600] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-sceptre.so.1'
+[11:22:57.555651] [dll] init: initializing backend `sceptre'
+[11:22:57.555832] [dll] init: backend `sceptre' is version 1.0.10
+[11:22:57.555837] [dll] load: searching backend `s9036' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.555841] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-s9036.so.1'
+[11:22:57.555847] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-s9036.so.1' (No such file or directory)
+[11:22:57.555852] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-s9036.so.1'
+[11:22:57.555859] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-s9036.so.1'
+[11:22:57.555907] [dll] init: initializing backend `s9036'
+[11:22:57.556031] [dll] init: backend `s9036' is version 1.0.0
+[11:22:57.556036] [dll] load: searching backend `rts8891' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.556041] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-rts8891.so.1'
+[11:22:57.556047] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-rts8891.so.1' (No such file or directory)
+[11:22:57.556051] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-rts8891.so.1'
+[11:22:57.556058] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-rts8891.so.1'
+[11:22:57.556126] [dll] init: initializing backend `rts8891'
+[11:22:57.556186] [dll] init: backend `rts8891' is version 1.0.2401
+[11:22:57.556237] [dll] load: searching backend `ricoh2' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.556242] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ricoh2.so.1'
+[11:22:57.556248] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ricoh2.so.1' (No such file or directory)
+[11:22:57.556252] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ricoh2.so.1'
+[11:22:57.556259] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ricoh2.so.1'
+[11:22:57.556317] [dll] init: initializing backend `ricoh2'
+[11:22:57.556364] [dll] init: backend `ricoh2' is version 1.0.0
+[11:22:57.556369] [dll] load: searching backend `ricoh' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.556374] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ricoh.so.1'
+[11:22:57.556381] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ricoh.so.1' (No such file or directory)
+[11:22:57.556386] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ricoh.so.1'
+[11:22:57.556393] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ricoh.so.1'
+[11:22:57.556440] [dll] init: initializing backend `ricoh'
+[11:22:57.556570] [dll] init: backend `ricoh' is version 1.0.0
+[11:22:57.556575] [dll] load: searching backend `qcam' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.556580] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-qcam.so.1'
+[11:22:57.556586] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-qcam.so.1' (No such file or directory)
+[11:22:57.556591] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-qcam.so.1'
+[11:22:57.556599] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-qcam.so.1'
+[11:22:57.556649] [dll] init: initializing backend `qcam'
+[11:22:57.556662] [dll] init: backend `qcam' is version 1.0.0
+[11:22:57.556666] [dll] load: searching backend `plustek' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.556671] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-plustek.so.1'
+[11:22:57.556677] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-plustek.so.1' (No such file or directory)
+[11:22:57.556683] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-plustek.so.1'
+[11:22:57.556690] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-plustek.so.1'
+[11:22:57.556760] [dll] init: initializing backend `plustek'
+[11:22:57.556880] [dll] init: backend `plustek' is version 1.0.0
+[11:22:57.556885] [dll] load: searching backend `pixma' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:57.556890] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pixma.so.1'
+[11:22:57.556896] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pixma.so.1' (No such file or directory)
+[11:22:57.556900] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pixma.so.1'
+[11:22:57.556910] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pixma.so.1'
+[11:22:57.557009] [dll] init: initializing backend `pixma'
+[11:22:57.557073] [dll] init: backend `pixma' is version 1.0.28
+[11:22:58.077788] [dll] load: searching backend `pint' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.077817] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pint.so.1'
+[11:22:58.077830] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pint.so.1' (No such file or directory)
+[11:22:58.077837] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pint.so.1'
+[11:22:58.077845] [dll] load: couldn't open `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pint.so.1' (No such file or directory)
+[11:22:58.077850] [dll] load: couldn't find backend `pint' (No such file or directory)
+[11:22:58.077856] [dll] load: searching backend `pieusb' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.077861] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pieusb.so.1'
+[11:22:58.077868] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pieusb.so.1' (No such file or directory)
+[11:22:58.077874] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pieusb.so.1'
+[11:22:58.077888] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pieusb.so.1'
+[11:22:58.078091] [dll] init: initializing backend `pieusb'
+[11:22:58.078194] [dll] init: backend `pieusb' is version 1.0.1
+[11:22:58.078200] [dll] load: searching backend `pie' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.078205] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pie.so.1'
+[11:22:58.078212] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-pie.so.1' (No such file or directory)
+[11:22:58.078217] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pie.so.1'
+[11:22:58.078226] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-pie.so.1'
+[11:22:58.078286] [dll] init: initializing backend `pie'
+[11:22:58.078644] [dll] init: backend `pie' is version 1.0.9
+[11:22:58.078653] [dll] load: searching backend `niash' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.078658] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-niash.so.1'
+[11:22:58.078664] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-niash.so.1' (No such file or directory)
+[11:22:58.078669] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-niash.so.1'
+[11:22:58.078677] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-niash.so.1'
+[11:22:58.078760] [dll] init: initializing backend `niash'
+[11:22:58.078814] [dll] init: backend `niash' is version 1.0.1
+[11:22:58.078819] [dll] load: searching backend `nec' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.078824] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-nec.so.1'
+[11:22:58.078830] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-nec.so.1' (No such file or directory)
+[11:22:58.078835] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-nec.so.1'
+[11:22:58.078843] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-nec.so.1'
+[11:22:58.078900] [dll] init: initializing backend `nec'
+[11:22:58.079034] [dll] init: backend `nec' is version 1.0.0
+[11:22:58.079040] [dll] load: searching backend `mustek_usb2' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.079045] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-mustek_usb2.so.1'
+[11:22:58.079051] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-mustek_usb2.so.1' (No such file or directory)
+[11:22:58.079056] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-mustek_usb2.so.1'
+[11:22:58.079063] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-mustek_usb2.so.1'
+[11:22:58.079132] [dll] init: initializing backend `mustek_usb2'
+[11:22:58.079142] [dll] init: backend `mustek_usb2' is version 1.0.10
+[11:22:58.079192] [dll] load: searching backend `mustek_usb' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.079197] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-mustek_usb.so.1'
+[11:22:58.079203] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-mustek_usb.so.1' (No such file or directory)
+[11:22:58.079208] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-mustek_usb.so.1'
+[11:22:58.079216] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-mustek_usb.so.1'
+[11:22:58.079279] [dll] init: initializing backend `mustek_usb'
+[11:22:58.079343] [dll] init: backend `mustek_usb' is version 1.0.18
+[11:22:58.079348] [dll] load: searching backend `mustek' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.079353] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-mustek.so.1'
+[11:22:58.079359] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-mustek.so.1' (No such file or directory)
+[11:22:58.079364] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-mustek.so.1'
+[11:22:58.079372] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-mustek.so.1'
+[11:22:58.079494] [dll] init: initializing backend `mustek'
+[11:22:58.079851] [dll] init: backend `mustek' is version 1.0.138
+[11:22:58.079861] [dll] load: searching backend `microtek2' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.079867] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-microtek2.so.1'
+[11:22:58.079875] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-microtek2.so.1' (No such file or directory)
+[11:22:58.079880] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-microtek2.so.1'
+[11:22:58.079889] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-microtek2.so.1'
+[11:22:58.079964] [dll] init: initializing backend `microtek2'
+[11:22:58.080161] [dll] init: backend `microtek2' is version 1.0.0
+[11:22:58.080169] [dll] load: searching backend `microtek' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.080174] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-microtek.so.1'
+[11:22:58.080180] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-microtek.so.1' (No such file or directory)
+[11:22:58.080186] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-microtek.so.1'
+[11:22:58.080195] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-microtek.so.1'
+[11:22:58.080260] [dll] init: initializing backend `microtek'
+[11:22:58.080449] [dll] init: backend `microtek' is version 1.0.0
+[11:22:58.080454] [dll] load: searching backend `matsushita' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.080459] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-matsushita.so.1'
+[11:22:58.080465] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-matsushita.so.1' (No such file or directory)
+[11:22:58.080470] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-matsushita.so.1'
+[11:22:58.080477] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-matsushita.so.1'
+[11:22:58.080537] [dll] init: initializing backend `matsushita'
+[11:22:58.080950] [dll] init: backend `matsushita' is version 1.0.7
+[11:22:58.080955] [dll] load: searching backend `magicolor' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:58.080960] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-magicolor.so.1'
+[11:22:58.080966] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-magicolor.so.1' (No such file or directory)
+[11:22:58.080971] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-magicolor.so.1'
+[11:22:58.080978] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-magicolor.so.1'
+[11:22:58.081585] [dll] init: initializing backend `magicolor'
+[11:22:58.081643] [dll] init: backend `magicolor' is version 1.0.1
+[11:22:59.588606] [dll] load: searching backend `ma1509' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:59.588630] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ma1509.so.1'
+[11:22:59.588642] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ma1509.so.1' (No such file or directory)
+[11:22:59.588648] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ma1509.so.1'
+[11:22:59.588662] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ma1509.so.1'
+[11:22:59.588816] [dll] init: initializing backend `ma1509'
+[11:22:59.588915] [dll] init: backend `ma1509' is version 1.0.3
+[11:22:59.588923] [dll] load: searching backend `lexmark' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:59.588929] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-lexmark.so.1'
+[11:22:59.588936] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-lexmark.so.1' (No such file or directory)
+[11:22:59.588944] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-lexmark.so.1'
+[11:22:59.588953] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-lexmark.so.1'
+[11:22:59.589039] [dll] init: initializing backend `lexmark'
+[11:22:59.589114] [dll] init: backend `lexmark' is version 1.0.32
+[11:22:59.589178] [dll] load: searching backend `leo' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:59.589184] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-leo.so.1'
+[11:22:59.589191] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-leo.so.1' (No such file or directory)
+[11:22:59.589197] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-leo.so.1'
+[11:22:59.589206] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-leo.so.1'
+[11:22:59.589274] [dll] init: initializing backend `leo'
+[11:22:59.589627] [dll] init: backend `leo' is version 1.0.11
+[11:22:59.589635] [dll] load: searching backend `kvs40xx' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:59.589641] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kvs40xx.so.1'
+[11:22:59.589649] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kvs40xx.so.1' (No such file or directory)
+[11:22:59.589655] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kvs40xx.so.1'
+[11:22:59.589664] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kvs40xx.so.1'
+[11:22:59.589750] [dll] init: initializing backend `kvs40xx'
+[11:22:59.589811] [dll] init: backend `kvs40xx' is version 1.0.1
+[11:22:59.590023] [dll] load: searching backend `kvs20xx' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:59.590029] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kvs20xx.so.1'
+[11:22:59.590037] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kvs20xx.so.1' (No such file or directory)
+[11:22:59.590043] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kvs20xx.so.1'
+[11:22:59.590052] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kvs20xx.so.1'
+[11:22:59.590131] [dll] init: initializing backend `kvs20xx'
+[11:22:59.590191] [dll] init: backend `kvs20xx' is version 1.0.2
+[11:22:59.590611] [dll] load: searching backend `kvs1025' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:59.590618] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kvs1025.so.1'
+[11:22:59.590625] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kvs1025.so.1' (No such file or directory)
+[11:22:59.590631] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kvs1025.so.1'
+[11:22:59.590640] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kvs1025.so.1'
+[11:22:59.590729] [dll] init: initializing backend `kvs1025'
+[11:22:59.590842] [dll] init: backend `kvs1025' is version 1.0.5
+[11:22:59.590849] [dll] load: searching backend `kodakaio' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:22:59.590854] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kodakaio.so.1'
+[11:22:59.590862] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kodakaio.so.1' (No such file or directory)
+[11:22:59.590867] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kodakaio.so.1'
+[11:22:59.590877] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kodakaio.so.1'
+[11:22:59.591486] [dll] init: initializing backend `kodakaio'
+[11:22:59.591547] [dll] init: backend `kodakaio' is version 1.0.3
+[11:23:01.430241] [dll] load: searching backend `kodak' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.430266] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kodak.so.1'
+[11:23:01.430278] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-kodak.so.1' (No such file or directory)
+[11:23:01.430287] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kodak.so.1'
+[11:23:01.430300] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-kodak.so.1'
+[11:23:01.430438] [dll] init: initializing backend `kodak'
+[11:23:01.430446] [dll] init: backend `kodak' is version 1.0.7
+[11:23:01.430602] [dll] load: searching backend `ibm' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.430618] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ibm.so.1'
+[11:23:01.430626] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-ibm.so.1' (No such file or directory)
+[11:23:01.430631] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ibm.so.1'
+[11:23:01.430639] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-ibm.so.1'
+[11:23:01.430723] [dll] init: initializing backend `ibm'
+[11:23:01.430867] [dll] init: backend `ibm' is version 1.0.0
+[11:23:01.430873] [dll] load: searching backend `hs2p' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.430878] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hs2p.so.1'
+[11:23:01.430886] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hs2p.so.1' (No such file or directory)
+[11:23:01.430893] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hs2p.so.1'
+[11:23:01.430904] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hs2p.so.1'
+[11:23:01.430974] [dll] init: initializing backend `hs2p'
+[11:23:01.431169] [dll] init: backend `hs2p' is version 1.0.0
+[11:23:01.431174] [dll] load: searching backend `hpsj5s' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.431179] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hpsj5s.so.1'
+[11:23:01.431185] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hpsj5s.so.1' (No such file or directory)
+[11:23:01.431190] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hpsj5s.so.1'
+[11:23:01.431201] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hpsj5s.so.1'
+[11:23:01.431276] [dll] init: initializing backend `hpsj5s'
+[11:23:01.431292] [dll] init: backend `hpsj5s' is version 1.0.3
+[11:23:01.431300] [dll] load: searching backend `hpljm1005' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.431306] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hpljm1005.so.1'
+[11:23:01.431314] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hpljm1005.so.1' (No such file or directory)
+[11:23:01.431321] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hpljm1005.so.1'
+[11:23:01.431332] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hpljm1005.so.1'
+[11:23:01.431416] [dll] init: initializing backend `hpljm1005'
+[11:23:01.431480] [dll] init: backend `hpljm1005' is version 1.0.1
+[11:23:01.431486] [dll] load: searching backend `hp5590' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.431491] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp5590.so.1'
+[11:23:01.431498] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp5590.so.1' (No such file or directory)
+[11:23:01.431503] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp5590.so.1'
+[11:23:01.431511] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp5590.so.1'
+[11:23:01.431589] [dll] init: initializing backend `hp5590'
+[11:23:01.431641] [dll] init: backend `hp5590' is version 1.0.8
+[11:23:01.431646] [dll] load: searching backend `hp5400' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.431651] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp5400.so.1'
+[11:23:01.431657] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp5400.so.1' (No such file or directory)
+[11:23:01.431663] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp5400.so.1'
+[11:23:01.431671] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp5400.so.1'
+[11:23:01.431741] [dll] init: initializing backend `hp5400'
+[11:23:01.431807] [dll] init: backend `hp5400' is version 1.0.3
+[11:23:01.431813] [dll] load: searching backend `hp4200' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.431818] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp4200.so.1'
+[11:23:01.431825] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp4200.so.1' (No such file or directory)
+[11:23:01.431832] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp4200.so.1'
+[11:23:01.431842] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp4200.so.1'
+[11:23:01.431917] [dll] init: initializing backend `hp4200'
+[11:23:01.431980] [dll] init: backend `hp4200' is version 1.0.0
+[11:23:01.431985] [dll] load: searching backend `hp3900' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.431991] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp3900.so.1'
+[11:23:01.431997] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp3900.so.1' (No such file or directory)
+[11:23:01.432003] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp3900.so.1'
+[11:23:01.432011] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp3900.so.1'
+[11:23:01.433380] [dll] init: initializing backend `hp3900'
+[11:23:01.433451] [dll] init: backend `hp3900' is version 1.0.0
+[11:23:01.433457] [dll] load: searching backend `hp3500' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.433462] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp3500.so.1'
+[11:23:01.433471] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp3500.so.1' (No such file or directory)
+[11:23:01.433478] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp3500.so.1'
+[11:23:01.433487] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp3500.so.1'
+[11:23:01.433565] [dll] init: initializing backend `hp3500'
+[11:23:01.433625] [dll] init: backend `hp3500' is version 1.0.0
+[11:23:01.433633] [dll] load: searching backend `hp' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.433640] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp.so.1'
+[11:23:01.433648] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-hp.so.1' (No such file or directory)
+[11:23:01.433656] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp.so.1'
+[11:23:01.433665] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-hp.so.1'
+[11:23:01.433771] [dll] init: initializing backend `hp'
+[11:23:01.433783] [dll] init: backend `hp' is version 1.0.8
+[11:23:01.434035] [dll] load: searching backend `gt68xx' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.434041] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-gt68xx.so.1'
+[11:23:01.434047] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-gt68xx.so.1' (No such file or directory)
+[11:23:01.434053] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-gt68xx.so.1'
+[11:23:01.434063] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-gt68xx.so.1'
+[11:23:01.434151] [dll] init: initializing backend `gt68xx'
+[11:23:01.434241] [dll] init: backend `gt68xx' is version 1.0.84
+[11:23:01.434315] [dll] load: searching backend `genesys' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.434321] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-genesys.so.1'
+[11:23:01.434327] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-genesys.so.1' (No such file or directory)
+[11:23:01.434333] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-genesys.so.1'
+[11:23:01.434340] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-genesys.so.1'
+[11:23:01.434632] [dll] init: initializing backend `genesys'
+[11:23:01.434950] [dll] init: backend `genesys' is version 1.0.0
+[11:23:01.435012] [dll] load: searching backend `fujitsu' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.435018] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-fujitsu.so.1'
+[11:23:01.435024] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-fujitsu.so.1' (No such file or directory)
+[11:23:01.435029] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-fujitsu.so.1'
+[11:23:01.435036] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-fujitsu.so.1'
+[11:23:01.435118] [dll] init: initializing backend `fujitsu'
+[11:23:01.435130] [dll] init: backend `fujitsu' is version 1.0.140
+[11:23:01.435255] [dll] load: searching backend `epsonds' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:01.435261] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-epsonds.so.1'
+[11:23:01.435267] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-epsonds.so.1' (No such file or directory)
+[11:23:01.435273] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-epsonds.so.1'
+[11:23:01.435280] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-epsonds.so.1'
+[11:23:01.435383] [dll] init: initializing backend `epsonds'
+[11:23:01.435434] [dll] init: backend `epsonds' is version 1.0.0
+[11:23:04.000883] [dll] load: searching backend `epson2' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:04.000905] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-epson2.so.1'
+[11:23:04.000915] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-epson2.so.1' (No such file or directory)
+[11:23:04.000921] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-epson2.so.1'
+[11:23:04.000931] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-epson2.so.1'
+[11:23:04.001083] [dll] init: initializing backend `epson2'
+[11:23:04.001158] [dll] init: backend `epson2' is version 1.0.124
+[11:23:05.001684] [dll] load: searching backend `epjitsu' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.001711] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-epjitsu.so.1'
+[11:23:05.001723] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-epjitsu.so.1' (No such file or directory)
+[11:23:05.001729] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-epjitsu.so.1'
+[11:23:05.001743] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-epjitsu.so.1'
+[11:23:05.001919] [dll] init: initializing backend `epjitsu'
+[11:23:05.001932] [dll] init: backend `epjitsu' is version 1.0.33
+[11:23:05.002045] [dll] load: searching backend `dmc' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.002052] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-dmc.so.1'
+[11:23:05.002059] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-dmc.so.1' (No such file or directory)
+[11:23:05.002065] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-dmc.so.1'
+[11:23:05.002077] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-dmc.so.1'
+[11:23:05.002169] [dll] init: initializing backend `dmc'
+[11:23:05.002352] [dll] init: backend `dmc' is version 1.0.0
+[11:23:05.002359] [dll] load: searching backend `dell1600n_net' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.002365] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-dell1600n_net.so.1'
+[11:23:05.002373] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-dell1600n_net.so.1' (No such file or directory)
+[11:23:05.002382] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-dell1600n_net.so.1'
+[11:23:05.002396] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-dell1600n_net.so.1'
+[11:23:05.002499] [dll] init: initializing backend `dell1600n_net'
+[11:23:05.002504] [dll] init: backend `dell1600n_net' is version 1.0.0
+[11:23:05.302617] [dll] load: searching backend `coolscan3' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.302639] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-coolscan3.so.1'
+[11:23:05.302650] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-coolscan3.so.1' (No such file or directory)
+[11:23:05.302657] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-coolscan3.so.1'
+[11:23:05.302672] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-coolscan3.so.1'
+[11:23:05.302842] [dll] init: initializing backend `coolscan3'
+[11:23:05.302931] [dll] init: backend `coolscan3' is version 1.0.0
+[11:23:05.303054] [dll] load: searching backend `coolscan' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.303062] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-coolscan.so.1'
+[11:23:05.303072] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-coolscan.so.1' (No such file or directory)
+[11:23:05.303080] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-coolscan.so.1'
+[11:23:05.303093] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-coolscan.so.1'
+[11:23:05.303191] [dll] init: initializing backend `coolscan'
+[11:23:05.303428] [dll] init: backend `coolscan' is version 1.0.0
+[11:23:05.303434] [dll] load: searching backend `cardscan' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.303442] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-cardscan.so.1'
+[11:23:05.303450] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-cardscan.so.1' (No such file or directory)
+[11:23:05.303456] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-cardscan.so.1'
+[11:23:05.303466] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-cardscan.so.1'
+[11:23:05.303551] [dll] init: initializing backend `cardscan'
+[11:23:05.303607] [dll] init: backend `cardscan' is version 1.0.3
+[11:23:05.303624] [dll] load: searching backend `canon_lide70' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.303630] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon_lide70.so.1'
+[11:23:05.303637] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon_lide70.so.1' (No such file or directory)
+[11:23:05.303643] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon_lide70.so.1'
+[11:23:05.303652] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon_lide70.so.1'
+[11:23:05.303727] [dll] init: initializing backend `canon_lide70'
+[11:23:05.303819] [dll] init: backend `canon_lide70' is version 1.0.0
+[11:23:05.303833] [dll] load: searching backend `canon_dr' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.303839] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon_dr.so.1'
+[11:23:05.303848] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon_dr.so.1' (No such file or directory)
+[11:23:05.303853] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon_dr.so.1'
+[11:23:05.303861] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon_dr.so.1'
+[11:23:05.303955] [dll] init: initializing backend `canon_dr'
+[11:23:05.303968] [dll] init: backend `canon_dr' is version 1.0.65
+[11:23:05.304158] [dll] load: searching backend `canon630u' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.304164] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon630u.so.1'
+[11:23:05.304171] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon630u.so.1' (No such file or directory)
+[11:23:05.304177] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon630u.so.1'
+[11:23:05.304186] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon630u.so.1'
+[11:23:05.304262] [dll] init: initializing backend `canon630u'
+[11:23:05.304321] [dll] init: backend `canon630u' is version 1.0.1
+[11:23:05.304327] [dll] load: searching backend `canon' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.304332] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon.so.1'
+[11:23:05.304340] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-canon.so.1' (No such file or directory)
+[11:23:05.304346] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon.so.1'
+[11:23:05.304357] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-canon.so.1'
+[11:23:05.304420] [dll] init: initializing backend `canon'
+[11:23:05.304498] [dll] init: backend `canon' is version 1.0.0
+[11:23:05.304503] [dll] load: searching backend `bh' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.304508] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-bh.so.1'
+[11:23:05.304514] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-bh.so.1' (No such file or directory)
+[11:23:05.304521] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-bh.so.1'
+[11:23:05.304533] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-bh.so.1'
+[11:23:05.304612] [dll] init: initializing backend `bh'
+[11:23:05.304808] [dll] init: backend `bh' is version 1.0.4
+[11:23:05.304814] [dll] load: searching backend `avision' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.304821] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-avision.so.1'
+[11:23:05.304829] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-avision.so.1' (No such file or directory)
+[11:23:05.304836] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-avision.so.1'
+[11:23:05.304845] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-avision.so.1'
+[11:23:05.304936] [dll] init: initializing backend `avision'
+[11:23:05.308777] [dll] init: backend `avision' is version 1.0.297
+[11:23:05.312342] [dll] load: searching backend `as6e' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.312348] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-as6e.so.1'
+[11:23:05.312356] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-as6e.so.1' (No such file or directory)
+[11:23:05.312362] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-as6e.so.1'
+[11:23:05.312371] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-as6e.so.1'
+[11:23:05.312439] [dll] init: initializing backend `as6e'
+[11:23:05.312480] [dll] load: searching backend `artec_eplus48u' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.312486] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-artec_eplus48u.so.1'
+[11:23:05.312493] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-artec_eplus48u.so.1' (No such file or directory)
+[11:23:05.312498] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-artec_eplus48u.so.1'
+[11:23:05.312506] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-artec_eplus48u.so.1'
+[11:23:05.312590] [dll] init: initializing backend `artec_eplus48u'
+[11:23:05.312681] [dll] init: backend `artec_eplus48u' is version 1.0.0
+[11:23:05.312688] [dll] load: searching backend `artec' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.312693] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-artec.so.1'
+[11:23:05.312699] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-artec.so.1' (No such file or directory)
+[11:23:05.312705] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-artec.so.1'
+[11:23:05.312712] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-artec.so.1'
+[11:23:05.312772] [dll] init: initializing backend `artec'
+[11:23:05.312958] [dll] init: backend `artec' is version 1.0.0
+[11:23:05.312963] [dll] load: searching backend `apple' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.312968] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-apple.so.1'
+[11:23:05.312973] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-apple.so.1' (No such file or directory)
+[11:23:05.312978] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-apple.so.1'
+[11:23:05.312985] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-apple.so.1'
+[11:23:05.313044] [dll] init: initializing backend `apple'
+[11:23:05.313235] [dll] init: backend `apple' is version 1.0.0
+[11:23:05.313241] [dll] load: searching backend `agfafocus' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.313246] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-agfafocus.so.1'
+[11:23:05.313252] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-agfafocus.so.1' (No such file or directory)
+[11:23:05.313258] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-agfafocus.so.1'
+[11:23:05.313265] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-agfafocus.so.1'
+[11:23:05.313326] [dll] init: initializing backend `agfafocus'
+[11:23:05.313456] [dll] init: backend `agfafocus' is version 1.0.0
+[11:23:05.313461] [dll] load: searching backend `abaton' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.313465] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-abaton.so.1'
+[11:23:05.313473] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-abaton.so.1' (No such file or directory)
+[11:23:05.313480] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-abaton.so.1'
+[11:23:05.313488] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-abaton.so.1'
+[11:23:05.313550] [dll] init: initializing backend `abaton'
+[11:23:05.313734] [dll] init: backend `abaton' is version 1.0.0
+[11:23:05.313739] [dll] load: searching backend `net' in `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib:/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane'
+[11:23:05.313744] [dll] load: trying to load `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-net.so.1'
+[11:23:05.313750] [dll] load: couldn't open `/nix/store/45hwsgjwa6nxxb5rzz2kl68g3ikfprm6-libglvnd-1.7.0/lib/libsane-net.so.1' (No such file or directory)
+[11:23:05.313755] [dll] load: trying to load `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-net.so.1'
+[11:23:05.313762] [dll] load: dlopen()ing `/nix/store/dqy6flh9kq0kdcas3hx3g3cz30p6vwr7-sane-backends-1.3.1/lib/sane/libsane-net.so.1'
+[11:23:05.313843] [dll] init: initializing backend `net'
+[11:23:05.323273] [dll] init: backend `net' is version 1.3.1
+[11:23:05.401363] [dll] sane_get_devices: found 1 devices
+[11:23:05.401376] [dll] sane_exit: exiting
+[11:23:05.401382] [dll] sane_exit: calling backend `xerox_mfp's exit function
+[11:23:05.401423] [dll] sane_exit: calling backend `umax1220u's exit function
+[11:23:05.401451] [dll] sane_exit: calling backend `umax's exit function
+[11:23:05.401481] [dll] sane_exit: calling backend `u12's exit function
+[11:23:05.401502] [dll] sane_exit: calling backend `teco3's exit function
+[11:23:05.401531] [dll] sane_exit: calling backend `teco2's exit function
+[11:23:05.401597] [dll] sane_exit: calling backend `teco1's exit function
+[11:23:05.401626] [dll] sane_exit: calling backend `tamarack's exit function
+[11:23:05.401647] [dll] sane_exit: calling backend `sp15c's exit function
+[11:23:05.401667] [dll] sane_exit: calling backend `snapscan's exit function
+[11:23:05.401692] [dll] sane_exit: calling backend `sm3840's exit function
+[11:23:05.401712] [dll] sane_exit: calling backend `sm3600's exit function
+[11:23:05.401733] [dll] sane_exit: calling backend `sharp's exit function
+[11:23:05.401753] [dll] sane_exit: calling backend `sceptre's exit function
+[11:23:05.401771] [dll] sane_exit: calling backend `s9036's exit function
+[11:23:05.401790] [dll] sane_exit: calling backend `rts8891's exit function
+[11:23:05.401810] [dll] sane_exit: calling backend `ricoh2's exit function
+[11:23:05.401831] [dll] sane_exit: calling backend `ricoh's exit function
+[11:23:05.401848] [dll] sane_exit: calling backend `qcam's exit function
+[11:23:05.401866] [dll] sane_exit: calling backend `plustek's exit function
+[11:23:05.401889] [dll] sane_exit: calling backend `pixma's exit function
+[11:23:05.401912] [dll] sane_exit: calling backend `pieusb's exit function
+[11:23:05.401937] [dll] sane_exit: calling backend `pie's exit function
+[11:23:05.401954] [dll] sane_exit: calling backend `niash's exit function
+[11:23:05.401975] [dll] sane_exit: calling backend `nec's exit function
+[11:23:05.401995] [dll] sane_exit: calling backend `mustek_usb2's exit function
+[11:23:05.402016] [dll] sane_exit: calling backend `mustek_usb's exit function
+[11:23:05.402038] [dll] sane_exit: calling backend `mustek's exit function
+[11:23:05.402059] [dll] sane_exit: calling backend `microtek2's exit function
+[11:23:05.402080] [dll] sane_exit: calling backend `microtek's exit function
+[11:23:05.402099] [dll] sane_exit: calling backend `matsushita's exit function
+[11:23:05.402119] [dll] sane_exit: calling backend `magicolor's exit function
+[11:23:05.402172] [dll] sane_exit: calling backend `ma1509's exit function
+[11:23:05.402191] [dll] sane_exit: calling backend `lexmark's exit function
+[11:23:05.402214] [dll] sane_exit: calling backend `leo's exit function
+[11:23:05.402232] [dll] sane_exit: calling backend `kvs40xx's exit function
+[11:23:05.402252] [dll] sane_exit: calling backend `kvs20xx's exit function
+[11:23:05.402273] [dll] sane_exit: calling backend `kvs1025's exit function
+[11:23:05.402293] [dll] sane_exit: calling backend `kodakaio's exit function
+[11:23:05.402317] [dll] sane_exit: calling backend `kodak's exit function
+[11:23:05.402334] [dll] sane_exit: calling backend `ibm's exit function
+[11:23:05.402353] [dll] sane_exit: calling backend `hs2p's exit function
+[11:23:05.402376] [dll] sane_exit: calling backend `hpsj5s's exit function
+[11:23:05.402403] [dll] sane_exit: calling backend `hpljm1005's exit function
+[11:23:05.402420] [dll] sane_exit: calling backend `hp5590's exit function
+[11:23:05.402437] [dll] sane_exit: calling backend `hp5400's exit function
+[11:23:05.402454] [dll] sane_exit: calling backend `hp4200's exit function
+[11:23:05.402469] [dll] sane_exit: calling backend `hp3900's exit function
+[11:23:05.402489] [dll] sane_exit: calling backend `hp3500's exit function
+[11:23:05.402505] [dll] sane_exit: calling backend `hp's exit function
+[11:23:05.402531] [dll] sane_exit: calling backend `gt68xx's exit function
+[11:23:05.402551] [dll] sane_exit: calling backend `genesys's exit function
+[11:23:05.402619] [dll] sane_exit: calling backend `fujitsu's exit function
+[11:23:05.402637] [dll] sane_exit: calling backend `epsonds's exit function
+[11:23:05.402652] [dll] sane_exit: calling backend `epson2's exit function
+[11:23:05.402671] [dll] sane_exit: calling backend `epjitsu's exit function
+[11:23:05.402689] [dll] sane_exit: calling backend `dmc's exit function
+[11:23:05.402703] [dll] sane_exit: calling backend `dell1600n_net's exit function
+[11:23:05.402792] [dll] sane_exit: calling backend `coolscan3's exit function
+[11:23:05.402806] [dll] sane_exit: calling backend `coolscan's exit function
+[11:23:05.402821] [dll] sane_exit: calling backend `cardscan's exit function
+[11:23:05.402836] [dll] sane_exit: calling backend `canon_lide70's exit function
+[11:23:05.402849] [dll] sane_exit: calling backend `canon_dr's exit function
+[11:23:05.402864] [dll] sane_exit: calling backend `canon630u's exit function
+[11:23:05.402879] [dll] sane_exit: calling backend `canon's exit function
+[11:23:05.402893] [dll] sane_exit: calling backend `bh's exit function
+[11:23:05.402907] [dll] sane_exit: calling backend `avision's exit function
+[11:23:05.402929] [dll] sane_exit: calling backend `artec_eplus48u's exit function
+[11:23:05.402944] [dll] sane_exit: calling backend `artec's exit function
+[11:23:05.402957] [dll] sane_exit: calling backend `apple's exit function
+[11:23:05.402970] [dll] sane_exit: calling backend `agfafocus's exit function
+[11:23:05.402984] [dll] sane_exit: calling backend `abaton's exit function
+[11:23:05.402995] [dll] sane_exit: calling backend `net's exit function
+[11:23:05.403227] [dll] sane_exit: finished
+device `net:localhost:brother4:net1;dev0' is a Brother *home Brother_MFC_B7715DW
