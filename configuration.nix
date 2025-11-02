@@ -327,14 +327,18 @@
       4455 # with-fire-and-sword
       8080 # trunk
     ]
-    ++ (builtins.genList (x: x + 30000) 1001); # Opens 30000-31000 for unftp;
-  networking.firewall.allowedUDPPorts = [
-    22 # ssh
-    21 # unftp
-    2121 # unftp
-    4455 # with-fire-and-sword
-    8080 # trunk
-  ];
+    ++ (builtins.genList (x: x + 30000) 1001) # Opens 30000-31000 for unftp;
+    ++ ([47624] ++ (builtins.genList (x: x + 2300) 101)); # heroes 3
+  networking.firewall.allowedUDPPorts =
+    [
+      22 # ssh
+      21 # unftp
+      2121 # unftp
+      4455 # with-fire-and-sword
+      8080 # trunk
+    ]
+    ++ ([47624] ++ (builtins.genList (x: x + 2300) 101)); # heroes 3
+
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
