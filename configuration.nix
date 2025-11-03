@@ -38,12 +38,12 @@
   };
 
   # virtualbox
-  virtualisation.virtualbox = {
-    host.enable = true;
-    host.enableExtensionPack = true;
-    guest.enable = true;
-    guest.dragAndDrop = true;
-  };
+  # virtualisation.virtualbox = {
+  #   host.enable = true;
+  #   host.enableExtensionPack = true;
+  #   guest.enable = true;
+  #   guest.dragAndDrop = true;
+  # };
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
   services.flatpak.enable = true;
   services.atd.enable = true;
