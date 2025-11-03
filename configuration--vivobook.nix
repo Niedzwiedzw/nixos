@@ -18,11 +18,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # RAID config
-  boot.swraid = {
-    enable = true;
-    mdadmConf = builtins.readFile ./mdadm.conf;
-  };
+  # # RAID config
+  # boot.swraid = {
+  #   enable = true;
+  #   mdadmConf = builtins.readFile ./mdadm.conf;
+  # };
   services.flatpak.enable = true;
   services.atd.enable = true;
 
