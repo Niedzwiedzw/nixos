@@ -72,5 +72,15 @@
         catppuccin.homeModules.catppuccin
       ];
     };
+    homeConfigurations.vivobook = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      extraSpecialArgs = {
+        helix-flake = helix;
+      };
+      modules = [
+        ./home-manager.nix
+        catppuccin.homeManagerModules.catppuccin
+      ];
+    };
   };
 }

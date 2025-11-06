@@ -33,7 +33,6 @@
   boot.initrd.kernelModules = [
     "amdgpu"
   ];
-  boot.kernelPackages = pkgs.linuxPackages_6_9;
 
   services.xserver.videoDrivers = ["amdgpu"];
   hardware.graphics.enable = true;
