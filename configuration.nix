@@ -243,7 +243,6 @@
     dejavu_fonts
 
     # utils
-    comma
     teamviewer
     desktop-file-utils
     xdg-utils

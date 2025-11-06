@@ -70,6 +70,10 @@
       modules = [
         ./home-manager.nix
         catppuccin.homeModules.catppuccin
+        # NIX INDEX
+        nix-index-database.homeModules.nix-index
+        # optional to also wrap and install comma
+        {programs.nix-index-database.comma.enable = true;}
       ];
     };
     homeConfigurations.vivobook = home-manager.lib.homeManagerConfiguration {
@@ -80,6 +84,10 @@
       modules = [
         ./home-manager.nix
         catppuccin.homeManagerModules.catppuccin
+        # NIX INDEX
+        nix-index-database.homeModules.nix-index
+        # optional to also wrap and install comma
+        {programs.nix-index-database.comma.enable = true;}
       ];
     };
   };
