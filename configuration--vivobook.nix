@@ -23,6 +23,10 @@
   #   enable = true;
   #   mdadmConf = builtins.readFile ./mdadm.conf;
   # };
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
   services.flatpak.enable = true;
   services.atd.enable = true;
 
