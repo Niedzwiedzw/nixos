@@ -168,6 +168,7 @@
     desktop-file-utils
     xdg-utils
     gnome-software
+    comma
 
     # scanner, printer
     qpdf

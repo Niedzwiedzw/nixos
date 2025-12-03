@@ -8,11 +8,6 @@
     jack.enable = true;
     wireplumber.enable = true;
     wireplumber = {
-      extraConfig = {
-        "context.scripts/99-setup-audio.lua" = {
-          text = builtins.readFile ./setup-audio.lua;
-        };
-      };
       configPackages = [
         (pkgs.writeTextDir "share/wireplumber/main.lua.d/99-alsa-lowlatency.lua" ''
           alsa_monitor.rules = {

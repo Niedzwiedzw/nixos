@@ -46,6 +46,11 @@
   #   guest.dragAndDrop = true;
   # };
   users.extraGroups.vboxusers.members = ["niedzwiedz"];
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   services.flatpak.enable = true;
   services.atd.enable = true;
 
@@ -247,6 +252,7 @@
     desktop-file-utils
     xdg-utils
     gnome-software
+    comma
 
     # scanner, printer
     qpdf
