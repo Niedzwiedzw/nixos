@@ -13,6 +13,7 @@
     # ./modules/magewell-legacy-compat.nix
     ./modules/wireguard.nix
     ./modules/gaming.nix
+    ./modules/performance-optimisations-main-machine.nix
   ];
 
   # Bootloader.

@@ -1,17 +1,9 @@
-{
-  config,
-  pkgs,
-  lib,
-}: {
+{pkgs, ...}: {
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelParams = [
     # AMD P-State EPP driver
     # (Modern frequency driver for 7800X3D)
-    "amd_pstate=active"
-
-    # Optional: disable security mitigations for ~5% perf gain
-    # Only uncomment if you understand the security tradeoff
-    "mitigations=off"
+    "amd_pstate=guided"
 
     # Reduce verbosity for faster boot
     "quiet"
@@ -25,9 +17,6 @@
   '';
 
   boot.kernel.sysctl = {
-    # Low swappiness - you have 64GB RAM, prefer keeping things in memory
-    "vm.swappiness" = 10;
-
     # Keep inode/dentry caches longer
     "vm.vfs_cache_pressure" = 50;
 
@@ -70,6 +59,5 @@
     powertop = {
       enable = true;
     };
-    cpuFreqGovernor = "ondemand";
   };
 }
