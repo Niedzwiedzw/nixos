@@ -40,6 +40,7 @@
       "llm" = "uv --directory ~/nixos/nix-shells/llm-shell run llm";
       # zellij helper
       "zz" = "zellij attach -c (echo $PWD | string replace -a '/' '-' | string trim --chars=-)";
+      "firefox-nightly" = "/home/niedzwiedz/nixos/scripts/firefox-nightly";
       # movement
       "htop" = "btm";
       ".." = "cd ..";

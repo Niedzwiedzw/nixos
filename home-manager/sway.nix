@@ -17,6 +17,12 @@
     pngquant
     alacritty
     emoji-picker
+
+    # ocr
+    tesseract
+    # tesseract-english
+    # tesseract-polish
+    imagemagick
   ];
 
   home.sessionVariables = {
@@ -86,7 +92,9 @@
       output * bg /home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill
 
       # keybinds
-      bindsym Mod4+Shift+x exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | wl-copy -t image/png
+      bindsym Mod4+Shift+x exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant | tee /tmp/screenshot.png | wl-copy -t image/png
+      bindsym Mod4+Shift+v exec grim -g "$(slurp -d)" - | convert - -resize 300% -sharpen 0x1.0 - | tesseract stdin stdout -l eng+pol | wl-copy
+
       bindsym Mod4+Shift+w exec alacritty -e ep
 
       # hibernation

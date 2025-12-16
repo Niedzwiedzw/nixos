@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+nix run --offline github:nix-community/flake-firefox-nightly/master#firefox-nightly-bin -- -p default $argv
