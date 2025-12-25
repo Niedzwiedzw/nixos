@@ -106,6 +106,7 @@
 
     config = {
       startup = [
+        {command = "nm-applet";}
         {command = "signal-desktop";}
         {command = "betterbird";}
         {command = "slack";}
