@@ -12,6 +12,7 @@
     # only enable for magewell (mwcap) sessions
     # ./modules/magewell-legacy-compat.nix
     ./modules/wireguard--vivobook.nix
+    ./modules/vivobook--tplink-wifi.nix
   ];
 
   # Bootloader.

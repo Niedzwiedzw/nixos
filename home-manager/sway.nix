@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  home.sessionPath = ["/home/niedzwiedz/.local/bin"];
   home.packages = with pkgs; [
     qt5.qtwayland
     waybar

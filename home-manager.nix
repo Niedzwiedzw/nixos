@@ -37,6 +37,10 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      # sysadmin stuff
+      usbutils
+
+      # terminal
       eza
       uv
       fd
