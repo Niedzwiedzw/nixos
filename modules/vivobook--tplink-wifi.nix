@@ -1,7 +1,7 @@
 {...}: {
   boot = {
-    kernelModules = ["8192eu"];
-    blacklistedKernelModules = ["rtl8xxxu"];
+    # kernelModules = ["8192eu"];
+    # blacklistedKernelModules = ["rtl8xxxu"];
   };
   networking = {
     # wireless.enable = true;

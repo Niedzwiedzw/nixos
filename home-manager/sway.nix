@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.sessionPath = ["/home/niedzwiedz/.local/bin"];
+  home.sessionPath = ["/home/niedzwiedz/.local/bin" "/home/niedzwiedz/nixos/scripts"];
   home.packages = with pkgs; [
     networkmanagerapplet
     qt5.qtwayland
