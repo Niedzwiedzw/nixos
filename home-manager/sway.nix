@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.sessionPath = ["/home/niedzwiedz/.local/bin"];
   home.packages = with pkgs; [
+    networkmanagerapplet
     qt5.qtwayland
     waybar
     dmenu
