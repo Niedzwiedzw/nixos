@@ -1,7 +1,4 @@
 {...}: {
-  # boot.kernelPackages = pkgs.linuxPackages_zen;
-  # boot.loader.timeout = 1;
-
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "16G";
 
