@@ -3,7 +3,7 @@
     git
     difftastic
     gnupg
-    pinentry
+    pinentry-curses
   ];
   programs.git = {
     enable = true;

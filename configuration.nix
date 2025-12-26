@@ -162,22 +162,10 @@
     ];
   };
 
-  # STYLIX
-  stylix = {
-    enable = true;
-    image = ./my-wallpaper-malysz-tajner-chester-linkin-park.png;
-    polarity = "dark";
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 10;
-    };
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  };
   fonts = with pkgs; {
     packages = [
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       dejavu_fonts
       # noto-fonts-cjk-sans
       liberation_ttf
@@ -245,11 +233,10 @@
   environment.systemPackages = with pkgs; [
     # global fonts
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     dejavu_fonts
 
     # utils
-    teamviewer
     desktop-file-utils
     xdg-utils
     gnome-software
@@ -281,7 +268,7 @@
     # amdvlk
     amdgpu_top
     vulkan-tools
-    glxinfo
+    mesa-demos
     vulkan-headers
     vulkan-loader
     vulkan-extension-layer

@@ -1,21 +1,17 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
     };
     musnix = {url = "github:musnix/musnix";};
-    stylix = {
-      url = "github:nix-community/stylix/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    catppuccin = {
-      url = "github:catppuccin/nix/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # catppuccin = {
+    #   url = "github:catppuccin/nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     helix.url = "github:helix-editor/helix";
     # nix index provides up-to-date binary cache
     nix-index-database.url = "github:nix-community/nix-index-database";
@@ -26,8 +22,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    stylix,
-    catppuccin,
+    # catppuccin,
     helix,
     nix-index-database,
     ...
@@ -38,8 +33,7 @@
     nixosConfigurations.niedzwiedz = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        catppuccin.nixosModules.catppuccin
-        stylix.nixosModules.stylix
+        # catppuccin.nixosModules.catppuccin
         inputs.musnix.nixosModules.musnix
 
         ./configuration.nix
@@ -51,8 +45,7 @@
     nixosConfigurations.vivobook = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        catppuccin.nixosModules.catppuccin
-        stylix.nixosModules.stylix
+        # catppuccin.nixosModules.catppuccin
         # inputs.musnix.nixosModules.musnix
 
         ./configuration--vivobook.nix
@@ -69,7 +62,7 @@
       };
       modules = [
         ./home-manager.nix
-        catppuccin.homeModules.catppuccin
+        # catppuccin.homeModules.catppuccin
         # NIX INDEX
         nix-index-database.homeModules.nix-index
         # optional to also wrap and install comma
@@ -83,7 +76,7 @@
       };
       modules = [
         ./home-manager.nix
-        catppuccin.homeManagerModules.catppuccin
+        # catppuccin.homeManagerModules.catppuccin
         # NIX INDEX
         nix-index-database.homeModules.nix-index
         # optional to also wrap and install comma

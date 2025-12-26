@@ -18,25 +18,24 @@
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
-    gamemode = {
-      enable = true;
-      settings = {
-        general = {
-          renice = 10;
-        };
-        gpu = {
-          apply_gpu_optimisations = "accept-responsibility";
-          gpu_device = 0;
-        };
-      };
-    };
+    # gamemode = {
+    #   enable = true;
+    #   settings = {
+    #     general = {
+    #       renice = 10;
+    #     };
+    #     gpu = {
+    #       apply_gpu_optimisations = "accept-responsibility";
+    #       gpu_device = 0;
+    #     };
+    #   };
+    # };
   };
 
   environment.systemPackages = with pkgs; [
     steamtinkerlaunch
     protonup-qt
     mangohud
-    gamemode
     # WINE
     winetricks
     protontricks
