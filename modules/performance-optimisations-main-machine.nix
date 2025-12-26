@@ -8,6 +8,7 @@
     # Reduce verbosity for faster boot
     "quiet"
     "loglevel=3"
+    "usbcore.autosuspend=-1"
   ];
   boot.loader.timeout = 1;
 
