@@ -30,7 +30,7 @@
   # /CATPUCCIN
 
   home = {
-    stateVersion = "24.05";
+    stateVersion = "24.11";
     sessionPath = [
       "$HOME/.cargo/bin"
     ];
