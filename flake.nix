@@ -4,7 +4,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/master";
     };
     musnix = {url = "github:musnix/musnix";};
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
