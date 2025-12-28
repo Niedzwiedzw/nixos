@@ -195,6 +195,19 @@
     # crypto
     cryptsetup
   ];
+  # sshd
+  services.openssh = {
+    enable = true;
+    ports = [22];
+    settings = {
+      PasswordAuthentication = false;
+      AllowUsers = ["niedzwiedz"]; # Allows all users by default. Can be [ "user1" "user2" ]
+      UseDns = false;
+      X11Forwarding = false;
+      GSSAPIAuthentication = "no";
+      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    };
+  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts =
