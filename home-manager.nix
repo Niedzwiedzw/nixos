@@ -20,13 +20,13 @@
     };
   };
   # CATPUCCIN
-  # catppuccin = {
-  #   enable = true;
-  #   flavor = "mocha";
-  #   cursors.enable = true;
-  #   kvantum.enable = true;
-  #   gtk.icon.enable = true;
-  # };
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    cursors.enable = true;
+    kvantum.enable = true;
+    gtk.icon.enable = true;
+  };
   # /CATPUCCIN
 
   home = {

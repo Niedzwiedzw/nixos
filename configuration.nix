@@ -8,12 +8,12 @@
     ./modules/audio-setup.nix
     ./modules/brother-printer.nix
     ./modules/jellyfin.nix
-    # ./modules/hibernation.nix
+    ./modules/hibernation.nix
     # only enable for magewell (mwcap) sessions
     # ./modules/magewell-legacy-compat.nix
     ./modules/wireguard.nix
-    # ./modules/gaming.nix
-    # ./modules/performance-optimisations-main-machine.nix
+    ./modules/gaming.nix
+    ./modules/performance-optimisations-main-machine.nix
   ];
 
   # Bootloader.
@@ -135,7 +135,7 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11

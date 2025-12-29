@@ -8,10 +8,10 @@
     };
     musnix = {url = "github:musnix/musnix";};
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    # catppuccin = {
-    #   url = "github:catppuccin/nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     helix.url = "github:helix-editor/helix";
     # nix index provides up-to-date binary cache
     nix-index-database.url = "github:nix-community/nix-index-database";
@@ -22,7 +22,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    # catppuccin,
+    catppuccin,
     helix,
     nix-index-database,
     ...
@@ -33,7 +33,7 @@
     nixosConfigurations.niedzwiedz = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        # catppuccin.nixosModules.catppuccin
+        catppuccin.nixosModules.catppuccin
         inputs.musnix.nixosModules.musnix
 
         ./configuration.nix
@@ -62,7 +62,7 @@
       };
       modules = [
         ./home-manager.nix
-        # catppuccin.homeModules.catppuccin
+        catppuccin.homeModules.catppuccin
         # NIX INDEX
         nix-index-database.homeModules.nix-index
         # optional to also wrap and install comma
