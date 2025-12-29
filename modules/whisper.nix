@@ -1,20 +1,32 @@
 {pkgs, ...}: let
-  python-with-rocm = pkgs.python3.override {
-    packageOverrides = self: super: {
-      torch = super.torch-bin.override {
-        openai-whisper = super.openai-whisper.override {
-          torch = self.torch;
-        };
-      };
-    };
-  };
+  whisper-cpp-hip = pkgs.whisper-cpp.overrideAttrs (old: {
+    cmakeFlags =
+      (old.cmakeFlags or [])
+      ++ [
+        "-DGGML_HIP=ON"
+        "-DAMDGPU_TARGETS=gfx1100"
+        "-DCMAKE_HIP_ARCHITECTURES=gfx1100"
+      ];
+    buildInputs =
+      (old.buildInputs or [])
+      ++ [
+        pkgs.rocmPackages.clr
+        pkgs.rocmPackages.hipblas
+        pkgs.rocmPackages.rocblas
+      ];
+  });
 
-  openai-whisper-rocm = pkgs.openai-whisper.override {
-    torch = pkgs.python3Packages.torchWithRocm;
-  };
+  modelName = "large-v3-turbo-q5_0";
+  modelsPath = "/tmp/models";
+  modelFullPath = "${modelsPath}/ggml-${modelName}.bin";
   whisper-pl = pkgs.writeShellScriptBin "whisper-pl" ''
     export HSA_OVERRIDE_GFX_VERSION=11.0.0
-    ${pkgs.openai-whisper}/bin/whisper --language Polish --device cuda --model turbo "$@"
+    set -e
+
+    mkdir -p ${modelsPath}
+
+    ${whisper-cpp-hip}/bin/whisper-cpp-download-ggml-model ${modelName} ${modelsPath}
+    ${whisper-cpp-hip}/bin/whisper-cli --model ${modelFullPath} -l pl "$@"
   '';
 in {
   hardware.graphics.extraPackages = with pkgs; [
@@ -29,8 +41,7 @@ in {
   users.users.niedzwiedz.extraGroups = ["video" "render"];
 
   environment.systemPackages = with pkgs; [
-    python-with-rocm
-    openai-whisper-rocm
+    whisper-cpp-hip
     ffmpeg
     whisper-pl
     rocmPackages.rocm-smi # useful for checking GPU status
