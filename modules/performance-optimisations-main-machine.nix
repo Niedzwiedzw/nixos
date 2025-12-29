@@ -21,10 +21,10 @@
   services.thermald.enable = true;
   powerManagement = {
     enable = true;
-    powertop = {
-      enable = true;
-    };
+    # powertop = {
+    #   enable = true;
+    # };
   };
   # Disable USB autosuspend globally
-  boot.kernelParams = ["usbcore.autosuspend=-1"];
+  # boot.kernelParams = ["usbcore.autosuspend=-1"];
 }
