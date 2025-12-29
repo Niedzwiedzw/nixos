@@ -12,6 +12,7 @@
     # only enable for magewell (mwcap) sessions
     # ./modules/magewell-legacy-compat.nix
     ./modules/wireguard--vivobook.nix
+    ./modules/font-config.nix
   ];
 
   # Bootloader.
@@ -97,39 +98,6 @@
     ];
   };
 
-  fonts = with pkgs; {
-    packages = [
-      noto-fonts
-      noto-fonts-color-emoji
-      dejavu_fonts
-      # noto-fonts-cjk-sans
-      liberation_ttf
-      fira-code
-      fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
-      proggyfonts
-      nerd-fonts.fira-code
-      nerd-fonts.droid-sans-mono
-      nerd-fonts.iosevka
-      # Maple Mono (Ligature TTF unhinted)
-      maple-mono.truetype
-      # Maple Mono NF (Ligature unhinted)
-      maple-mono.NF-unhinted
-      # Maple Mono NF CN (Ligature unhinted)
-      maple-mono.NF-CN-unhinted
-    ];
-    enableDefaultPackages = true;
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        sansSerif = ["Noto Sans"];
-        monospace = ["DejaVu Sans Mono"];
-        emoji = ["Noto Color Emoji"];
-      };
-    };
-  };
-
   services.gvfs.enable = true;
   programs = {
     thunar = {
@@ -146,11 +114,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # global fonts
-    noto-fonts
-    noto-fonts-color-emoji
-    dejavu_fonts
-
     # utils
     desktop-file-utils
     xdg-utils

@@ -94,7 +94,7 @@
       output * bg /home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill
 
       # keybinds
-      bindsym Mod4+Shift+x exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant | tee /tmp/screenshot.png | wl-copy -t image/png
+      bindsym Mod4+Shift+x exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | tee /tmp/screenshot.png | wl-copy -t image/png
       bindsym Mod4+Shift+v exec grim -g "$(slurp -d)" - | convert - -resize 300% -sharpen 0x1.0 - | tesseract stdin stdout -l eng+pol | wl-copy
 
       bindsym Mod4+Shift+w exec alacritty -e ep
@@ -468,7 +468,6 @@
             	transition: none;
             	color: #161320;
             	background: #ABE9B3;
-            	/*background: #1A1826;*/
             }
             #custom-notification {
             	margin-top: 6px;
@@ -481,6 +480,7 @@
             	transition: none;
             	color: #161320;
             	background: #E8A2AF;
+              font-family: "NotoSansMono Nerd Font";
             }
             #custom-lock {
             	margin-top: 6px;
