@@ -33,6 +33,7 @@
     stateVersion = "24.11";
     sessionPath = [
       "$HOME/.cargo/bin"
+      "$HOME/nixos/scripts"
     ];
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
