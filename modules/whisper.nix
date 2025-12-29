@@ -1,5 +1,19 @@
 {pkgs, ...}: let
+  python-with-rocm = pkgs.python3.override {
+    packageOverrides = self: super: {
+      torch = super.torch-bin.override {
+        openai-whisper = super.openai-whisper.override {
+          torch = self.torch;
+        };
+      };
+    };
+  };
+
+  openai-whisper-rocm = pkgs.openai-whisper.override {
+    torch = pkgs.python3Packages.torchWithRocm;
+  };
   whisper-pl = pkgs.writeShellScriptBin "whisper-pl" ''
+    export HSA_OVERRIDE_GFX_VERSION=11.0.0
     ${pkgs.openai-whisper}/bin/whisper --language Polish --device cuda --model turbo "$@"
   '';
 in {
@@ -15,7 +29,8 @@ in {
   users.users.niedzwiedz.extraGroups = ["video" "render"];
 
   environment.systemPackages = with pkgs; [
-    openai-whisper
+    python-with-rocm
+    openai-whisper-rocm
     ffmpeg
     whisper-pl
     rocmPackages.rocm-smi # useful for checking GPU status
