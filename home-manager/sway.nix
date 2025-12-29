@@ -335,7 +335,7 @@
             * {
             	border: none;
             	border-radius: 10;
-              font-family: "Maple Mono NF 11";
+              font-family: "Maple Mono NF";
             	font-size: 15px;
             	min-height: 10px;
             }

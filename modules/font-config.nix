@@ -11,10 +11,10 @@
     ];
 
     fontconfig.defaultFonts = {
-      monospace = ["Maple Mono"];
-      sansSerif = ["Maple Mono"];
-      serif = ["Maple Mono"];
-      emoji = ["Noto Color Emoji"];
+      monospace = ["Maple Mono NF" "Maple Mono"];
+      sansSerif = ["Maple Mono NF" "Maple Mono"];
+      serif = ["Maple Mono NF" "Maple Mono"];
+      emoji = ["Maple Mono NF" "Noto Color Emoji"];
     };
   };
 }
