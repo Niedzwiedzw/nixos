@@ -15,6 +15,7 @@
     ./modules/gaming.nix
     ./modules/performance-optimisations-main-machine.nix
     ./modules/font-config.nix
+    ./modules/whisper.nix
   ];
 
   # Bootloader.
