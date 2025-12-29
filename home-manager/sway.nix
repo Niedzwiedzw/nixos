@@ -205,7 +205,7 @@
     settings = {
       effect-blur = "20x2";
       fade-in = "0.5";
-      font = "Roboto";
+      font = "Maple Mono NF";
       indicator-radius = 100;
       indicator-thickness = 7;
     };
@@ -335,7 +335,7 @@
             * {
             	border: none;
             	border-radius: 10;
-              font-family: "Cantarell, Noto Sans, sans-serif";
+              font-family: "Maple Mono NF 11";
             	font-size: 15px;
             	min-height: 10px;
             }
@@ -480,7 +480,6 @@
             	transition: none;
             	color: #161320;
             	background: #E8A2AF;
-              font-family: "NotoSansMono Nerd Font";
             }
             #custom-lock {
             	margin-top: 6px;

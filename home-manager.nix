@@ -125,7 +125,7 @@
         };
         fonts = {
           size = 16;
-          family = "Maple Mono";
+          family = "Maple Mono NF";
         };
         # fonts.extras = [
         #   {family = "Noto Color Emoji";}
