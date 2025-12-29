@@ -5,10 +5,15 @@
     gnupg
     pinentry-curses
   ];
-  programs.git = {
-    enable = true;
-    difftastic.enable = true;
-    lfs.enable = true;
+  programs = {
+    git = {
+      enable = true;
+      lfs.enable = true;
+    };
+    difftastic = {
+      enable = true;
+      git.enable = true;
+    };
   };
 
   xdg.configFile."~/.gitconfig".source = ./git/gitconfig.local;
