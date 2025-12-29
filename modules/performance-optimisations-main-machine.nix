@@ -25,4 +25,6 @@
       enable = true;
     };
   };
+  # Disable USB autosuspend globally
+  boot.kernelParams = ["usbcore.autosuspend=-1"];
 }
