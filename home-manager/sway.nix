@@ -121,7 +121,7 @@
         {command = "kdeconnect-app";}
       ];
       modifier = "Mod4";
-      menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu -b | ${pkgs.findutils}/bin/xargs swaymsg exec --";
+      menu = "/home/niedzwiedz/nixos/scripts/dmenu-wrapped.sh";
       terminal = "rio";
       input = {
         "*" = {
