@@ -45,7 +45,7 @@
     nixosConfigurations.vivobook = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        # catppuccin.nixosModules.catppuccin
+        catppuccin.nixosModules.catppuccin
         # inputs.musnix.nixosModules.musnix
 
         ./configuration--vivobook.nix
@@ -76,7 +76,7 @@
       };
       modules = [
         ./home-manager.nix
-        # catppuccin.homeManagerModules.catppuccin
+        catppuccin.homeManagerModules.catppuccin
         # NIX INDEX
         nix-index-database.homeModules.nix-index
         # optional to also wrap and install comma
