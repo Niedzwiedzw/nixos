@@ -25,6 +25,8 @@
     # tesseract-english
     # tesseract-polish
     imagemagick
+    # bluetooth
+    overskride
   ];
 
   home.sessionVariables = {

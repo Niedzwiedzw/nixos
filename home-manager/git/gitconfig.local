@@ -1,8 +1,12 @@
 [user]
 	email = niedzwiedzwo@gmail.com
 	name = niedzwiedzw
+
 [includeIf "gitdir:~/crionis/"]
 	path = ~/crionis/.gitconfig
+
+[includeIf "gitdir:~/exein/"]
+	path = ~/exein/.gitconfig
 
 [core]
 	excludesfile = ~/.global-git-ignores

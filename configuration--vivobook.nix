@@ -30,6 +30,25 @@
   };
   services.flatpak.enable = true;
   services.atd.enable = true;
+  virtualisation = {
+    containers.enable = true;
+    # docker = {
+    #   enable = true;
+    #   # Optional: enable on boot
+    #   enableOnBoot = true;
+    #   # Use rootless Docker (more secure)
+    #   rootless = {
+    #     enable = true;
+    #     setSocketVariable = true;
+    #   };
+    # };
+
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -92,7 +111,7 @@
   users.users.niedzwiedz = {
     isNormalUser = true;
     description = "niedzwiedz";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "docker"];
+    extraGroups = ["docker" "podman" "networkmanager" "wheel" "audio" "video"];
     packages = with pkgs; [
       home-manager
     ];
@@ -208,6 +227,13 @@
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
+
+  # == BLUETOOTH ==
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts =
