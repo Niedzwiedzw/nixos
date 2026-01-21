@@ -54,6 +54,19 @@
       ];
       specialArgs = {inherit inputs;};
     };
+    nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [
+        catppuccin.nixosModules.catppuccin
+        # inputs.musnix.nixosModules.musnix
+
+        ./configuration--thinkpad.nix
+
+        nix-index-database.nixosModules.nix-index
+      ];
+      specialArgs = {inherit inputs;};
+    };
+
     # home
     homeConfigurations.niedzwiedz = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
@@ -70,6 +83,20 @@
       ];
     };
     homeConfigurations.vivobook = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      extraSpecialArgs = {
+        helix-flake = helix;
+      };
+      modules = [
+        ./home-manager.nix
+        catppuccin.homeManagerModules.catppuccin
+        # NIX INDEX
+        nix-index-database.homeModules.nix-index
+        # optional to also wrap and install comma
+        {programs.nix-index-database.comma.enable = true;}
+      ];
+    };
+    homeConfigurations.thinkpad = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         helix-flake = helix;

@@ -30,7 +30,7 @@
   # /CATPUCCIN
 
   home = {
-    stateVersion = "24.11";
+    stateVersion = "25.11";
     sessionPath = [
       "$HOME/.cargo/bin"
       "$HOME/nixos/scripts"
