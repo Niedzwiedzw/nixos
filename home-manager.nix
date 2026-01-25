@@ -72,7 +72,6 @@
       slack
       rclone
       steam
-      nexusmods-app
       gedit
       protontricks
       (lutris.override {
