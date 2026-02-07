@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  startupPrograms,
+  ...
+}: {
   home.sessionPath = ["/home/niedzwiedz/.local/bin" "/home/niedzwiedz/nixos/scripts"];
   home.packages = with pkgs; [
     networkmanagerapplet
@@ -108,20 +112,7 @@
     '';
 
     config = {
-      startup = [
-        {command = "nm-applet";}
-        {command = "signal-desktop";}
-        {command = "betterbird";}
-        {command = "slack";}
-        {command = "discord";}
-        {command = "keepassxc";}
-        {command = "xrandr --output HDMI-A-1 --primary";}
-        {command = "thunderbird";}
-        {command = "autotiling";}
-        # kde connect
-        {command = "kdeconnectd --replace &";}
-        {command = "kdeconnect-app";}
-      ];
+      startup = builtins.map (it: {command = it;}) startupPrograms;
       modifier = "Mod4";
       menu = "/home/niedzwiedz/nixos/scripts/dmenu-wrapped.sh";
       terminal = "rio";
@@ -227,7 +218,7 @@
         # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
         modules-left = ["sway/workspaces"];
         modules-center = ["sway/window"];
-        modules-right = ["cpu" "memory" "temperature#cpu" "temperature#gpu" "network" "clock" "idle_inhibitor" "custom/lock" "custom/notification" "tray"];
+        modules-right = ["cpu" "memory" "temperature#cpu" "temperature#gpu" "network" "clock" "idle_inhibitor" "custom/lock" "custom/notification" "battery" "tray"];
         "idle_inhibitor" = {
           format = "{icon}";
           format-icons = {
@@ -301,6 +292,17 @@
           "format-ethernet" = "🕸️  {ifname}: {ipaddr}/{cidr}"; #  Icon= ethernet
           "format-disconnected" = "⚠  Disconnected";
           "tooltip-format" = "{ifname}= {ipaddr}";
+        };
+        "battery" = {
+          "states" = {
+            "warning" = 30;
+            "critical" = 1;
+          };
+          "format" = "<span color='#28CD41'> {icon} </span>{capacity}% ";
+          "format-charging" = " 󱐋{capacity}%";
+          "interval" = 1;
+          "format-icons" = ["󰂎" "󰁼" "󰁿" "󰂁" "󰁹"];
+          "tooltip" = true;
         };
 
         "temperature#cpu" = {

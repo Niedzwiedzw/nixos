@@ -14,6 +14,7 @@
     ./modules/wireguard--thinkpad.nix
     ./modules/power-management-laptop.nix
     ./modules/font-config.nix
+    ./modules/gaming.nix
   ];
 
   # Bootloader.

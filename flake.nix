@@ -4,12 +4,12 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-25.11";
     };
     musnix = {url = "github:musnix/musnix";};
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     catppuccin = {
-      url = "github:catppuccin/nix";
+      url = "github:catppuccin/nix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix.url = "github:helix-editor/helix";
@@ -28,6 +28,19 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    startupPrograms = [
+      "nm-applet"
+      "signal-desktop"
+      "betterbird"
+      "slack"
+      "discord"
+      "keepassxc"
+      "xrandr --output HDMI-A-1 --primary"
+      "thunderbird"
+      "autotiling"
+      "kdeconnectd --replace &"
+      "kdeconnect-app"
+    ];
   in {
     # nixos`
     nixosConfigurations.niedzwiedz = nixpkgs.lib.nixosSystem {
@@ -72,6 +85,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         helix-flake = helix;
+        startupPrograms = startupPrograms;
       };
       modules = [
         ./home-manager.nix
@@ -86,6 +100,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         helix-flake = helix;
+        startupPrograms = startupPrograms;
       };
       modules = [
         ./home-manager.nix
@@ -100,6 +115,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         helix-flake = helix;
+        startupPrograms = startupPrograms;
       };
       modules = [
         ./home-manager.nix

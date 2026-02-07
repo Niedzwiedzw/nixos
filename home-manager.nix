@@ -100,6 +100,10 @@
       # rustc
       #  thunderbird
       adw-gtk3
+      brave
+      acpi
+      # ai
+      opencode
     ];
   };
   gtk = {

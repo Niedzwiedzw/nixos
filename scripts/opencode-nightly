@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+# https://github.com/anomalyco/opencode/
+nix run --offline github:anomalyco/opencode/dev#default $argv
