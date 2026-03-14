@@ -42,6 +42,6 @@
     # support 64-bit only
     (wine.override {wineBuild = "wine64";})
     # wine-staging (version with experimental features)
-    wineWowPackages.stagingFull
+    # wineWowPackages.stagingFull
   ];
 }
