@@ -30,16 +30,17 @@
     system = "x86_64-linux";
     startupPrograms = [
       "nm-applet"
+      "blueman-applet"
       "signal-desktop"
-      "betterbird"
-      "slack"
+      # "betterbird"
+      # "slack"
       "discord"
       "keepassxc"
       "xrandr --output HDMI-A-1 --primary"
       "thunderbird"
       "autotiling"
-      "kdeconnectd --replace &"
-      "kdeconnect-app"
+      # "kdeconnectd --replace &"
+      # "kdeconnect-app"
     ];
   in {
     # nixos`
