@@ -31,6 +31,7 @@
     imagemagick
     # bluetooth
     overskride
+    wl-mirror
   ];
 
   home.sessionVariables = {
@@ -167,7 +168,6 @@
         };
         "*" = {
           bg = "/home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill";
-          mirror = "eDP-1";
         };
         "DP-2" = {
           resolution = "1920x1080@144hz";
