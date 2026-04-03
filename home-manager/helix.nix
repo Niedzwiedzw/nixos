@@ -62,6 +62,9 @@
               "O" = ":toggle inline-diagnostics.cursor-line disable warning";
               "C" = "@ D%severity error";
               "B" = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}";
+              "g" = {
+                "p" = ":echo %sh{/home/niedzwiedz/nixos/scripts/gh-permalink.py %{buffer_name} %{cursor_line}}";
+              };
             };
           };
           insert = {
