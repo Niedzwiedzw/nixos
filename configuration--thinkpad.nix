@@ -17,6 +17,9 @@
     ./modules/gaming.nix
   ];
 
+  # use lix package manager (rust reimplementation)
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
