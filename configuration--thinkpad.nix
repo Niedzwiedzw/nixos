@@ -1,12 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration--thinkpad.nix
-    # ./modules/audio-setup.nix
-    # ./modules/brother-printer.nix
+    ./modules/audio-setup.nix
+    ./modules/brother-printer.nix
     # ./modules/jellyfin.nix
     # ./modules/hibernation.nix
     # only enable for magewell (mwcap) sessions
@@ -19,6 +23,11 @@
 
   # use lix package manager (rust reimplementation)
   nix.package = pkgs.lixPackageSets.stable.lix;
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "reaper"
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

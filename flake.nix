@@ -72,7 +72,7 @@
       inherit system;
       modules = [
         catppuccin.nixosModules.catppuccin
-        # inputs.musnix.nixosModules.musnix
+        inputs.musnix.nixosModules.musnix
 
         ./configuration--thinkpad.nix
 
