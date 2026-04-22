@@ -163,6 +163,7 @@
     mdadm
     # devtools
     python3
+    krita
     # chaotic stuff
     # firefox_nightly
     # end of chaotic stuff
