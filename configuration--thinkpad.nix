@@ -44,7 +44,15 @@
   };
   services.flatpak.enable = true;
   services.atd.enable = true;
+
   virtualisation = {
+    # virtualbox
+    virtualbox = {
+      host.enable = true;
+      host.enableExtensionPack = true;
+      guest.enable = true;
+      guest.dragAndDrop = true;
+    };
     containers.enable = true;
     # docker = {
     #   enable = true;
@@ -125,7 +133,7 @@
   users.users.niedzwiedz = {
     isNormalUser = true;
     description = "niedzwiedz";
-    extraGroups = ["docker" "podman" "networkmanager" "wheel" "audio" "video"];
+    extraGroups = ["docker" "podman" "networkmanager" "wheel" "audio" "video" "dialout"];
     packages = with pkgs; [
       home-manager
     ];

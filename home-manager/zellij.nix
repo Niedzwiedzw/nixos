@@ -381,8 +381,9 @@
     //   - true (default)
     //   - false
     //
-    // session_serialization false
+    session_serialization false
 
+    show_startup_tips false
     // Whether pane viewports are serialized along with the session, default is false
     // Options:
     //   - true
