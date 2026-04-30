@@ -15,23 +15,23 @@ in {
       };
       ${thinkpad.name} = {
         resolution = thinkpad.resolution;
-        position = "${toString lg.width},0";
+        position = "${toString lg.width},${toString (iiyama.height)}";
       };
       # left
       ${lg.name} = {
         resolution = lg.resolution;
-        position = "0,${toString (thinkpad.height + 350)}";
+        position = "0,${toString (-350)}";
         # transform = "270";
       };
       # center
       ${iiyama.name} = {
         resolution = iiyama.resolution;
-        position = "${toString lg.width},${toString thinkpad.height}";
+        position = "${toString lg.width},${toString 0}";
       };
       # aoc
       ${aoc.name} = {
         resolution = aoc.resolution;
-        position = "${toString (lg.width + iiyama.width)},${toString (thinkpad.height + 350)}";
+        position = "${toString (lg.width + iiyama.width)},${toString (-350)}";
       };
     };
   };
