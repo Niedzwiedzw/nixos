@@ -90,6 +90,7 @@
       };
       modules = [
         ./home-manager.nix
+        ./home-manager/display-setups/pc-gpu.nix
         catppuccin.homeModules.catppuccin
         # NIX INDEX
         nix-index-database.homeModules.nix-index
@@ -120,6 +121,7 @@
       };
       modules = [
         ./home-manager.nix
+        ./home-manager/display-setups/docking-station.nix
         catppuccin.homeManagerModules.catppuccin
         # NIX INDEX
         nix-index-database.homeModules.nix-index
