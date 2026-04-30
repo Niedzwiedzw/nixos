@@ -1,65 +1,31 @@
-{...}: {
+{...}: let
+  displays = import ./available-displays.nix;
+  inherit (displays) laptop leftMonitor centerMonitor rightMonitor;
+  assignWorkspaces = import ./assign-workspaces.nix;
+in {
   wayland.windowManager.sway.config = {
-    workspaceOutputAssign = [
-      {
-        workspace = "1";
-        output = "DP-2";
-      }
-      {
-        workspace = "2";
-        output = "DP-2";
-      }
-      {
-        workspace = "3";
-        output = "DP-2";
-      }
-      {
-        workspace = "4";
-        output = "HDMI-A-1";
-      }
-      {
-        workspace = "5";
-        output = "HDMI-A-1";
-      }
-      {
-        workspace = "6";
-        output = "HDMI-A-1";
-      }
-      {
-        workspace = "7";
-        output = "HDMI-A-1";
-      }
-      {
-        workspace = "8";
-        output = "HDMI-A-2";
-      }
-      {
-        workspace = "9";
-        output = "HDMI-A-2";
-      }
-      {
-        workspace = "10";
-        output = "HDMI-A-2";
-      }
-    ];
+    workspaceOutputAssign =
+      (assignWorkspaces leftMonitor [1 2 3])
+      ++ (assignWorkspaces centerMonitor [4 5 6 7])
+      ++ (assignWorkspaces rightMonitor [8 9 10]);
     output = {
-      "eDP-1" = {
-        resolution = "1920x1200@60hz";
+      ${laptop.name} = {
+        resolution = laptop.resolution;
       };
       "*" = {
         bg = "/home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill";
       };
-      "DP-2" = {
-        resolution = "1920x1080@144hz";
+      ${leftMonitor.name} = {
+        resolution = leftMonitor.resolution;
         position = "0,295";
         # transform = "270";
       };
-      "HDMI-A-1" = {
-        resolution = "2560x1440@144hz";
+      ${centerMonitor.name} = {
+        resolution = centerMonitor.resolution;
         position = "1920,0";
       };
-      "HDMI-A-2" = {
-        resolution = "1920x1080@144hz";
+      ${rightMonitor.name} = {
+        resolution = rightMonitor.resolution;
         position = "4480,460";
       };
     };
