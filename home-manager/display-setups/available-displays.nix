@@ -1,18 +1,26 @@
 {
-  laptop = {
+  thinkpad = {
     name = "eDP-1";
     resolution = "1920x1200@60hz";
+    width = 1920;
+    height = 1200;
   };
-  leftMonitor = {
-    name = "DP-2";
+  iiyama = {
+    name = "DP-11";
+    resolution = "2560x1440@165hz";
+    width = 2560;
+    height = 1440;
+  };
+  lg = {
+    name = "DP-9";
     resolution = "1920x1080@144hz";
+    width = 1920;
+    height = 1080;
   };
-  centerMonitor = {
-    name = "HDMI-A-1";
-    resolution = "2560x1440@144hz";
-  };
-  rightMonitor = {
-    name = "HDMI-A-2";
-    resolution = "1920x1080@144hz";
+  aoc = {
+    name = "DP-8";
+    resolution = "1920x1080@180hz";
+    width = 1920;
+    height = 1080;
   };
 }

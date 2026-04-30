@@ -23,7 +23,7 @@
   catppuccin = {
     enable = true;
     flavor = "mocha";
-    cursors.enable = true;
+    cursors.enable = false;
     kvantum.enable = true;
     gtk.icon.enable = true;
   };
