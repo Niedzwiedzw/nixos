@@ -68,6 +68,7 @@
       losslesscut-bin
       keepassxc
       discord
+      jq
       ungoogled-chromium
       slack
       rclone

@@ -228,6 +228,7 @@
     gparted
     xorg.xhost.out
     bottom
+    jq
     # inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     # -- amd gpu
 
