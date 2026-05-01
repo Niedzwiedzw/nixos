@@ -1,6 +1,7 @@
 {
   pkgs,
   helix-flake,
+  nil-lsp,
   lib,
   ...
 }: {
@@ -119,6 +120,7 @@
           };
         };
         language-server.nil = {
+          package = nil-lsp.packages.${pkgs.system}.default;
           command = "nil";
           config = {
             nix = {
@@ -126,7 +128,7 @@
                 autoEvalInputs = true;
                 autoArchive = true;
               };
-              maxMemoryMB = 8192;
+              maxMemoryMB = 8 * 1024;
             };
             formatting.command = ["alejandra" "--"];
           };

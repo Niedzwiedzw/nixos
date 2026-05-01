@@ -1,5 +1,5 @@
 {...}: let
-  displays = import ./available-displays.nix;
+  displays = import ./available-displays--thinkpad.nix;
   inherit (displays) thinkpad iiyama lg aoc;
   assignWorkspaces = import ./assign-workspaces.nix;
 in {

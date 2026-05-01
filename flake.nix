@@ -16,6 +16,9 @@
     # nix index provides up-to-date binary cache
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    nil-lsp = {
+      url = "github:oxalica/nil/main";
+    };
   };
   outputs = {
     self,
@@ -25,6 +28,7 @@
     catppuccin,
     helix,
     nix-index-database,
+    nil-lsp,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -87,6 +91,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         helix-flake = helix;
+        nil-lsp = nil-lsp;
         startupPrograms = startupPrograms;
       };
       modules = [
@@ -103,6 +108,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         helix-flake = helix;
+        nil-lsp = nil-lsp;
         startupPrograms = startupPrograms;
       };
       modules = [
@@ -118,6 +124,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         helix-flake = helix;
+        nil-lsp = nil-lsp;
         startupPrograms = startupPrograms;
       };
       modules = [
