@@ -54,21 +54,13 @@
       guest.dragAndDrop = true;
     };
     containers.enable = true;
-    # docker = {
-    #   enable = true;
-    #   # Optional: enable on boot
-    #   enableOnBoot = true;
-    #   # Use rootless Docker (more secure)
-    #   rootless = {
-    #     enable = true;
-    #     setSocketVariable = true;
-    #   };
-    # };
-
-    podman = {
+    docker = {
       enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
+      enableOnBoot = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
     };
   };
 
@@ -236,6 +228,9 @@
     # -- end of amd gpu
     # crypto
     cryptsetup
+    # docker
+    docker-compose
+    docker-buildx
   ];
   # sshd
   services.openssh = {

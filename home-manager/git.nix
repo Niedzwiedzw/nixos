@@ -5,6 +5,11 @@
     gnupg
     pinentry-curses
   ];
+
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true; # note: lowercase 'p' in Support
+  };
   programs = {
     git = {
       enable = true;
