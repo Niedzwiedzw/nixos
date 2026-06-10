@@ -6,19 +6,19 @@
     height = 1080;
   };
   iiyama = {
-    name = "HDMI-A-1";
+    name = "Iiyama North America PL2770QS 1210632811174";
     resolution = "2560x1440@165hz";
     width = 2560;
     height = 1440;
   };
   lg = {
-    name = "DP-2";
+    name = "LG Electronics 24GM79G 0x00024D8F";
     resolution = "1920x1080@144hz";
     width = 1920;
     height = 1080;
   };
   aoc = {
-    name = "DP-1";
+    name = "AOC 24G4 12VR2HA015161";
     resolution = "1920x1080@180hz";
     width = 1920;
     height = 1080;
