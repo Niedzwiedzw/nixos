@@ -38,6 +38,8 @@
     username = "niedzwiedz";
     homeDirectory = "/home/niedzwiedz";
     packages = with pkgs; [
+      # remote desktop
+      rustdesk
       # sysadmin stuff
       usbutils
 
