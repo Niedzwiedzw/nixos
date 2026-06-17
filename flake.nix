@@ -34,18 +34,19 @@
     system = "x86_64-linux";
     startupPrograms = [
       "nm-applet"
-      "blueman-applet"
+      # "blueman-applet"
       "signal-desktop"
       # "betterbird"
-      # "slack"
+      "slack"
       "discord"
-      "keepassxc"
-      "xrandr --output DP-1 --primary"
-      "thunderbird"
+      # "keepassxc"
+      # "xrandr --output DP-1 --primary"
+      # "thunderbird"
       "autotiling"
       # "/home/niedzwiedz/nixos/scripts/tablet-follow-focus.sh"
       # "kdeconnectd --replace &"
       # "kdeconnect-app"
+      "waybar"
     ];
   in {
     # nixos`
