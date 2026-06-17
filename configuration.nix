@@ -10,7 +10,7 @@
     ./modules/jellyfin.nix
     ./modules/hibernation.nix
     # only enable for magewell (mwcap) sessions
-    ./modules/magewell-legacy-compat.nix
+    # ./modules/magewell-legacy-compat.nix
     ./modules/wireguard.nix
     ./modules/gaming.nix
     ./modules/performance-optimisations-main-machine.nix
@@ -225,15 +225,13 @@
     # end of chaotic stuff
     pavucontrol
     pulseaudio
-    helvum
     gparted
-    xorg.xhost.out
+    xhost.out
     bottom
     jq
     # inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     # -- amd gpu
 
-    blender-hip
     # amdvlk
     amdgpu_top
     vulkan-tools

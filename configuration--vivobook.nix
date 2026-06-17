@@ -157,9 +157,8 @@
     # end of chaotic stuff
     pavucontrol
     pulseaudio
-    helvum
     gparted
-    xorg.xhost.out
+    xhost.out
     bottom
     # inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     # -- amd gpu

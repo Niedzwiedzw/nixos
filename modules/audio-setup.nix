@@ -103,7 +103,7 @@
     jack2
     jack-example-tools
     qpwgraph
-    helvum
+    crosspipe
     pavucontrol
   ];
 
