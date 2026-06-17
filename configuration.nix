@@ -58,6 +58,15 @@
     binfmt = true;
   };
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "niedzwiedz";
+      };
+    };
+  };
   services.flatpak.enable = true;
   services.atd.enable = true;
 

@@ -57,8 +57,9 @@
 
   wayland.windowManager.sway = {
     checkConfig = false;
+    wrapperFeatures.gtk = true;
+
     enable = true;
-    systemd.enable = true;
     extraConfig = ''
       # catpuccin mocha: https://github.com/catppuccin/i3/blob/main/themes/catppuccin-mocha
       set $rosewater #f5e0dc
@@ -141,10 +142,6 @@
   };
   programs.waybar = {
     enable = true;
-    systemd = {
-      enable = true;
-      target = "sway-session.target";
-    };
     settings = [
       {
         layer = "top";

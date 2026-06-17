@@ -53,6 +53,15 @@
     };
   };
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "niedzwiedz";
+      };
+    };
+  };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # amd gpu specific stuff

@@ -43,7 +43,7 @@
       "xrandr --output DP-1 --primary"
       "thunderbird"
       "autotiling"
-      "/home/niedzwiedz/nixos/scripts/tablet-follow-focus.sh"
+      # "/home/niedzwiedz/nixos/scripts/tablet-follow-focus.sh"
       # "kdeconnectd --replace &"
       # "kdeconnect-app"
     ];
