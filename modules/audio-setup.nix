@@ -1,83 +1,62 @@
 {pkgs, ...}: {
+  imports = [
+    ./audio-setup/recording-session.nix
+  ];
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
-    wireplumber.enable = true;
+
     wireplumber = {
+      enable = true;
       configPackages = [
-        (pkgs.writeTextDir "share/wireplumber/main.lua.d/99-alsa-lowlatency.lua" ''
-          alsa_monitor.rules = {
+        (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/99-ui24r.conf" ''
+          monitor.alsa.rules = [
             {
-              matches = {{{ "node.name", "matches", "alsa_output.*" }}};
-              apply_properties = {
-                ["audio.format"] = "S32LE",
-                ["audio.rate"] = "96000", -- for USB soundcards it should be twice your desired rate
-                ["api.alsa.period-size"] = 2, -- defaults to 1024, tweak by trial-and-error
-                -- ["api.alsa.disable-batch"] = true, -- generally, USB soundcards use the batch mode
-              },
-            },
-          }
+              matches = [
+                { node.name = "alsa_input.usb-Soundcraft_Soundcraft_Ui24-00.multichannel-input" }
+                { node.name = "alsa_output.usb-Soundcraft_Soundcraft_Ui24-00.multichannel-output" }
+              ]
+              actions = {
+                update-props = {
+                  audio.format = "S32LE"
+                  audio.rate = 48000
+                  api.alsa.period-size = 128
+                  session.suspend-timeout-seconds = 0
+                }
+              }
+            }
+          ]
         '')
       ];
     };
 
     extraConfig.pipewire = {
-      "91-null-sinks" = {
-        "context.objects" = [
-          {
-            # A default dummy driver. This handles nodes marked with the "node.always-driver"
-            # properyty when no other driver is currently active. JACK clients need this.
-            factory = "spa-node-factory";
-            args = {
-              "factory.name" = "support.node.driver";
-              "node.name" = "Dummy-Driver";
-              "priority.driver" = 8000;
-            };
-          }
-          {
-            factory = "adapter";
-            args = {
-              "factory.name" = "support.null-audio-sink";
-              "node.name" = "Microphone-Proxy";
-              "node.description" = "Microphone";
-              "media.class" = "Audio/Source/Virtual";
-              "audio.position" = "MONO";
-            };
-          }
-          {
-            factory = "adapter";
-            args = {
-              "factory.name" = "support.null-audio-sink";
-              "node.name" = "Main-Output-Proxy";
-              "node.description" = "Main Output";
-              "media.class" = "Audio/Sink";
-              "audio.position" = "FL,FR";
-            };
-          }
-        ];
-      };
       "92-low-latency" = {
         context.properties = {
           default.clock.rate = 48000;
-          default.clock.quantum = 32;
+          default.clock.quantum = 256;
           default.clock.min-quantum = 32;
-          default.clock.max-quantum = 32;
+          default.clock.max-quantum = 1024;
         };
       };
     };
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
-  musnix.enable = true;
+
+  musnix = {
+    enable = true;
+    kernel.realtime = true;
+  };
+
   services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  security.polkit.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # reaper
+    # DAW
     reaper
     # plugins
     lsp-plugins
@@ -89,8 +68,8 @@
     distrho-ports
     helm
     zam-plugins
-    drumgizmo # /run/current-system/sw/lib/lv2
-    # vst emulation
+    drumgizmo
+    # vst bridging (yabridge pulls in its own pinned wine)
     yabridge
     yabridgectl
     # drivers, utils
@@ -106,34 +85,4 @@
     crosspipe
     pavucontrol
   ];
-
-  # hardware.pulseaudio.enable = false;
-  security.pam.loginLimits = [
-    {
-      domain = "@audio";
-      item = "memlock";
-      type = "-";
-      value = "unlimited";
-    }
-    {
-      domain = "@audio";
-      item = "rtprio";
-      type = "-";
-      value = "99";
-    }
-    {
-      domain = "@audio";
-      item = "nofile";
-      type = "soft";
-      value = "99999";
-    }
-    {
-      domain = "@audio";
-      item = "nofile";
-      type = "hard";
-      value = "524288";
-    }
-  ];
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
 }
