@@ -9,7 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration--thinkpad.nix
-    ./modules/audio-setup.nix
+    # ./modules/audio-setup.nix
     ./modules/brother-printer.nix
     # ./modules/jellyfin.nix
     # ./modules/hibernation.nix
