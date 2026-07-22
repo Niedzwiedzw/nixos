@@ -5,6 +5,10 @@
       allowUnfreePredicate = _: true;
     };
   };
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
   services.gammastep = {
     enable = true;
     provider = "manual";

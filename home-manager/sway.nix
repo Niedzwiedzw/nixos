@@ -125,10 +125,6 @@
   services.swaync = {
     enable = true;
   };
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
-  };
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;

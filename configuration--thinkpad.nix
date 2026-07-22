@@ -267,9 +267,15 @@
   networking.firewall.allowedTCPPorts =
     [
     ]
-    ++ (builtins.genList (x: x + 30000) 1001); # Opens 30000-31000 for unftp;
-  networking.firewall.allowedUDPPorts = [
-  ];
+    # Opens 30000-31000 for unftp
+    ++ (lib.range 30000 31001)
+    # kdeconnect
+    ++ (lib.range 1714 1764);
+  networking.firewall.allowedUDPPorts =
+    [
+    ]
+    # kdeconnect
+    ++ (lib.range 1714 1764);
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
