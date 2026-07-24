@@ -251,7 +251,6 @@
       AllowUsers = ["niedzwiedz"]; # Allows all users by default. Can be [ "user1" "user2" ]
       UseDns = false;
       X11Forwarding = false;
-      GSSAPIAuthentication = "no";
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
