@@ -1,6 +1,6 @@
 {...}: let
   displays = import ./available-displays--gpu-pc.nix;
-  inherit (displays) iiyama lg aoc sony_tv;
+  inherit (displays) iiyama lg aoc sony_tv lg_tv;
   assignWorkspaces = import ./assign-workspaces.nix;
 
   # scale now lives on each display; positions are logical (scaled) pixels,
@@ -17,7 +17,8 @@ in {
         (assignWorkspaces lg [2 3 4])
         ++ (assignWorkspaces iiyama [1 5 6 7])
         ++ (assignWorkspaces aoc [8 9 10])
-        ++ (assignWorkspaces sony_tv [99]);
+        # ++ (assignWorkspaces sony_tv [99]);
+        ++ (assignWorkspaces lg_tv [99]);
       output = {
         "*" = {
           bg = "/home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill";
@@ -40,11 +41,17 @@ in {
           scale = toString aoc.scale;
           position = pos (lgLW + iiyamaLW) (-350);
         };
-        ${sony_tv.name} = {
-          resolution = sony_tv.resolution;
-          scale = toString sony_tv.scale;
+        # ${sony_tv.name} = {
+        #   resolution = sony_tv.resolution;
+        #   scale = toString sony_tv.scale;
+        #   position = pos (lgLW + iiyamaLW + 9000) 9000;
+        #   transform = toString 180;
+        # };
+        ${lg_tv.name} = {
+          resolution = lg_tv.resolution;
+          scale = toString lg_tv.scale;
           position = pos (lgLW + iiyamaLW + 9000) 9000;
-          transform = toString 180;
+          # transform = toString 180;
         };
       };
     };

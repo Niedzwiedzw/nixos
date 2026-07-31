@@ -11,8 +11,9 @@
     resolution = "2560x1440@165hz";
     width = 2560;
     height = 1440;
-    scale = 1.6; # for recording sessions
+    # scale = 1.6; # for recording sessions
     # scale = 1.2; # ~109 PPI vs ~92 PPI on the 1080p panels
+    scale = 1.0;
   };
   lg = {
     name = "LG Electronics 24GM79G 0x00024D8F";
@@ -26,6 +27,13 @@
     resolution = "1920x1080@180hz";
     width = 1920;
     height = 1080;
+    scale = 1.0;
+  };
+  lg_tv = {
+    name = "LG Electronics LG TV SSCR2 0x01010101";
+    resolution = "3840x2160@60.000hz";
+    width = 3840;
+    height = 2160;
     scale = 1.0;
   };
 }

@@ -109,6 +109,26 @@
       acpi
       # ai
       opencode
+      (pkgs.writeShellScriptBin "bigpicture" ''
+        set -euo pipefail
+        export STEAM_MULTIPLE_XWAYLANDS=1
+        export STEAM_GAMESCOPE_HDR_SUPPORTED=1
+        export STEAM_GAMESCOPE_FANCY_SCALING_SUPPORT=1
+        export STEAM_GAMESCOPE_COLOR_MANAGED=1
+        export STEAM_USE_MANGOAPP=1
+        export DXVK_HDR=1
+        export PROTON_ENABLE_HDR=1
+
+        export GAMESCOPE_LIMITER_FILE="$(mktemp /tmp/gamescope-limiter.XXXXXXXX)";
+        exec gamescope \
+              --backend drm \
+              -W 3840 -H 2160 -r 60 \
+              -f -e --rt \
+              --hdr-enabled \
+              --hdr-sdr-content-nits 300 \
+              --xwayland-count 2 \
+              -- steam -gamepadui
+      '')
     ];
   };
   gtk = {
