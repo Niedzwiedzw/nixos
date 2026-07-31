@@ -36,7 +36,9 @@
     #   };
     # };
   };
-
+  hardware.graphics = {
+    enable32Bit = true;
+  };
   environment.systemPackages = with pkgs; [
     steamtinkerlaunch
     protonup-qt
