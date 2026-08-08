@@ -1,16 +1,186 @@
 {
   pkgs,
+  lib,
   startupPrograms,
   ...
 }: {
-  home.sessionPath = ["/home/niedzwiedz/.local/bin" "/home/niedzwiedz/nixos/scripts"];
+  programs.niri = {
+    enable = true;
+    settings = {
+      input.focus-follows-mouse = {};
+      spawn-at-startup = map (it: {command = ["sh" "-c" it];}) startupPrograms;
+      hotkey-overlay = {
+        skip-at-startup = true;
+      };
+
+      cursor = {
+        hide-when-typing = true;
+        hide-after-inactive-ms = 1000;
+      };
+
+      input.keyboard.xkb = {
+        layout = "pl";
+        # options = "terminate:ctrl_alt_bksp,caps:escape,altwin:swap_alt_win";
+      };
+
+      # catppuccin
+      layout = {
+        focus-ring.enable = false;
+        border = {
+          enable = true;
+          width = 2;
+          active.color = "#b4befe"; # lavender
+          inactive.color = "#6c7086"; # overlay0
+        };
+      };
+
+      binds =
+        {
+          # -- apps --
+          "Mod+Return".action.spawn = "rio";
+          # "Mod+D".action.spawn = "/home/niedzwiedz/nixos/scripts/dmenu-wrapped.sh";
+          "Mod+D".action.spawn = "${pkgs.fuzzel}/bin/fuzzel";
+          "Mod+Shift+Q".action.close-window = {};
+
+          # -- focus --
+          "Mod+H".action.focus-column-or-monitor-left = {};
+          "Mod+L".action.focus-column-or-monitor-right = {};
+          "Mod+Shift+H".action.move-column-to-monitor-left = {};
+          "Mod+Shift+L".action.move-column-to-monitor-right = {};
+
+          "Mod+J".action.focus-window-or-monitor-down = {};
+          "Mod+K".action.focus-window-or-monitor-up = {};
+          "Mod+Shift+J".action.move-window-down = {};
+          "Mod+Shift+K".action.move-window-up = {};
+
+          "Mod+Ctrl+J".action.focus-monitor-down = {};
+          "Mod+Ctrl+K".action.focus-monitor-up = {};
+          "Mod+Ctrl+Shift+J".action.move-column-to-monitor-down = {};
+          "Mod+Ctrl+Shift+K".action.move-column-to-monitor-up = {};
+
+          # -- monitors (extra vs sway, since columns scroll within a monitor) --
+          "Mod+Ctrl+H".action.focus-monitor-left = {};
+          "Mod+Ctrl+L".action.focus-monitor-right = {};
+          "Mod+Ctrl+Shift+H".action.move-column-to-monitor-left = {};
+          "Mod+Ctrl+Shift+L".action.move-column-to-monitor-right = {};
+
+          # -- windows/layout --
+          "Mod+F".action.maximize-column = {};
+          "Mod+Shift+F".action.fullscreen-window = {};
+          "Mod+Shift+Space".action.toggle-window-floating = {};
+          "Mod+Space".action.switch-focus-between-floating-and-tiling = {};
+          "Mod+R".action.switch-preset-column-width = {};
+          "Mod+Shift+R".action.switch-preset-window-height = {};
+          "Mod+Minus".action.set-column-width = "-10%";
+          "Mod+Equal".action.set-column-width = "+10%";
+          "Mod+Comma".action.consume-window-into-column = {}; # ~ sway "move into container"
+          "Mod+Period".action.expel-window-from-column = {};
+          "Mod+W".action.toggle-column-tabbed-display = {}; # ~ sway tabbed layout
+
+          # -- misc --
+          "Mod+Tab".action.toggle-overview = {};
+          "Mod+Shift+E".action.quit = {};
+          "Ctrl+Alt+L".action.spawn = "swaylock";
+          "Mod+Shift+Slash".action.show-hotkey-overlay = {};
+
+          "Mod+C".action.center-column = {};
+          "Mod+Home".action.focus-column-first = {};
+          "Mod+End".action.focus-column-last = {};
+          "Print".action.screenshot = {};
+          "Alt+Print".action.screenshot-window = {};
+          "Mod+Shift+Equal".action.expand-column-to-available-width = {};
+
+          # screenshots
+          "Mod+Shift+X".action.spawn = ["sh" "-c" ''grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | tee /tmp/screenshot.png | wl-copy -t image/png''];
+          "Mod+Shift+V".action.spawn = ["sh" "-c" ''grim -g "$(slurp -d)" - | convert - -resize 300% -sharpen 0x1.0 - | tesseract stdin stdout -l eng+pol | wl-copy''];
+          "Mod+Shift+W".action.spawn = ["alacritty" "-e" "ep"];
+        }
+        # -- workspaces 1-10 + 99, by name (matches your pinned named workspaces) --
+        // lib.listToAttrs (lib.concatMap (n: let
+          ws = toString n;
+          key = toString (lib.mod n 10);
+        in [
+          {
+            name = "Mod+${key}";
+            value.action.focus-workspace = ws;
+          }
+          {
+            name = "Mod+Shift+${key}";
+            value.action.move-column-to-workspace = ws;
+          }
+        ]) (lib.range 1 10))
+        // {
+          "Mod+Grave".action.focus-workspace = "99"; # the TV
+          "Mod+Shift+Grave".action.move-column-to-workspace = "99";
+        };
+
+      environment = {
+        NIXOS_OZONE_WL = "1";
+        MOZ_ENABLE_WAYLAND = "1";
+        MOZ_USE_XINPUT2 = "1";
+        SDL_VIDEODRIVER = "wayland";
+
+        # needs qt5.qtwayland in packages
+        QT_QPA_PLATFORM = "wayland";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
+        # Fix for some Java AWT applications (e.g. Android Studio),
+        # use this if they aren't displayed properly:
+        _JAVA_AWT_WM_NONREPARENTING = "1";
+      };
+    };
+  };
+
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      main = {
+        terminal = "rio";
+        font = "Maple Mono NF:size=12";
+      };
+      # catppuccin mocha, to match the borders
+      colors = {
+        background = "1e1e2eff"; # base
+        text = "cdd6f4ff"; # text
+        match = "b4befeff"; # lavender
+        selection = "45475aff"; # surface1
+        selection-text = "cdd6f4ff";
+        selection-match = "b4befeff";
+        border = "b4befeff"; # lavender
+      };
+    };
+  };
+
+  programs = {
+    alacritty.enable = true;
+    swaylock = {
+      enable = true;
+      package = pkgs.swaylock-effects;
+      settings = {
+        effect-blur = "20x2";
+        fade-in = "0.5";
+        font = "Maple Mono NF";
+        indicator-radius = 100;
+        indicator-thickness = 7;
+      };
+    };
+  };
+
+  services = {
+    swaync.enable = true; # notification daemon (waybar custom/notification uses swaync-client)
+    swayidle.enable = true; # idle management daemon (TODO: configure timeouts/events)
+    # polkit-gnome.enable = true; # polkit
+    # NOTE: if using niri-flake's NixOS module, it already runs the KDE polkit
+    # agent; disable one of them, e.g. on the NixOS side:
+    #   systemd.user.services.niri-flake-polkit.enable = false;
+  };
+
   home.packages = with pkgs; [
+    swaybg # wallpaper
+    xwayland-satellite # xwayland support (niri >= 25.05 auto-spawns it from PATH)
     networkmanagerapplet
     qt5.qtwayland
-    waybar
-    dmenu
     xorg.xrandr
-    autotiling
     kooha
     wl-screenrec
     wf-recorder
@@ -26,127 +196,49 @@
 
     # ocr
     tesseract
-    # tesseract-english
-    # tesseract-polish
     imagemagick
     # bluetooth
     overskride
     wl-mirror
   ];
 
-  home.sessionVariables = {
-    LD_LIBRARY_PATH = "${pkgs.libglvnd}/lib";
-    MOZ_ENABLE_WAYLAND = "1";
-    MOZ_USE_XINPUT2 = "1";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_CURRENT_DESKTOP = "sway";
-    XKB_DEFAULT_OPTIONS = "terminate:ctrl_alt_bksp,caps:escape,altwin:swap_alt_win";
-    SDL_VIDEODRIVER = "wayland";
-
-    # needs qt5.qtwayland in systemPackages
-    QT_QPA_PLATFORM = "wayland";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-
-    # Fix for some Java AWT applications (e.g. Android Studio),
-    # use this if they aren't displayed properly:
-    _JAVA_AWT_WM_NONREPARENTING = 1;
-
-    # gtk applications on wayland
-    GTK_BACKEND = "wayland";
-  };
-
-  wayland.windowManager.sway = {
-    checkConfig = false;
-    wrapperFeatures.gtk = true;
-
+  xdg.portal = {
     enable = true;
-    extraConfig = ''
-      # catpuccin mocha: https://github.com/catppuccin/i3/blob/main/themes/catppuccin-mocha
-      set $rosewater #f5e0dc
-      set $flamingo #f2cdcd
-      set $pink #f5c2e7
-      set $mauve #cba6f7
-      set $red #f38ba8
-      set $maroon #eba0ac
-      set $peach #fab387
-      set $yellow #f9e2af
-      set $green #a6e3a1
-      set $teal #94e2d5
-      set $sky #89dceb
-      set $sapphire #74c7ec
-      set $blue #89b4fa
-      set $lavender #b4befe
-      set $text #cdd6f4
-      set $subtext1 #bac2de
-      set $subtext0 #a6adc8
-      set $overlay2 #9399b2
-      set $overlay1 #7f849c
-      set $overlay0 #6c7086
-      set $surface2 #585b70
-      set $surface1 #45475a
-      set $surface0 #313244
-      set $base #1e1e2e
-      set $mantle #181825
-      set $crust #11111b
-
-
-      # target                 title     bg    text   indicator  border
-      client.focused           $lavender $base $text  $rosewater $lavender
-      client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-      client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-      client.urgent            $peach    $base $peach $overlay0  $peach
-      client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-      client.background        $base
-
-      # wallpaper
-      output * bg /home/niedzwiedz/nixos/my-wallpaper-malysz-tajner-chester-linkin-park.png fill
-
-      # keybinds
-      bindsym Mod4+Shift+x exec grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | tee /tmp/screenshot.png | wl-copy -t image/png
-      bindsym Mod4+Shift+v exec grim -g "$(slurp -d)" - | convert - -resize 300% -sharpen 0x1.0 - | tesseract stdin stdout -l eng+pol | wl-copy
-
-      bindsym Mod4+Shift+w exec alacritty -e ep
-
-    '';
-
-    config = {
-      startup = builtins.map (it: {command = it;}) startupPrograms;
-      modifier = "Mod4";
-      menu = "/home/niedzwiedz/nixos/scripts/dmenu-wrapped.sh";
-      terminal = "rio";
-      input = {
-        "*" = {
-          xkb_layout = "pl";
-        };
-      };
-      bars = [];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.niri = {
+      "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
     };
   };
-  services.swaync = {
-    enable = true;
-  };
-  programs.swaylock = {
-    enable = true;
-    # package = pkgs.swaylock-effects;
-    settings = {
-      effect-blur = "20x2";
-      fade-in = "0.5";
-      font = "Maple Mono NF";
-      indicator-radius = 100;
-      indicator-thickness = 7;
-    };
-  };
+
+  # == waybar ==
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
     settings = [
       {
         layer = "top";
         position = "top";
-        # modules-left = ["sway/workspaces"];
-        # modules-center = ["sway/window"];
-        # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
-        modules-left = ["sway/workspaces"];
-        modules-center = ["sway/window"];
+        # sway/* modules populate under sway, niri/* under niri;
+        # waybar silently skips the inactive ones.
+        modules-left = ["sway/workspaces" "niri/workspaces"];
+        "niri/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
+            "6" = "6";
+            "7" = "7";
+            "8" = "8";
+            "9" = "9";
+            "10" = "10";
+            "99" = "📺";
+            default = "•";
+          };
+        };
+        modules-center = ["sway/window" "niri/window"];
         modules-right = ["cpu" "memory" "temperature#cpu" "temperature#gpu" "network" "clock" "idle_inhibitor" "custom/lock" "custom/notification" "battery" "tray"];
         "idle_inhibitor" = {
           format = "{icon}";
@@ -548,13 +640,17 @@
             }
 
 
-            #workspaces button {
+      #workspaces button {
           border-top: 2px solid transparent;
           /* To compensate for the top border and still have vertical centering */
           padding-bottom: 2px;
           padding-left: 10px;
           padding-right: 10px;
           color: #888888;
+      }
+
+      #workspaces button.empty {
+          color: #45475a;
       }
 
       #workspaces button.focused {
@@ -569,12 +665,4 @@
       }
     '';
   };
-
-  xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
-    [screencast]
-    output_name=
-    max_fps=30
-    chooser_cmd=${pkgs.slurp}/bin/slurp -f %o -or
-    chooser_type=simple
-  '';
 }

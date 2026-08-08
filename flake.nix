@@ -19,6 +19,7 @@
     nil-lsp = {
       url = "github:oxalica/nil/main";
     };
+    niri.url = "github:sodiboo/niri-flake";
   };
   outputs = {
     self,
@@ -29,6 +30,7 @@
     helix,
     nix-index-database,
     nil-lsp,
+    niri,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -42,11 +44,11 @@
       # "keepassxc"
       # "xrandr --output DP-1 --primary"
       # "thunderbird"
-      "autotiling"
+      # "autotiling"
       # "/home/niedzwiedz/nixos/scripts/tablet-follow-focus.sh"
       # "kdeconnectd --replace &"
       # "kdeconnect-app"
-      "waybar"
+      # "waybar"
     ];
   in {
     # nixos`
@@ -94,6 +96,7 @@
         helix-flake = helix;
         nil-lsp = nil-lsp;
         startupPrograms = startupPrograms;
+        niri = niri;
       };
       modules = [
         ./home-manager.nix
@@ -103,6 +106,7 @@
         nix-index-database.homeModules.nix-index
         # optional to also wrap and install comma
         {programs.nix-index-database.comma.enable = true;}
+        niri.homeModules.niri
       ];
     };
     homeConfigurations.vivobook = home-manager.lib.homeManagerConfiguration {
@@ -111,6 +115,7 @@
         helix-flake = helix;
         nil-lsp = nil-lsp;
         startupPrograms = startupPrograms;
+        niri = niri;
       };
       modules = [
         ./home-manager.nix
@@ -119,6 +124,7 @@
         nix-index-database.homeModules.nix-index
         # optional to also wrap and install comma
         {programs.nix-index-database.comma.enable = true;}
+        niri.homeModules.niri
       ];
     };
     homeConfigurations.thinkpad = home-manager.lib.homeManagerConfiguration {
@@ -127,6 +133,7 @@
         helix-flake = helix;
         nil-lsp = nil-lsp;
         startupPrograms = startupPrograms;
+        niri = niri;
       };
       modules = [
         ./home-manager.nix
@@ -136,6 +143,7 @@
         nix-index-database.homeModules.nix-index
         # optional to also wrap and install comma
         {programs.nix-index-database.comma.enable = true;}
+        niri.homeModules.niri
       ];
     };
   };

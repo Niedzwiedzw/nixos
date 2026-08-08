@@ -205,7 +205,8 @@
   };
   imports = [
     ./home-manager/thunderbird.nix
-    ./home-manager/sway.nix
+    # ./home-manager/sway.nix
+    ./home-manager/niri.nix
     ./home-manager/fish.nix
     ./home-manager/git.nix
     ./home-manager/zellij.nix

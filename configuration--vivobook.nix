@@ -32,6 +32,11 @@
     binfmt = true;
   };
   services.flatpak.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = ["gtk"];
+  };
   services.atd.enable = true;
   virtualisation = {
     containers.enable = true;
@@ -135,7 +140,7 @@
       enable = true;
       plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
     };
-    sway.enable = true;
+    # sway.enable = true;
     fish.enable = true;
   };
   users.defaultUserShell = pkgs.fish;

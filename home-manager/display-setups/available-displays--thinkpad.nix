@@ -18,7 +18,8 @@
     height = 1080;
   };
   aoc = {
-    name = "AOC 24G4 12VR2HA015161";
+    name = "PNP(AOC) 24G4 12VR2HA015161";
+    # name = "AOC 24G4 12VR2HA015161"; # -- worked on sway
     resolution = "1920x1080@180hz";
     width = 1920;
     height = 1080;

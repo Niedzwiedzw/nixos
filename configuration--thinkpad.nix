@@ -43,6 +43,11 @@
     binfmt = true;
   };
   services.flatpak.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = ["gtk"];
+  };
   services.atd.enable = true;
 
   virtualisation = {
@@ -69,7 +74,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
         user = "niedzwiedz";
       };
     };
@@ -148,7 +153,7 @@
       enable = true;
       plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
     };
-    sway.enable = true;
+    # sway.enable = true;
     fish.enable = true;
   };
   users.defaultUserShell = pkgs.fish;

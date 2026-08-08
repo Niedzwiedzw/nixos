@@ -11,8 +11,6 @@
     resolution = "2560x1440@165hz";
     width = 2560;
     height = 1440;
-    # scale = 1.6; # for recording sessions
-    # scale = 1.2; # ~109 PPI vs ~92 PPI on the 1080p panels
     scale = 1.0;
   };
   lg = {
@@ -23,7 +21,8 @@
     scale = 1.0;
   };
   aoc = {
-    name = "AOC 24G4 12VR2HA015161";
+    name = "PNP(AOC) 24G4 12VR2HA015161";
+    # name = "AOC 24G4 12VR2HA015161"; # -- worked on sway
     resolution = "1920x1080@180hz";
     width = 1920;
     height = 1080;
