@@ -2,8 +2,11 @@
   pkgs,
   lib,
   startupPrograms,
+  niri,
   ...
-}: {
+}: let
+  inherit (niri.lib.kdl) node plain leaf flag;
+in {
   programs.niri = {
     enable = true;
     settings = {
@@ -33,6 +36,18 @@
           inactive.color = "#6c7086"; # overlay0
         };
       };
+      window-rules = [
+        {
+          matches = [{is-active = false;}];
+          opacity = 0.9;
+          # background-effect = {
+          #   xray = true;
+          #   blur = true;
+          #   noise = 0.05;
+          #   saturation = 1.0;
+          # };
+        }
+      ];
 
       binds =
         {
@@ -204,9 +219,11 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome];
     config.niri = {
       "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
+      "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
+      "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
     };
   };
 
