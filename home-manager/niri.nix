@@ -10,7 +10,10 @@ in {
   programs.niri = {
     enable = true;
     settings = {
-      input.focus-follows-mouse = {};
+      input.focus-follows-mouse = {
+        enable = true;
+        max-scroll-amount = "5%";
+      };
       spawn-at-startup = map (it: {command = ["sh" "-c" it];}) startupPrograms;
       hotkey-overlay = {
         skip-at-startup = true;

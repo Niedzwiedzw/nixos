@@ -18,7 +18,7 @@
     ./modules/wireguard--thinkpad.nix
     ./modules/power-management-laptop.nix
     ./modules/font-config.nix
-    ./modules/gaming.nix
+    # ./modules/gaming.nix
   ];
 
   # use lix package manager (rust reimplementation)
@@ -52,12 +52,12 @@
 
   virtualisation = {
     # virtualbox
-    virtualbox = {
-      host.enable = true;
-      host.enableExtensionPack = true;
-      guest.enable = true;
-      guest.dragAndDrop = true;
-    };
+    # virtualbox = {
+    #   host.enable = true;
+    #   host.enableExtensionPack = true;
+    #   guest.enable = true;
+    #   guest.dragAndDrop = true;
+    # };
     containers.enable = true;
     docker = {
       enable = true;
@@ -202,10 +202,10 @@
     libGL
     libxkbcommon
     wayland-utils
-    winePackages.wayland
-    wine64Packages.wayland
-    wineWow64Packages.wayland
-    wineWowPackages.wayland
+    # winePackages.wayland
+    # wine64Packages.wayland
+    # wineWow64Packages.wayland
+    # wineWowPackages.wayland
     waylandpp
     wayland
     xorg.libX11
