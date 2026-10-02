@@ -2,11 +2,11 @@
 {pkgs, ...}: let
   # ---- Tunables: change these, everything below follows ----
   sampleRate = 48000; # Ui24 only advertises 48k over USB
-  quantum = 64; # graph buffer (a.k.a. blocksize) in frames
-  periodSize = 32; # ALSA period for the Ui24 node
-  minQuantum = 32; # let the graph negotiate down...
+  quantum = 256; # graph buffer (a.k.a. blocksize) in frames
+  periodSize = 64; # ALSA period for the Ui24 node
+  minQuantum = 64; # let the graph negotiate down...
   maxQuantum = 1024; # ...and back off under load
-  headroom = 64;
+  headroom = 128;
 
   # ---- Derived ----
   pwLatency = "${toString quantum}/${toString sampleRate}"; # PIPEWIRE_LATENCY hint
@@ -98,8 +98,51 @@ in {
     qpwgraph
     crosspipe
     pavucontrol
-    (pkgs.writeShellScriptBin "reaper-audio" ''
-      exec env PIPEWIRE_LATENCY=${pwLatency} ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.reaper}/bin/reaper "$@"
-    '')
+    (pkgs.writeShellScriptBin "reaper-audio" (let
+      pluginLibs = pkgs.lib.makeLibraryPath [
+        pkgs.stdenv.cc.cc.lib # libstdc++.so.6
+        pkgs.udev # libudev.so.1
+        pkgs.xdotool # libxdo.so.3
+        pkgs.xorg.libX11 # libX11.so.6
+      ];
+    in ''
+      export PIPEWIRE_LATENCY=${pwLatency}
+      export LD_LIBRARY_PATH=${pluginLibs}''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+
+      echo "=== reaper-audio diagnostics ==="
+      echo "PIPEWIRE_LATENCY = $PIPEWIRE_LATENCY"
+      echo "LD_LIBRARY_PATH  = $LD_LIBRARY_PATH"
+      echo
+
+      for so in \
+        "$HOME/.config/REAPER/UserPlugins/reaper_helgobox-x64.so" \
+        "$HOME/.config/REAPER/FX/helgobox-x64.so"
+      do
+        if [ -f "$so" ]; then
+          echo "--- $so"
+          missing=$(${pkgs.glibc.bin}/bin/ldd "$so" 2>/dev/null | grep 'not found' || true)
+          if [ -n "$missing" ]; then
+            echo "MISSING DEPS:"
+            echo "$missing"
+          else
+            echo "all direct deps resolved"
+          fi
+          # real dlopen test (catches symbol version errors ldd misses)
+          err=$(${pkgs.python3}/bin/python3 -c "import ctypes; ctypes.CDLL('$so')" 2>&1 || true)
+          if [ -n "$err" ]; then
+            echo "DLOPEN ERROR:"
+            echo "$err" | tail -n1
+          else
+            echo "dlopen OK"
+          fi
+        else
+          echo "--- $so: NOT FOUND on disk"
+        fi
+        echo
+      done
+      echo "================================"
+
+      exec ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.reaper}/bin/reaper "$@"
+    ''))
   ];
 }

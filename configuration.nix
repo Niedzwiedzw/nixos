@@ -265,7 +265,6 @@
     winePackages.wayland
     wine64Packages.wayland
     wineWow64Packages.wayland
-    wineWowPackages.wayland
     waylandpp
     wayland
     xorg.libX11
