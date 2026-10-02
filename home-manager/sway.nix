@@ -269,7 +269,7 @@
             	border: none;
             	border-radius: 10;
               font-family: "Maple Mono NF";
-            	font-size: 15px;
+            	font-size: 12px;
             	min-height: 10px;
             }
 

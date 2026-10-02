@@ -18,7 +18,7 @@
     ./modules/wireguard--thinkpad.nix
     ./modules/power-management-laptop.nix
     ./modules/font-config.nix
-    # ./modules/gaming.nix
+    ./modules/gaming.nix
   ];
 
   # use lix package manager (rust reimplementation)
