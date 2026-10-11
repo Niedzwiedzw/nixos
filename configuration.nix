@@ -295,6 +295,9 @@
     # -- end of amd gpu
     # crypto
     cryptsetup
+    # vnc
+    wayvnc
+    wlvncc
   ];
 
   # Open ports in the firewall.

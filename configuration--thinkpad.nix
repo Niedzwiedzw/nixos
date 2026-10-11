@@ -247,6 +247,9 @@
     docker-compose
     docker-buildx
     pipewire.jack
+    # vnc
+    wayvnc
+    wlvncc
   ];
   # sshd
   services.openssh = {
