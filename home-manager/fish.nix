@@ -191,41 +191,48 @@
         end
       '';
 
-      ytarchive = ''
-        function ytarchive
-         yt-dlp -f bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best -o '%(upload_date)s - %(channel)s - %(id)s - %(title)s.%(ext)s' \
-         --sponsorblock-mark "all" \
-         --geo-bypass \
-         --sub-langs 'all' \
-         --embed-subs \
-         --embed-metadata \
-         --convert-subs 'srt' \
-         --download-archive $argv[1].txt https://www.youtube.com/$argv[1]/videos;
-        end
-      '';
-
-      ytarchivevideo = ''
-        function ytarchivevideo
-          yt-dlp -f bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best -o '%(upload_date)s - %(channel)s - %(id)s - %(title)s.%(ext)s' \
-         --sponsorblock-mark "all" \
-         --geo-bypass \
-         --sub-langs 'all' \
-         --embed-metadata \
-         --convert-subs 'srt' \
-         --download-archive $argv[1] $argv[2];
-        end
-      '';
-
       ytd = ''
         function ytd
-           yt-dlp -f bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best -o '%(upload_date)s - %(channel)s - %(id)s - %(title)s.%(ext)s' \
-         --sponsorblock-mark "all" \
-         --geo-bypass \
-         --sub-langs 'all' \
-         --embed-subs \
-         --embed-metadata \
-         --convert-subs 'srt' \
-         $argv
+          mkdir -p "$HOME/Videos"
+
+          yt-dlp \
+            -f 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' \
+            -o "$HOME/Videos/%(upload_date)s - %(channel)s - %(id)s - %(title)s.%(ext)s" \
+            --sponsorblock-mark all \
+            --geo-bypass \
+            --sub-langs all \
+            --embed-subs \
+            --embed-metadata \
+            --convert-subs srt \
+            --exec "after_move:fish -c '
+              set src \$argv[1]
+              set size (stat -c %s \"\$src\")
+
+              if test \$size -le 19000000
+                exit 0
+              end
+
+              set duration (ffprobe -v error -show_entries format=duration -of csv=p=0 \"\$src\")
+              set bitrate (math -s0 \"(19000000 * 8 / \$duration - 96000) / 1000\")
+              set bitrate (math \"max(10, \$bitrate)\")
+
+              set tmp (mktemp --suffix=.mp4)
+
+              ffmpeg -y -i \"\$src\" \
+                -c:v libx264 -b:v \"\$bitrate\"k \
+                -pix_fmt yuv420p \
+                -c:a aac -b:a 96k \
+                -map 0:v:0 -map 0:a? -sn \
+                -movflags +faststart \"\$tmp\"
+
+              if test \$status -eq 0; and test (stat -c %s \"\$tmp\") -le 20000
+                mv -f \"\$tmp\" \"\$src\"
+              else
+                echo \"Compression failed or exceeded 25 MB: \$src\" >&2
+                rm -f \"\$tmp\"
+              end
+            ' -- %(filepath)q" \
+            $argv
         end
       '';
     };
