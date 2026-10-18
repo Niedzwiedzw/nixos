@@ -119,13 +119,14 @@ in {
       #   transform.rotation = 180;
       # };
       ${lg_tv.name} = {
-        mode = {inherit (lg_tv) width height;};
-        scale = lg_tv.scale;
-        position = {
-          x = lgLW + iiyamaLW + 9000;
-          y = 9000;
-        };
-        # transform.rotation = 180;
+        enable = false;
+        # mode = {inherit (lg_tv) width height;};
+        # scale = lg_tv.scale;
+        # position = {
+        #   x = lgLW + iiyamaLW + 9000;
+        #   y = 9000;
+        # };
+        # # transform.rotation = 180;
       };
     };
 

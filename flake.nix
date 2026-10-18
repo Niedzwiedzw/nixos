@@ -19,7 +19,7 @@
     nil-lsp = {
       url = "github:oxalica/nil/main";
     };
-    niri.url = "github:sodiboo/niri-flake";
+    niri.url = "github:epireyn/niri-flake";
   };
   outputs = {
     self,
@@ -34,6 +34,11 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
+    pkgsWithNiri = import nixpkgs {
+      inherit system;
+      overlays = [niri.overlays.niri];
+    };
+
     startupPrograms = [
       "nm-applet"
       # "blueman-applet"
@@ -91,7 +96,7 @@
 
     # home
     homeConfigurations.niedzwiedz = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = pkgsWithNiri;
       extraSpecialArgs = {
         helix-flake = helix;
         nil-lsp = nil-lsp;

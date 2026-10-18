@@ -9,6 +9,8 @@
 in {
   programs.niri = {
     enable = true;
+    package = pkgs.niri-unstable;
+
     settings = {
       input.focus-follows-mouse = {
         enable = true;
