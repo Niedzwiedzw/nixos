@@ -115,7 +115,7 @@
       ];
     };
     homeConfigurations.vivobook = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = pkgsWithNiri;
       extraSpecialArgs = {
         helix-flake = helix;
         nil-lsp = nil-lsp;
@@ -133,7 +133,7 @@
       ];
     };
     homeConfigurations.thinkpad = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = pkgsWithNiri;
       extraSpecialArgs = {
         helix-flake = helix;
         nil-lsp = nil-lsp;

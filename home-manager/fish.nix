@@ -191,6 +191,76 @@
         end
       '';
 
+      ff-shrink = ''
+        function ff-shrink
+            if test (count $argv) -ne 1
+                echo "Usage: ff-shrink <video-path>"
+                return 1
+            end
+
+            set -l input "$argv[1]"
+
+            if not test -f "$input"
+                echo "File not found: $input"
+                return 1
+            end
+
+            # Insert --halved before the extension
+            set -l output (string replace -r -- '(\.[^./]+)$' '--halved$1' "$input")
+
+            if test -z "$output"; or test "$output" = "$input"
+                echo "Failed to generate output filename"
+                return 1
+            end
+
+            # Read video bitrate
+            set -l bitrate (ffprobe -v error \
+                -select_streams v:0 \
+                -show_entries stream=bit_rate \
+                -of default=noprint_wrappers=1:nokey=1 \
+                "$input")
+
+            # Read file size
+            set -l size_bytes (wc -c < "$input" | string trim)
+            set -l size_mb (math --scale=2 "$size_bytes / 1048576")
+
+            echo "File: $input"
+            echo "Size: $size_mb MiB"
+
+            if string match -rq '^[0-9]+$' -- "$bitrate"
+                set -l bitrate_mbps (math --scale=2 "$bitrate / 1000000")
+                echo "Video bitrate: $bitrate_mbps Mbps"
+            else
+                echo "Video bitrate: unavailable"
+            end
+
+            # Prompt for new bitrate
+            read -P "New bitrate (e.g. 2500k, 4M): " new_bitrate
+            or return 1
+
+            if not string match -rq '^[0-9]+([kKmM])?$' -- "$new_bitrate"
+                echo "Invalid bitrate"
+                return 1
+            end
+
+            # Select codec
+            set -l codec libx264
+            if string match -rq '\.webm$' -- (string lower -- "$input")
+                set codec libvpx-vp9
+            end
+
+            echo "Output: $output"
+            echo "Target bitrate: $new_bitrate"
+
+            # Re-encode video, preserve audio
+            ffmpeg -hide_banner -n -i "$input" \
+                -map 0:v:0 -map '0:a?' \
+                -c:v "$codec" -b:v "$new_bitrate" \
+                -c:a copy \
+                "$output"
+        end
+      '';
+
       ytd = ''
         function ytd
           mkdir -p "$HOME/Videos"
