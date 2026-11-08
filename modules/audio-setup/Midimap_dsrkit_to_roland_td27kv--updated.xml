@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  DrumGizmo DRSKit -> Roland TD-27 factory MIDI note assignments.
-  Instrument identifiers verified against the DRSKit2 kit and its supplied sample-midimap.xml.
-  Verified against the supplied DRSKit2 full drumkit XML: all referenced instruments exist.
-  Roland factory note map: https://support.roland.com/hc/en-us/articles/4407474950811-TD-27-Default-MIDI-Note-Map
+  DrumGizmo DRSKit (full or no_whiskers) <- Roland TD-27 factory MIDI note map.
 
-  Notes:
-   - DRSKit2 does not have dedicated Tom1_rim / Tom2_rim / Tom3_rim
-     instruments, so the rim zones trigger their corresponding tom samples.
-   - Hi-hat openness is mapped by separate open/closed note numbers here.
-     Continuous pedal CC and cymbal choke behavior are not translated by this XML.
-   - Snare note 37 (cross-stick) and 40 (rim) are mapped following the
-     supplied DRSKit sample's note-to-instrument choices; audition and swap
-     Snare_rim / Snare_rest if you prefer the opposite articulations.
+  Note numbers from Roland: https://support.roland.com/hc/en-us/articles/4407474950811
+  Instrument names verified against DRSKit_full.xml / DRSKit_no_whiskers.xml.
+
+  DRSKit naming: "_tip" = bow hit, "_shank"/no suffix on open hat = edge hit,
+  Snare_rim = rimshot, Snare_rest = cross-stick (stick resting on the head).
+
+  Not expressible here (see chat): half-open hi-hat (TD-27 sends CC4 position,
+  DrumGizmo 0.9.20 ignores it), foot splash, tom rim articulations.
+  Cymbal chokes arrive as polyphonic aftertouch and work automatically in
+  DrumGizmo 0.9.20+ with no midimap entry.
 -->
 <midimap>
   <!-- Kick -->
   <map note="36" instr="Kdrum_with_contact"/>
-  <map note="35" instr="Kdrum_without_contact"/><!-- optional GM alternative -->
+  <map note="35" instr="Kdrum_without_contact"/>   <!-- not sent by TD-27; GM spare -->
 
-  <!-- Snare: TD-27 head, rimshot and cross-stick -->
+  <!-- Snare: head / rimshot / cross-stick -->
   <map note="38" instr="Snare"/>
-  <map note="40" instr="Snare_rest"/>
-  <map note="37" instr="Snare_rim"/>
+  <map note="40" instr="Snare_rim"/>                <!-- TD-27 rim = rimshot -->
+  <map note="37" instr="Snare_rest"/>               <!-- TD-27 X-stick = cross-stick -->
 
-  <!-- Toms: no distinct tom-rim instruments in DRSKit2 -->
+  <!-- Toms: head and rim both play the head sample (no tom-rim samples in DRSKit) -->
   <map note="48" instr="Tom1"/>
   <map note="50" instr="Tom1"/>
   <map note="45" instr="Tom2"/>
@@ -32,23 +31,30 @@
   <map note="43" instr="Tom3"/>
   <map note="58" instr="Tom3"/>
 
-  <!-- Hi-hat: TD-27 open/closed bow and edge + pedal -->
-  <map note="46" instr="Hihat_open_tip"/>
-  <map note="26" instr="Hihat_open"/>
-  <map note="42" instr="Hihat_closed"/>
-  <map note="22" instr="Hihat_closed_shank"/>
-  <map note="44" instr="Hihat_foot"/>
+  <!-- Hi-hat: bow/edge x open/closed, plus pedal -->
+  <map note="46" instr="Hihat_open_tip"/>           <!-- open, bow -->
+  <map note="26" instr="Hihat_open"/>               <!-- open, edge -->
+  <map note="42" instr="Hihat_closed"/>             <!-- closed, bow -->
+  <map note="22" instr="Hihat_closed_shank"/>       <!-- closed, edge -->
+  <map note="44" instr="Hihat_foot"/>               <!-- pedal chick -->
 
-  <!-- Crash 1 (left): bow + edge -->
-  <map note="49" instr="Crash_left_tip"/>
-  <map note="55" instr="Crash_left_shank"/>
+  <!-- Crash 1 (left) -->
+  <map note="49" instr="Crash_left_tip"/>           <!-- bow -->
+  <map note="55" instr="Crash_left_shank"/>         <!-- edge -->
 
-  <!-- Crash 2 (right): bow + edge -->
-  <map note="57" instr="Crash_right_tip"/>
-  <map note="52" instr="Crash_right_shank"/>
+  <!-- Crash 2 (right) -->
+  <map note="57" instr="Crash_right_tip"/>          <!-- bow -->
+  <map note="52" instr="Crash_right_shank"/>        <!-- edge -->
 
-  <!-- Ride: bow + edge + bell -->
-  <map note="51" instr="Ride_tip"/>
-  <map note="59" instr="Ride_shank"/>
-  <map note="53" instr="Ride_shank_bell"/>
+  <!-- Ride -->
+  <map note="51" instr="Ride_tip"/>                 <!-- bow -->
+  <map note="59" instr="Ride_shank"/>               <!-- edge -->
+  <map note="53" instr="Ride_shank_bell"/>          <!-- bell (Ride_tip_bell is the softer alternative) -->
+
+  <!-- Optional: TD-27 AUX inputs, if you add pads. Uncomment what you use.
+  <map note="27" instr="Hihat_semi_open"/>
+  <map note="29" instr="Ride_tip_chain"/>
+  <map note="30" instr="Ride_tip_bell_chain"/>
+  <map note="31" instr="Ride_rest"/>
+  -->
 </midimap>
