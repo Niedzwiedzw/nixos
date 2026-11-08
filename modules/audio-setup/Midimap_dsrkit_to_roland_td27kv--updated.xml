@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   DrumGizmo DRSKit -> Roland TD-27 factory MIDI note assignments.
-  Instrument identifiers are taken only from sample-midimap.xml supplied with the kit.
-  Intended for the full DRSKit articulation set (verify against the loaded drumkit XML).
+  Instrument identifiers verified against the DRSKit2 kit and its supplied sample-midimap.xml.
+  Verified against the supplied DRSKit2 full drumkit XML: all referenced instruments exist.
   Roland factory note map: https://support.roland.com/hc/en-us/articles/4407474950811-TD-27-Default-MIDI-Note-Map
 
   Notes:
-   - DRSKit sample map has no dedicated Tom1_rim / Tom2_rim / Tom3_rim
-     instruments, so the rim zones trigger their corresponding tom sounds.
+   - DRSKit2 does not have dedicated Tom1_rim / Tom2_rim / Tom3_rim
+     instruments, so the rim zones trigger their corresponding tom samples.
    - Hi-hat openness is mapped by separate open/closed note numbers here.
      Continuous pedal CC and cymbal choke behavior are not translated by this XML.
    - Snare note 37 (cross-stick) and 40 (rim) are mapped following the
@@ -24,7 +24,7 @@
   <map note="40" instr="Snare_rest"/>
   <map note="37" instr="Snare_rim"/>
 
-  <!-- Toms: no separately named tom-rim samples in supplied DRSKit map -->
+  <!-- Toms: no distinct tom-rim instruments in DRSKit2 -->
   <map note="48" instr="Tom1"/>
   <map note="50" instr="Tom1"/>
   <map note="45" instr="Tom2"/>
