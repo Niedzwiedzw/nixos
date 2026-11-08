@@ -9,8 +9,7 @@
     # rust-analyzer
     vscode-langservers-extracted
     yaml-language-server
-    taplo
-    nil
+    tombi
     nixpkgs-fmt
     alejandra
     lua-language-server

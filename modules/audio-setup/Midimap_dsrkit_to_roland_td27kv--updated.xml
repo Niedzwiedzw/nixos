@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DrumGizmo DRSKit -> Roland TD-27 factory MIDI note assignments.
+  Instrument identifiers are taken only from sample-midimap.xml supplied with the kit.
+  Intended for the full DRSKit articulation set (verify against the loaded drumkit XML).
+  Roland factory note map: https://support.roland.com/hc/en-us/articles/4407474950811-TD-27-Default-MIDI-Note-Map
+
+  Notes:
+   - DRSKit sample map has no dedicated Tom1_rim / Tom2_rim / Tom3_rim
+     instruments, so the rim zones trigger their corresponding tom sounds.
+   - Hi-hat openness is mapped by separate open/closed note numbers here.
+     Continuous pedal CC and cymbal choke behavior are not translated by this XML.
+   - Snare note 37 (cross-stick) and 40 (rim) are mapped following the
+     supplied DRSKit sample's note-to-instrument choices; audition and swap
+     Snare_rim / Snare_rest if you prefer the opposite articulations.
+-->
+<midimap>
+  <!-- Kick -->
+  <map note="36" instr="Kdrum_with_contact"/>
+  <map note="35" instr="Kdrum_without_contact"/><!-- optional GM alternative -->
+
+  <!-- Snare: TD-27 head, rimshot and cross-stick -->
+  <map note="38" instr="Snare"/>
+  <map note="40" instr="Snare_rest"/>
+  <map note="37" instr="Snare_rim"/>
+
+  <!-- Toms: no separately named tom-rim samples in supplied DRSKit map -->
+  <map note="48" instr="Tom1"/>
+  <map note="50" instr="Tom1"/>
+  <map note="45" instr="Tom2"/>
+  <map note="47" instr="Tom2"/>
+  <map note="43" instr="Tom3"/>
+  <map note="58" instr="Tom3"/>
+
+  <!-- Hi-hat: TD-27 open/closed bow and edge + pedal -->
+  <map note="46" instr="Hihat_open_tip"/>
+  <map note="26" instr="Hihat_open"/>
+  <map note="42" instr="Hihat_closed"/>
+  <map note="22" instr="Hihat_closed_shank"/>
+  <map note="44" instr="Hihat_foot"/>
+
+  <!-- Crash 1 (left): bow + edge -->
+  <map note="49" instr="Crash_left_tip"/>
+  <map note="55" instr="Crash_left_shank"/>
+
+  <!-- Crash 2 (right): bow + edge -->
+  <map note="57" instr="Crash_right_tip"/>
+  <map note="52" instr="Crash_right_shank"/>
+
+  <!-- Ride: bow + edge + bell -->
+  <map note="51" instr="Ride_tip"/>
+  <map note="59" instr="Ride_shank"/>
+  <map note="53" instr="Ride_shank_bell"/>
+</midimap>

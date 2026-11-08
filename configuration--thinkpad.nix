@@ -287,6 +287,8 @@
   networking.firewall.allowedTCPPorts =
     [
     ]
+    # asd
+    ++ [25565]
     # Opens 30000-31000 for unftp
     ++ (lib.range 30000 31001)
     # kdeconnect
