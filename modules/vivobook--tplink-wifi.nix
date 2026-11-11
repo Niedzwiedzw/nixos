@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   boot = {
     # kernelModules = ["8192eu"];
     # blacklistedKernelModules = ["rtl8xxxu"];

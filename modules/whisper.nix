@@ -1,19 +1,16 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   whisper-cpp-hip = pkgs.whisper-cpp.overrideAttrs (old: {
-    cmakeFlags =
-      (old.cmakeFlags or [])
-      ++ [
-        "-DGGML_HIP=ON"
-        "-DAMDGPU_TARGETS=gfx1100"
-        "-DCMAKE_HIP_ARCHITECTURES=gfx1100"
-      ];
-    buildInputs =
-      (old.buildInputs or [])
-      ++ [
-        pkgs.rocmPackages.clr
-        pkgs.rocmPackages.hipblas
-        pkgs.rocmPackages.rocblas
-      ];
+    cmakeFlags = (old.cmakeFlags or [ ]) ++ [
+      "-DGGML_HIP=ON"
+      "-DAMDGPU_TARGETS=gfx1100"
+      "-DCMAKE_HIP_ARCHITECTURES=gfx1100"
+    ];
+    buildInputs = (old.buildInputs or [ ]) ++ [
+      pkgs.rocmPackages.clr
+      pkgs.rocmPackages.hipblas
+      pkgs.rocmPackages.rocblas
+    ];
   });
 
   modelName = "large-v3-turbo-q5_0";
@@ -28,7 +25,8 @@
     ${whisper-cpp-hip}/bin/whisper-cpp-download-ggml-model ${modelName} ${modelsPath}
     ${whisper-cpp-hip}/bin/whisper-cli --model ${modelFullPath} -l pl "$@"
   '';
-in {
+in
+{
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr
     rocmPackages.clr.icd
@@ -38,7 +36,10 @@ in {
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
-  users.users.niedzwiedz.extraGroups = ["video" "render"];
+  users.users.niedzwiedz.extraGroups = [
+    "video"
+    "render"
+  ];
 
   environment.systemPackages = with pkgs; [
     whisper-cpp-hip

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services.jellyfin = {
     enable = true;
     openFirewall = true;
@@ -8,10 +8,14 @@
   services.minidlna = {
     enable = true;
     settings = {
-      media_dir = ["/home/niedzwiedz/Downloads/torrent"];
+      media_dir = [ "/home/niedzwiedz/Downloads/torrent" ];
       friendly_name = "NixOS Media Server";
       inotify = "yes"; # Auto-detect new files
     };
   };
-  environment.systemPackages = with pkgs; [ffmpeg libva libva-utils];
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+    libva
+    libva-utils
+  ];
 }

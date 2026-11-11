@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -106,8 +106,6 @@
       adw-gtk3
       brave
       acpi
-      # ai
-      opencode
       (pkgs.writeShellScriptBin "bigpicture" ''
         set -euo pipefail
 
@@ -150,7 +148,7 @@
         confirm-before-quit = false;
         editor = {
           program = "hx";
-          args = [];
+          args = [ ];
         };
         window = {
           opacity = 0.88;
@@ -161,9 +159,9 @@
           family = "Maple Mono NF";
         };
         fonts.extras = [
-          {family = "Maple Mono";}
-          {family = "Noto Color Emoji";}
-          {family = "DejaVu Sans";}
+          { family = "Maple Mono"; }
+          { family = "Noto Color Emoji"; }
+          { family = "DejaVu Sans"; }
         ];
       };
     };

@@ -4,9 +4,16 @@
   startupPrograms,
   niri,
   ...
-}: let
-  inherit (niri.lib.kdl) node plain leaf flag;
-in {
+}:
+let
+  inherit (niri.lib.kdl)
+    node
+    plain
+    leaf
+    flag
+    ;
+in
+{
   programs.niri = {
     enable = true;
     package = pkgs.niri-unstable;
@@ -16,7 +23,13 @@ in {
         enable = true;
         max-scroll-amount = "5%";
       };
-      spawn-at-startup = map (it: {command = ["sh" "-c" it];}) startupPrograms;
+      spawn-at-startup = map (it: {
+        command = [
+          "sh"
+          "-c"
+          it
+        ];
+      }) startupPrograms;
       hotkey-overlay = {
         skip-at-startup = true;
       };
@@ -43,7 +56,7 @@ in {
       };
       window-rules = [
         {
-          matches = [{is-active = false;}];
+          matches = [ { is-active = false; } ];
           opacity = 0.9;
           # background-effect = {
           #   xray = true;
@@ -54,85 +67,102 @@ in {
         }
       ];
 
-      binds =
-        {
-          # -- apps --
-          "Mod+Return".action.spawn = "rio";
-          # "Mod+D".action.spawn = "/home/niedzwiedz/nixos/scripts/dmenu-wrapped.sh";
-          "Mod+D".action.spawn = "${pkgs.fuzzel}/bin/fuzzel";
-          "Mod+Shift+Q".action.close-window = {};
+      binds = {
+        # -- apps --
+        "Mod+Return".action.spawn = "rio";
+        # "Mod+D".action.spawn = "/home/niedzwiedz/nixos/scripts/dmenu-wrapped.sh";
+        "Mod+D".action.spawn = "${pkgs.fuzzel}/bin/fuzzel";
+        "Mod+Shift+Q".action.close-window = { };
 
-          # -- focus --
-          "Mod+H".action.focus-column-or-monitor-left = {};
-          "Mod+L".action.focus-column-or-monitor-right = {};
-          "Mod+Shift+H".action.move-column-to-monitor-left = {};
-          "Mod+Shift+L".action.move-column-to-monitor-right = {};
+        # -- focus --
+        "Mod+H".action.focus-column-or-monitor-left = { };
+        "Mod+L".action.focus-column-or-monitor-right = { };
+        "Mod+Shift+H".action.move-column-to-monitor-left = { };
+        "Mod+Shift+L".action.move-column-to-monitor-right = { };
 
-          "Mod+J".action.focus-window-or-monitor-down = {};
-          "Mod+K".action.focus-window-or-monitor-up = {};
-          "Mod+Shift+J".action.move-window-down = {};
-          "Mod+Shift+K".action.move-window-up = {};
+        "Mod+J".action.focus-window-or-monitor-down = { };
+        "Mod+K".action.focus-window-or-monitor-up = { };
+        "Mod+Shift+J".action.move-window-down = { };
+        "Mod+Shift+K".action.move-window-up = { };
 
-          "Mod+Ctrl+J".action.focus-monitor-down = {};
-          "Mod+Ctrl+K".action.focus-monitor-up = {};
-          "Mod+Ctrl+Shift+J".action.move-column-to-monitor-down = {};
-          "Mod+Ctrl+Shift+K".action.move-column-to-monitor-up = {};
+        "Mod+Ctrl+J".action.focus-monitor-down = { };
+        "Mod+Ctrl+K".action.focus-monitor-up = { };
+        "Mod+Ctrl+Shift+J".action.move-column-to-monitor-down = { };
+        "Mod+Ctrl+Shift+K".action.move-column-to-monitor-up = { };
 
-          # -- monitors (extra vs sway, since columns scroll within a monitor) --
-          "Mod+Ctrl+H".action.focus-monitor-left = {};
-          "Mod+Ctrl+L".action.focus-monitor-right = {};
-          "Mod+Ctrl+Shift+H".action.move-column-to-monitor-left = {};
-          "Mod+Ctrl+Shift+L".action.move-column-to-monitor-right = {};
+        # -- monitors (extra vs sway, since columns scroll within a monitor) --
+        "Mod+Ctrl+H".action.focus-monitor-left = { };
+        "Mod+Ctrl+L".action.focus-monitor-right = { };
+        "Mod+Ctrl+Shift+H".action.move-column-to-monitor-left = { };
+        "Mod+Ctrl+Shift+L".action.move-column-to-monitor-right = { };
 
-          # -- windows/layout --
-          "Mod+F".action.maximize-column = {};
-          "Mod+Shift+F".action.fullscreen-window = {};
-          "Mod+Shift+Space".action.toggle-window-floating = {};
-          "Mod+Space".action.switch-focus-between-floating-and-tiling = {};
-          "Mod+R".action.switch-preset-column-width = {};
-          "Mod+Shift+R".action.switch-preset-window-height = {};
-          "Mod+Minus".action.set-column-width = "-10%";
-          "Mod+Equal".action.set-column-width = "+10%";
-          "Mod+Comma".action.consume-window-into-column = {}; # ~ sway "move into container"
-          "Mod+Period".action.expel-window-from-column = {};
-          "Mod+W".action.toggle-column-tabbed-display = {}; # ~ sway tabbed layout
+        # -- windows/layout --
+        "Mod+F".action.maximize-column = { };
+        "Mod+Shift+F".action.fullscreen-window = { };
+        "Mod+Shift+Space".action.toggle-window-floating = { };
+        "Mod+Space".action.switch-focus-between-floating-and-tiling = { };
+        "Mod+R".action.switch-preset-column-width = { };
+        "Mod+Shift+R".action.switch-preset-window-height = { };
+        "Mod+Minus".action.set-column-width = "-10%";
+        "Mod+Equal".action.set-column-width = "+10%";
+        "Mod+Comma".action.consume-window-into-column = { }; # ~ sway "move into container"
+        "Mod+Period".action.expel-window-from-column = { };
+        "Mod+W".action.toggle-column-tabbed-display = { }; # ~ sway tabbed layout
 
-          # -- misc --
-          "Mod+Tab".action.toggle-overview = {};
-          "Mod+Shift+E".action.quit = {};
-          "Ctrl+Alt+L".action.spawn = "swaylock";
-          "Mod+Shift+Slash".action.show-hotkey-overlay = {};
+        # -- misc --
+        "Mod+Tab".action.toggle-overview = { };
+        "Mod+Shift+E".action.quit = { };
+        "Ctrl+Alt+L".action.spawn = "swaylock";
+        "Mod+Shift+Slash".action.show-hotkey-overlay = { };
 
-          "Mod+C".action.center-column = {};
-          "Mod+Home".action.focus-column-first = {};
-          "Mod+End".action.focus-column-last = {};
-          "Print".action.screenshot = {};
-          "Alt+Print".action.screenshot-window = {};
-          "Mod+Shift+Equal".action.expand-column-to-available-width = {};
+        "Mod+C".action.center-column = { };
+        "Mod+Home".action.focus-column-first = { };
+        "Mod+End".action.focus-column-last = { };
+        "Print".action.screenshot = { };
+        "Alt+Print".action.screenshot-window = { };
+        "Mod+Shift+Equal".action.expand-column-to-available-width = { };
 
-          # screenshots
-          "Mod+Shift+X".action.spawn = ["sh" "-c" ''grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | tee /tmp/screenshot.png | wl-copy -t image/png''];
-          "Mod+Shift+V".action.spawn = ["sh" "-c" ''grim -g "$(slurp -d)" - | convert - -resize 300% -sharpen 0x1.0 - | tesseract stdin stdout -l eng+pol | wl-copy''];
-          "Mod+Shift+W".action.spawn = ["alacritty" "-e" "ep"];
-        }
-        # -- workspaces 1-10 + 99, by name (matches your pinned named workspaces) --
-        // lib.listToAttrs (lib.concatMap (n: let
-          ws = toString n;
-          key = toString (lib.mod n 10);
-        in [
-          {
-            name = "Mod+${key}";
-            value.action.focus-workspace = ws;
-          }
-          {
-            name = "Mod+Shift+${key}";
-            value.action.move-column-to-workspace = ws;
-          }
-        ]) (lib.range 1 10))
-        // {
-          "Mod+Grave".action.focus-workspace = "99"; # the TV
-          "Mod+Shift+Grave".action.move-column-to-workspace = "99";
-        };
+        # screenshots
+        "Mod+Shift+X".action.spawn = [
+          "sh"
+          "-c"
+          ''grim -g "$(slurp -d)" - | swappy -f - -o - | pngquant - | tee /tmp/screenshot.png | wl-copy -t image/png''
+        ];
+        "Mod+Shift+V".action.spawn = [
+          "sh"
+          "-c"
+          ''grim -g "$(slurp -d)" - | convert - -resize 300% -sharpen 0x1.0 - | tesseract stdin stdout -l eng+pol | wl-copy''
+        ];
+        "Mod+Shift+W".action.spawn = [
+          "alacritty"
+          "-e"
+          "ep"
+        ];
+      }
+      # -- workspaces 1-10 + 99, by name (matches your pinned named workspaces) --
+      // lib.listToAttrs (
+        lib.concatMap (
+          n:
+          let
+            ws = toString n;
+            key = toString (lib.mod n 10);
+          in
+          [
+            {
+              name = "Mod+${key}";
+              value.action.focus-workspace = ws;
+            }
+            {
+              name = "Mod+Shift+${key}";
+              value.action.move-column-to-workspace = ws;
+            }
+          ]
+        ) (lib.range 1 10)
+      )
+      // {
+        "Mod+Grave".action.focus-workspace = "99"; # the TV
+        "Mod+Shift+Grave".action.move-column-to-workspace = "99";
+      };
 
       environment = {
         NIXOS_OZONE_WL = "1";
@@ -224,11 +254,14 @@ in {
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
     config.niri = {
-      "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
-      "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
-      "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
+      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
     };
   };
 
@@ -242,7 +275,10 @@ in {
         position = "top";
         # sway/* modules populate under sway, niri/* under niri;
         # waybar silently skips the inactive ones.
-        modules-left = ["sway/workspaces" "niri/workspaces"];
+        modules-left = [
+          "sway/workspaces"
+          "niri/workspaces"
+        ];
         "niri/workspaces" = {
           format = "{icon}";
           format-icons = {
@@ -260,8 +296,23 @@ in {
             default = "•";
           };
         };
-        modules-center = ["sway/window" "niri/window"];
-        modules-right = ["cpu" "memory" "temperature#cpu" "temperature#gpu" "network" "clock" "idle_inhibitor" "custom/lock" "custom/notification" "battery" "tray"];
+        modules-center = [
+          "sway/window"
+          "niri/window"
+        ];
+        modules-right = [
+          "cpu"
+          "memory"
+          "temperature#cpu"
+          "temperature#gpu"
+          "network"
+          "clock"
+          "idle_inhibitor"
+          "custom/lock"
+          "custom/notification"
+          "battery"
+          "tray"
+        ];
         "idle_inhibitor" = {
           format = "{icon}";
           format-icons = {
@@ -292,7 +343,9 @@ in {
             };
           };
         };
-        tray = {spacing = 5;};
+        tray = {
+          spacing = 5;
+        };
         "custom/notification" = {
           tooltip = false;
           format = "{icon}";
@@ -332,7 +385,7 @@ in {
         network = {
           interval = 5;
           "format-wifi" = "  {essid} ({signalStrength}%)"; # Icon= wifi
-          "format-ethernet" = "🕸️  {ifname}: {ipaddr}/{cidr}"; #  Icon= ethernet
+          "format-ethernet" = "🕸️  {ifname}: {ipaddr}/{cidr}"; # Icon= ethernet
           "format-disconnected" = "⚠  Disconnected";
           "tooltip-format" = "{ifname}= {ipaddr}";
         };
@@ -344,7 +397,13 @@ in {
           "format" = "<span color='#28CD41'> {icon} </span>{capacity}% ";
           "format-charging" = " 󱐋{capacity}%";
           "interval" = 1;
-          "format-icons" = ["󰂎" "󰁼" "󰁿" "󰂁" "󰁹"];
+          "format-icons" = [
+            "󰂎"
+            "󰁼"
+            "󰁿"
+            "󰂁"
+            "󰁹"
+          ];
           "tooltip" = true;
         };
 

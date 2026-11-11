@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   musnix = {
     rtcqs.enable = true;
     rtirq = {

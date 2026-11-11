@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   swapUUID = "58e44a76-a337-43cc-97ff-adf1528670b2";
-in {
+in
+{
   powerManagement.enable = true;
   swapDevices = [
     {
@@ -14,5 +16,8 @@ in {
   boot.resumeDevice = "/dev/disk/by-uuid/${swapUUID}";
   services.logind.powerKey = "hibernate";
   services.logind.powerKeyLongPress = "poweroff";
-  environment.systemPackages = with pkgs; [swayidle swaylock];
+  environment.systemPackages = with pkgs; [
+    swayidle
+    swaylock
+  ];
 }

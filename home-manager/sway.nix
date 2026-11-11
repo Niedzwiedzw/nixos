@@ -2,8 +2,12 @@
   pkgs,
   startupPrograms,
   ...
-}: {
-  home.sessionPath = ["/home/niedzwiedz/.local/bin" "/home/niedzwiedz/nixos/scripts"];
+}:
+{
+  home.sessionPath = [
+    "/home/niedzwiedz/.local/bin"
+    "/home/niedzwiedz/nixos/scripts"
+  ];
   home.packages = with pkgs; [
     networkmanagerapplet
     qt5.qtwayland
@@ -110,7 +114,7 @@
     '';
 
     config = {
-      startup = builtins.map (it: {command = it;}) startupPrograms;
+      startup = builtins.map (it: { command = it; }) startupPrograms;
       modifier = "Mod4";
       menu = "/home/niedzwiedz/nixos/scripts/dmenu-wrapped.sh";
       terminal = "rio";
@@ -119,7 +123,7 @@
           xkb_layout = "pl";
         };
       };
-      bars = [];
+      bars = [ ];
     };
   };
   services.swaync = {
@@ -145,9 +149,21 @@
         # modules-left = ["sway/workspaces"];
         # modules-center = ["sway/window"];
         # modules-right = ["pulseaudio" "cpu" "memory" "temperature" "clock" "tray"];
-        modules-left = ["sway/workspaces"];
-        modules-center = ["sway/window"];
-        modules-right = ["cpu" "memory" "temperature#cpu" "temperature#gpu" "network" "clock" "idle_inhibitor" "custom/lock" "custom/notification" "battery" "tray"];
+        modules-left = [ "sway/workspaces" ];
+        modules-center = [ "sway/window" ];
+        modules-right = [
+          "cpu"
+          "memory"
+          "temperature#cpu"
+          "temperature#gpu"
+          "network"
+          "clock"
+          "idle_inhibitor"
+          "custom/lock"
+          "custom/notification"
+          "battery"
+          "tray"
+        ];
         "idle_inhibitor" = {
           format = "{icon}";
           format-icons = {
@@ -178,7 +194,9 @@
             };
           };
         };
-        tray = {spacing = 5;};
+        tray = {
+          spacing = 5;
+        };
         "custom/notification" = {
           tooltip = false;
           format = "{icon}";
@@ -218,7 +236,7 @@
         network = {
           interval = 5;
           "format-wifi" = "  {essid} ({signalStrength}%)"; # Icon= wifi
-          "format-ethernet" = "🕸️  {ifname}: {ipaddr}/{cidr}"; #  Icon= ethernet
+          "format-ethernet" = "🕸️  {ifname}: {ipaddr}/{cidr}"; # Icon= ethernet
           "format-disconnected" = "⚠  Disconnected";
           "tooltip-format" = "{ifname}= {ipaddr}";
         };
@@ -230,7 +248,13 @@
           "format" = "<span color='#28CD41'> {icon} </span>{capacity}% ";
           "format-charging" = " 󱐋{capacity}%";
           "interval" = 1;
-          "format-icons" = ["󰂎" "󰁼" "󰁿" "󰂁" "󰁹"];
+          "format-icons" = [
+            "󰂎"
+            "󰁼"
+            "󰁿"
+            "󰂁"
+            "󰁹"
+          ];
           "tooltip" = true;
         };
 

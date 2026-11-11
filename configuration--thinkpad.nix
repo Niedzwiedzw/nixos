@@ -5,7 +5,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration--thinkpad.nix
@@ -24,7 +25,8 @@
   # use lix package manager (rust reimplementation)
   nix.package = pkgs.lixPackageSets.stable.lix;
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "reaper"
     ];
@@ -45,8 +47,11 @@
   services.flatpak.enable = true;
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome];
-    config.common.default = ["gtk"];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
+    config.common.default = [ "gtk" ];
   };
   services.atd.enable = true;
 
@@ -88,7 +93,7 @@
     "amdgpu"
   ];
 
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.graphics.enable = true;
 
   # boot.initrd.luks.devices."luks-dc26d02c-eb73-4302-9367-2d313170c745".device = "/dev/disk/by-uuid/dc26d02c-eb73-4302-9367-2d313170c745";
@@ -132,7 +137,10 @@
   # Configure console keymap
   console.keyMap = "pl2";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -141,7 +149,15 @@
   users.users.niedzwiedz = {
     isNormalUser = true;
     description = "niedzwiedz";
-    extraGroups = ["docker" "podman" "networkmanager" "wheel" "audio" "video" "dialout"];
+    extraGroups = [
+      "docker"
+      "podman"
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+      "dialout"
+    ];
     packages = with pkgs; [
       home-manager
     ];
@@ -151,7 +167,10 @@
   programs = {
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
     };
     # sway.enable = true;
     fish.enable = true;
@@ -254,10 +273,10 @@
   # sshd
   services.openssh = {
     enable = true;
-    ports = [22];
+    ports = [ 22 ];
     settings = {
       PasswordAuthentication = false;
-      AllowUsers = ["niedzwiedz"]; # Allows all users by default. Can be [ "user1" "user2" ]
+      AllowUsers = [ "niedzwiedz" ]; # Allows all users by default. Can be [ "user1" "user2" ]
       UseDns = false;
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
@@ -284,20 +303,18 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts =
-    [
-    ]
-    # asd
-    ++ [25565]
-    # Opens 30000-31000 for unftp
-    ++ (lib.range 30000 31001)
-    # kdeconnect
-    ++ (lib.range 1714 1764);
-  networking.firewall.allowedUDPPorts =
-    [
-    ]
-    # kdeconnect
-    ++ (lib.range 1714 1764);
+  networking.firewall.allowedTCPPorts = [
+  ]
+  # asd
+  ++ [ 25565 ]
+  # Opens 30000-31000 for unftp
+  ++ (lib.range 30000 31001)
+  # kdeconnect
+  ++ (lib.range 1714 1764);
+  networking.firewall.allowedUDPPorts = [
+  ]
+  # kdeconnect
+  ++ (lib.range 1714 1764);
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

@@ -4,7 +4,8 @@
   nil-lsp,
   lib,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     # rust-analyzer
     vscode-langservers-extracted
@@ -14,6 +15,9 @@
     alejandra
     lua-language-server
     tinymist
+    nil-lsp.packages.${pkgs.system}.default
+    pkgs.nixd
+    pkgs.nixfmt
   ];
   programs = {
     helix = {
@@ -72,7 +76,7 @@
             C-e = "goto_line_end_newline";
           };
           select = {
-            esc = ["normal_mode"];
+            esc = [ "normal_mode" ];
           };
         };
       };
@@ -92,17 +96,17 @@
           }
           {
             name = "typst";
-            language-servers = ["tinymist"];
+            language-servers = [ "tinymist" ];
           }
         ];
         language-server.rust-analyzer = {
           command = "rust-analyzer";
           config = {
             command = "clippy";
-            extraArgs = ["--tests"];
+            extraArgs = [ "--tests" ];
             checkOnSave = {
               command = "clippy";
-              extraArgs = ["--tests"];
+              extraArgs = [ "--tests" ];
             };
           };
         };
@@ -113,7 +117,7 @@
             preview = {
               background = {
                 enabled = true;
-                args = ["--invert-colors=never"];
+                args = [ "--invert-colors=never" ];
               };
             };
           };
@@ -129,7 +133,10 @@
               };
               maxMemoryMB = 8 * 1024;
             };
-            formatting.command = ["alejandra" "--"];
+            formatting.command = [
+              "alejandra"
+              "--"
+            ];
           };
         };
       };

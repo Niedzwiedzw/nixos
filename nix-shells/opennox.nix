@@ -1,7 +1,10 @@
-{pkgs ? import <nixpkgs> {}}:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 (pkgs.buildFHSEnv {
   name = "opennox";
-  targetPkgs = pkgs:
+  targetPkgs =
+    pkgs:
     (with pkgs; [
       udev
       alsa-lib
@@ -15,5 +18,4 @@
   #   alsa-lib
   # ]);
   runScript = "lutris";
-})
-.env
+}).env

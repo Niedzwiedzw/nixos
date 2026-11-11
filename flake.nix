@@ -6,7 +6,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager/release-26.05";
     };
-    musnix = {url = "github:musnix/musnix";};
+    musnix = {
+      url = "github:musnix/musnix";
+    };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     catppuccin = {
       url = "github:catppuccin/nix/release-26.05";
@@ -21,135 +23,138 @@
     };
     niri.url = "github:epireyn/niri-flake";
   };
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    catppuccin,
-    helix,
-    nix-index-database,
-    nil-lsp,
-    niri,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgsWithNiri = import nixpkgs {
-      inherit system;
-      overlays = [niri.overlays.niri];
-    };
-
-    startupPrograms = [
-      "nm-applet"
-      # "blueman-applet"
-      "signal-desktop"
-      # "betterbird"
-      "slack"
-      "discord"
-      # "keepassxc"
-      # "xrandr --output DP-1 --primary"
-      # "thunderbird"
-      # "autotiling"
-      # "/home/niedzwiedz/nixos/scripts/tablet-follow-focus.sh"
-      # "kdeconnectd --replace &"
-      # "kdeconnect-app"
-      # "waybar"
-    ];
-  in {
-    # nixos`
-    nixosConfigurations.niedzwiedz = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        catppuccin.nixosModules.catppuccin
-        inputs.musnix.nixosModules.musnix
-
-        ./configuration.nix
-
-        nix-index-database.nixosModules.nix-index
-      ];
-      specialArgs = {inherit inputs;};
-    };
-    nixosConfigurations.vivobook = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        catppuccin.nixosModules.catppuccin
-        # inputs.musnix.nixosModules.musnix
-
-        ./configuration--vivobook.nix
-
-        nix-index-database.nixosModules.nix-index
-      ];
-      specialArgs = {inherit inputs;};
-    };
-    nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        catppuccin.nixosModules.catppuccin
-        inputs.musnix.nixosModules.musnix
-
-        ./configuration--thinkpad.nix
-
-        nix-index-database.nixosModules.nix-index
-      ];
-      specialArgs = {inherit inputs;};
-    };
-
-    # home
-    homeConfigurations.niedzwiedz = home-manager.lib.homeManagerConfiguration {
-      pkgs = pkgsWithNiri;
-      extraSpecialArgs = {
-        helix-flake = helix;
-        nil-lsp = nil-lsp;
-        startupPrograms = startupPrograms;
-        niri = niri;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      catppuccin,
+      helix,
+      nix-index-database,
+      nil-lsp,
+      niri,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgsWithNiri = import nixpkgs {
+        inherit system;
+        overlays = [ niri.overlays.niri ];
       };
-      modules = [
-        ./home-manager.nix
-        ./home-manager/display-setups/pc-gpu.nix
-        catppuccin.homeModules.catppuccin
-        # NIX INDEX
-        nix-index-database.homeModules.nix-index
-        # optional to also wrap and install comma
-        {programs.nix-index-database.comma.enable = true;}
-        niri.homeModules.niri
+
+      startupPrograms = [
+        "nm-applet"
+        # "blueman-applet"
+        "signal-desktop"
+        # "betterbird"
+        "slack"
+        "discord"
+        # "keepassxc"
+        # "xrandr --output DP-1 --primary"
+        # "thunderbird"
+        # "autotiling"
+        # "/home/niedzwiedz/nixos/scripts/tablet-follow-focus.sh"
+        # "kdeconnectd --replace &"
+        # "kdeconnect-app"
+        # "waybar"
       ];
-    };
-    homeConfigurations.vivobook = home-manager.lib.homeManagerConfiguration {
-      pkgs = pkgsWithNiri;
-      extraSpecialArgs = {
-        helix-flake = helix;
-        nil-lsp = nil-lsp;
-        startupPrograms = startupPrograms;
-        niri = niri;
+    in
+    {
+      # nixos`
+      nixosConfigurations.niedzwiedz = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          catppuccin.nixosModules.catppuccin
+          inputs.musnix.nixosModules.musnix
+
+          ./configuration.nix
+
+          nix-index-database.nixosModules.nix-index
+        ];
+        specialArgs = { inherit inputs; };
       };
-      modules = [
-        ./home-manager.nix
-        catppuccin.homeManagerModules.catppuccin
-        # NIX INDEX
-        nix-index-database.homeModules.nix-index
-        # optional to also wrap and install comma
-        {programs.nix-index-database.comma.enable = true;}
-        niri.homeModules.niri
-      ];
-    };
-    homeConfigurations.thinkpad = home-manager.lib.homeManagerConfiguration {
-      pkgs = pkgsWithNiri;
-      extraSpecialArgs = {
-        helix-flake = helix;
-        nil-lsp = nil-lsp;
-        startupPrograms = startupPrograms;
-        niri = niri;
+      nixosConfigurations.vivobook = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          catppuccin.nixosModules.catppuccin
+          # inputs.musnix.nixosModules.musnix
+
+          ./configuration--vivobook.nix
+
+          nix-index-database.nixosModules.nix-index
+        ];
+        specialArgs = { inherit inputs; };
       };
-      modules = [
-        ./home-manager.nix
-        ./home-manager/display-setups/docking-station.nix
-        catppuccin.homeManagerModules.catppuccin
-        # NIX INDEX
-        nix-index-database.homeModules.nix-index
-        # optional to also wrap and install comma
-        {programs.nix-index-database.comma.enable = true;}
-        niri.homeModules.niri
-      ];
+      nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          catppuccin.nixosModules.catppuccin
+          inputs.musnix.nixosModules.musnix
+
+          ./configuration--thinkpad.nix
+
+          nix-index-database.nixosModules.nix-index
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
+      # home
+      homeConfigurations.niedzwiedz = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgsWithNiri;
+        extraSpecialArgs = {
+          helix-flake = helix;
+          nil-lsp = nil-lsp;
+          startupPrograms = startupPrograms;
+          niri = niri;
+        };
+        modules = [
+          ./home-manager.nix
+          ./home-manager/display-setups/pc-gpu.nix
+          catppuccin.homeModules.catppuccin
+          # NIX INDEX
+          nix-index-database.homeModules.nix-index
+          # optional to also wrap and install comma
+          { programs.nix-index-database.comma.enable = true; }
+          niri.homeModules.niri
+        ];
+      };
+      homeConfigurations.vivobook = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgsWithNiri;
+        extraSpecialArgs = {
+          helix-flake = helix;
+          nil-lsp = nil-lsp;
+          startupPrograms = startupPrograms;
+          niri = niri;
+        };
+        modules = [
+          ./home-manager.nix
+          catppuccin.homeManagerModules.catppuccin
+          # NIX INDEX
+          nix-index-database.homeModules.nix-index
+          # optional to also wrap and install comma
+          { programs.nix-index-database.comma.enable = true; }
+          niri.homeModules.niri
+        ];
+      };
+      homeConfigurations.thinkpad = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgsWithNiri;
+        extraSpecialArgs = {
+          helix-flake = helix;
+          nil-lsp = nil-lsp;
+          startupPrograms = startupPrograms;
+          niri = niri;
+        };
+        modules = [
+          ./home-manager.nix
+          ./home-manager/display-setups/docking-station.nix
+          catppuccin.homeManagerModules.catppuccin
+          # NIX INDEX
+          nix-index-database.homeModules.nix-index
+          # optional to also wrap and install comma
+          { programs.nix-index-database.comma.enable = true; }
+          niri.homeModules.niri
+        ];
+      };
     };
-  };
 }

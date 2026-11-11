@@ -1,5 +1,6 @@
 # ./modules/audio-setup.nix
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   # ---- Tunables: change these, everything below follows ----
   sampleRate = 48000; # Ui24 only advertises 48k over USB
   quantum = 256; # graph buffer (a.k.a. blocksize) in frames
@@ -14,7 +15,8 @@
   # Ui24 PipeWire node names (from `wpctl inspect`)
   ui24Input = "alsa_input.usb-Soundcraft_Soundcraft_Ui24-00.multichannel-input";
   ui24Output = "alsa_output.usb-Soundcraft_Soundcraft_Ui24-00.multichannel-output";
-in {
+in
+{
   imports = [
     ./audio-setup/recording-session.nix
   ];
@@ -98,51 +100,54 @@ in {
     qpwgraph
     crosspipe
     pavucontrol
-    (pkgs.writeShellScriptBin "reaper-audio" (let
-      pluginLibs = pkgs.lib.makeLibraryPath [
-        pkgs.stdenv.cc.cc.lib # libstdc++.so.6
-        pkgs.udev # libudev.so.1
-        pkgs.xdotool # libxdo.so.3
-        pkgs.xorg.libX11 # libX11.so.6
-      ];
-    in ''
-      export PIPEWIRE_LATENCY=${pwLatency}
-      export LD_LIBRARY_PATH=${pluginLibs}''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+    (pkgs.writeShellScriptBin "reaper-audio" (
+      let
+        pluginLibs = pkgs.lib.makeLibraryPath [
+          pkgs.stdenv.cc.cc.lib # libstdc++.so.6
+          pkgs.udev # libudev.so.1
+          pkgs.xdotool # libxdo.so.3
+          pkgs.xorg.libX11 # libX11.so.6
+        ];
+      in
+      ''
+        export PIPEWIRE_LATENCY=${pwLatency}
+        export LD_LIBRARY_PATH=${pluginLibs}''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 
-      echo "=== reaper-audio diagnostics ==="
-      echo "PIPEWIRE_LATENCY = $PIPEWIRE_LATENCY"
-      echo "LD_LIBRARY_PATH  = $LD_LIBRARY_PATH"
-      echo
-
-      for so in \
-        "$HOME/.config/REAPER/UserPlugins/reaper_helgobox-x64.so" \
-        "$HOME/.config/REAPER/FX/helgobox-x64.so"
-      do
-        if [ -f "$so" ]; then
-          echo "--- $so"
-          missing=$(${pkgs.glibc.bin}/bin/ldd "$so" 2>/dev/null | grep 'not found' || true)
-          if [ -n "$missing" ]; then
-            echo "MISSING DEPS:"
-            echo "$missing"
-          else
-            echo "all direct deps resolved"
-          fi
-          # real dlopen test (catches symbol version errors ldd misses)
-          err=$(${pkgs.python3}/bin/python3 -c "import ctypes; ctypes.CDLL('$so')" 2>&1 || true)
-          if [ -n "$err" ]; then
-            echo "DLOPEN ERROR:"
-            echo "$err" | tail -n1
-          else
-            echo "dlopen OK"
-          fi
-        else
-          echo "--- $so: NOT FOUND on disk"
-        fi
+        echo "=== reaper-audio diagnostics ==="
+        echo "PIPEWIRE_LATENCY = $PIPEWIRE_LATENCY"
+        echo "LD_LIBRARY_PATH  = $LD_LIBRARY_PATH"
         echo
-      done
-      echo "================================"
 
-      exec ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.reaper}/bin/reaper "$@"
-    ''))
+        for so in \
+          "$HOME/.config/REAPER/UserPlugins/reaper_helgobox-x64.so" \
+          "$HOME/.config/REAPER/FX/helgobox-x64.so"
+        do
+          if [ -f "$so" ]; then
+            echo "--- $so"
+            missing=$(${pkgs.glibc.bin}/bin/ldd "$so" 2>/dev/null | grep 'not found' || true)
+            if [ -n "$missing" ]; then
+              echo "MISSING DEPS:"
+              echo "$missing"
+            else
+              echo "all direct deps resolved"
+            fi
+            # real dlopen test (catches symbol version errors ldd misses)
+            err=$(${pkgs.python3}/bin/python3 -c "import ctypes; ctypes.CDLL('$so')" 2>&1 || true)
+            if [ -n "$err" ]; then
+              echo "DLOPEN ERROR:"
+              echo "$err" | tail -n1
+            else
+              echo "dlopen OK"
+            fi
+          else
+            echo "--- $so: NOT FOUND on disk"
+          fi
+          echo
+        done
+        echo "================================"
+
+        exec ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.reaper}/bin/reaper "$@"
+      ''
+    ))
   ];
 }

@@ -2,25 +2,34 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   displays = import ./available-displays--thinkpad.nix;
-  inherit (displays) thinkpad iiyama lg aoc;
+  inherit (displays)
+    thinkpad
+    iiyama
+    lg
+    aoc
+    ;
   # assignWorkspacesSway = display: workspaces:
   #   map (n: {
   #     workspace = toString n;
   #     output = display.name;
   #   })
   #   workspaces;
-  assignWorkspacesNiri = display: workspaces:
-    lib.listToAttrs (map (n: {
+  assignWorkspacesNiri =
+    display: workspaces:
+    lib.listToAttrs (
+      map (n: {
         name = lib.fixedWidthNumber 2 n; # keys control ordering: "01" < "02" < "10"
         value = {
           name = toString n;
           open-on-output = display.name;
         };
-      })
-      workspaces);
-in {
+      }) workspaces
+    );
+in
+{
   # wayland.windowManager.sway.config = {
   #   workspaceOutputAssign =
   #     (assignWorkspacesSway thinkpad [1])
@@ -55,13 +64,25 @@ in {
   # };
   programs.niri.settings = {
     workspaces =
-      (assignWorkspacesNiri thinkpad [1])
-      // (assignWorkspacesNiri lg [2 3 4])
-      // (assignWorkspacesNiri iiyama [5 6 7])
-      // (assignWorkspacesNiri aoc [8 9 10]);
+      (assignWorkspacesNiri thinkpad [ 1 ])
+      // (assignWorkspacesNiri lg [
+        2
+        3
+        4
+      ])
+      // (assignWorkspacesNiri iiyama [
+        5
+        6
+        7
+      ])
+      // (assignWorkspacesNiri aoc [
+        8
+        9
+        10
+      ]);
     outputs = {
       ${thinkpad.name} = {
-        mode = {inherit (thinkpad) width height;};
+        mode = { inherit (thinkpad) width height; };
         position = {
           x = lg.width;
           y = iiyama.height;
@@ -69,7 +90,7 @@ in {
       };
       # left
       ${lg.name} = {
-        mode = {inherit (lg) width height;};
+        mode = { inherit (lg) width height; };
         position = {
           x = 0;
           y = -350;
@@ -78,7 +99,7 @@ in {
       };
       # center
       ${iiyama.name} = {
-        mode = {inherit (iiyama) width height;};
+        mode = { inherit (iiyama) width height; };
         position = {
           x = lg.width;
           y = 0;
@@ -86,7 +107,7 @@ in {
       };
       # aoc
       ${aoc.name} = {
-        mode = {inherit (aoc) width height;};
+        mode = { inherit (aoc) width height; };
         position = {
           x = lg.width + iiyama.width;
           y = -350;

@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   # magewell capture card
   hardware.mwProCapture.enable = true;
 

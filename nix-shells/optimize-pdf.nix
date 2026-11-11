@@ -1,4 +1,5 @@
-with import <nixpkgs> {}; let
+with import <nixpkgs> { };
+let
   shrinkpdf = pkgs.writeShellScriptBin "shrinkpdf" ''
     #!/bin/bash
     # shrinkpdf.sh - Shrink PDF files using Ghostscript
@@ -209,14 +210,14 @@ with import <nixpkgs> {}; let
     echo "PDF shrunk successfully: $OUTPUT_FILE"
   '';
 in
-  mkShell {
-    name = "pdf-optimizer-env";
-    buildInputs = [
-      ghostscript
-      bc # For compression ratio calculation in verbose mode
-      shrinkpdf
-    ];
-    shellHook = ''
-      shrinkpdf --help
-    '';
-  }
+mkShell {
+  name = "pdf-optimizer-env";
+  buildInputs = [
+    ghostscript
+    bc # For compression ratio calculation in verbose mode
+    shrinkpdf
+  ];
+  shellHook = ''
+    shrinkpdf --help
+  '';
+}

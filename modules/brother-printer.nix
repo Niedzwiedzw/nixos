@@ -1,7 +1,9 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   printerAddr = "192.168.1.11";
   printerName = "Brother_MFC_B7715DW";
-in {
+in
+{
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
@@ -132,6 +134,12 @@ in {
       };
     };
   };
-  users.users.niedzwiedz.extraGroups = ["scanner" "lp"]; # Replace with your username
-  environment.systemPackages = with pkgs; [xsane simple-scan];
+  users.users.niedzwiedz.extraGroups = [
+    "scanner"
+    "lp"
+  ]; # Replace with your username
+  environment.systemPackages = with pkgs; [
+    xsane
+    simple-scan
+  ];
 }

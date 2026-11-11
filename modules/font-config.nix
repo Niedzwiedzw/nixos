@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   fonts = {
     packages = with pkgs; [
       maple-mono.truetype
@@ -11,10 +11,22 @@
     ];
 
     fontconfig.defaultFonts = {
-      monospace = ["Maple Mono NF" "Maple Mono"];
-      sansSerif = ["Maple Mono NF" "Maple Mono"];
-      serif = ["Maple Mono NF" "Maple Mono"];
-      emoji = ["Maple Mono NF" "Noto Color Emoji"];
+      monospace = [
+        "Maple Mono NF"
+        "Maple Mono"
+      ];
+      sansSerif = [
+        "Maple Mono NF"
+        "Maple Mono"
+      ];
+      serif = [
+        "Maple Mono NF"
+        "Maple Mono"
+      ];
+      emoji = [
+        "Maple Mono NF"
+        "Noto Color Emoji"
+      ];
     };
   };
 }
