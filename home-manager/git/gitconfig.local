@@ -9,7 +9,7 @@
 	path = ~/exein/.gitconfig
 
 [core]
-	excludesfile = ~/.global-git-ignores
+    excludesfile = ~/.gitignore
 	editor = hx
 	compression = 0
 
@@ -19,7 +19,8 @@
 
 # `git dlog` to show `git log -p` with difftastic.
 [alias]
-        dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+    dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+	main-pins = "!git checkout HEAD -- $(git submodule --quiet foreach 'echo $sm_path')"
 
 
 [difftool]
@@ -61,10 +62,13 @@
         colorMoved = plain
         mnemonicPrefix = true
         renames = true
+[submodule]
+	recurse = true
 [push]
         default = simple
         autoSetupRemote = true
         followTags = true
+		recurseSubmodules = check
 [fetch]
         prune = true
         pruneTags = true
@@ -79,8 +83,6 @@
 [rerere]
         enabled = true
         autoupdate = true
-[core]
-        excludesfile = ~/.gitignore
 [rebase]
         autoSquash = true
         autoStash = true

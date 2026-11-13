@@ -6,6 +6,9 @@
   ...
 }:
 {
+  xdg.configFile."helix/ignore".text = ''
+    .direnv/
+  '';
   home.packages = with pkgs; [
     # rust-analyzer
     vscode-langservers-extracted

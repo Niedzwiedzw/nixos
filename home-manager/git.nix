@@ -21,5 +21,5 @@
     };
   };
 
-  xdg.configFile."~/.gitconfig".source = ./git/gitconfig.local;
+  xdg.configFile."git/config".source = ./git/gitconfig.local;
 }

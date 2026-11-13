@@ -198,6 +198,7 @@
   };
 
   services.gvfs.enable = true;
+  services.tumbler.enable = true;
   programs = {
     nix-ld = {
       enable = true;
@@ -217,7 +218,7 @@
         mesa
       ];
     };
-
+    xfconf.enable = true;
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
@@ -235,82 +236,96 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # utils
-    desktop-file-utils
-    xdg-utils
-    gnome-software
-    comma
+  environment.systemPackages =
+    with pkgs;
 
-    # scanner, printer
-    qpdf
-    imagemagick
-    sane-airscan
-    # backups
-    borgmatic
-    # raid
-    mdadm
-    # devtools
-    python3
-    # chaotic stuff
-    # firefox_nightly
-    # end of chaotic stuff
-    pavucontrol
-    pulseaudio
-    gparted
-    xhost.out
-    bottom
-    jq
-    # inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
-    # -- amd gpu
+    [
+      # thunar
+      file-roller
+      tumbler
+      gnome-epub-thumbnailer
+      gst-thumbnailers
+      evince
+      f3d
 
-    # amdvlk
-    amdgpu_top
-    vulkan-tools
-    mesa-demos
-    vulkan-headers
-    vulkan-loader
-    vulkan-extension-layer
-    libGL
-    libxkbcommon
-    wayland-utils
-    winePackages.wayland
-    wine64Packages.wayland
-    wineWow64Packages.wayland
-    waylandpp
-    wayland
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXrandr
-    xorg.libXi
-    shaderc
-    directx-shader-compiler
-    wayland.dev
-    # gaming - STEAM
-    # steamtinkerlaunch
-    unixtools.xxd
-    yad
-    xorg.xwininfo
-    unzip
+    ]
+    ++ [
 
-    vulkan-tools
-    # Extra dependencies
-    # https://github.com/lutris/docs/
-    gnutls
-    openldap
-    libgpg-error
-    freetype
-    sqlite
-    libxml2
-    xml2
-    SDL2
-    # -- end of amd gpu
-    # crypto
-    cryptsetup
-    # vnc
-    wayvnc
-    wlvncc
-  ];
+      # utils
+      desktop-file-utils
+      xdg-utils
+      gnome-software
+      comma
+
+      # scanner, printer
+      qpdf
+      imagemagick
+      sane-airscan
+      # backups
+      borgmatic
+      # raid
+      mdadm
+      # devtools
+      python3
+      # chaotic stuff
+      # firefox_nightly
+      # end of chaotic stuff
+      pavucontrol
+      pulseaudio
+      gparted
+      xhost.out
+      bottom
+      jq
+      # inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+      # -- amd gpu
+
+      # amdvlk
+      amdgpu_top
+      vulkan-tools
+      mesa-demos
+      vulkan-headers
+      vulkan-loader
+      vulkan-extension-layer
+      libGL
+      libxkbcommon
+      wayland-utils
+      winePackages.wayland
+      wine64Packages.wayland
+      wineWow64Packages.wayland
+      waylandpp
+      wayland
+      xorg.libX11
+      xorg.libXcursor
+      xorg.libXrandr
+      xorg.libXi
+      shaderc
+      directx-shader-compiler
+      wayland.dev
+      # gaming - STEAM
+      # steamtinkerlaunch
+      unixtools.xxd
+      yad
+      xorg.xwininfo
+      unzip
+
+      vulkan-tools
+      # Extra dependencies
+      # https://github.com/lutris/docs/
+      gnutls
+      openldap
+      libgpg-error
+      freetype
+      sqlite
+      libxml2
+      xml2
+      SDL2
+      # -- end of amd gpu
+      # crypto
+      cryptsetup
+      # vnc
+      wayvnc
+      wlvncc
+    ];
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
