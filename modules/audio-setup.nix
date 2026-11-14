@@ -3,7 +3,7 @@
 let
   # ---- Tunables: change these, everything below follows ----
   sampleRate = 48000; # Ui24 only advertises 48k over USB
-  quantum = 256; # graph buffer (a.k.a. blocksize) in frames
+  quantum = 64; # graph buffer (a.k.a. blocksize) in frames
   periodSize = 64; # ALSA period for the Ui24 node
   minQuantum = 64; # let the graph negotiate down...
   maxQuantum = 1024; # ...and back off under load
