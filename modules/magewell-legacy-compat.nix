@@ -2,10 +2,10 @@
   # magewell capture card
   hardware.mwProCapture.enable = true;
 
-  # tiktok
-  boot.kernelModules = [
-    "v4l2loopback"
-  ];
+  # # tiktok
+  # boot.kernelModules = [
+  #   "v4l2loopback"
+  # ];
   # boot.kernelPackages =
   #   (import inputs.nixpkgs-unstable {
   #     config.allowUnfree = true;
