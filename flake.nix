@@ -22,6 +22,10 @@
       url = "github:oxalica/nil/main";
     };
     niri.url = "github:epireyn/niri-flake";
+    yazi-plugins = {
+      url = "github:yazi-rs/plugins";
+      flake = false;
+    };
   };
   outputs =
     {
@@ -107,6 +111,7 @@
           nil-lsp = nil-lsp;
           startupPrograms = startupPrograms;
           niri = niri;
+          yaziPluginsSource = inputs.yazi-plugins;
         };
         modules = [
           ./home-manager.nix
@@ -126,6 +131,7 @@
           nil-lsp = nil-lsp;
           startupPrograms = startupPrograms;
           niri = niri;
+          yaziPluginsSource = inputs.yazi-plugins;
         };
         modules = [
           ./home-manager.nix
@@ -144,6 +150,7 @@
           nil-lsp = nil-lsp;
           startupPrograms = startupPrograms;
           niri = niri;
+          yaziPluginsSource = inputs.yazi-plugins;
         };
         modules = [
           ./home-manager.nix

@@ -63,7 +63,7 @@
       ffmpeg-full
       # audio
       # davinci-resolve
-      anydesk
+      # anydesk
       spotify
 
       # utils
@@ -208,5 +208,6 @@
     ./home-manager/git.nix
     ./home-manager/zellij.nix
     ./home-manager/helix.nix
+    ./home-manager/yazi.nix
   ];
 }
